@@ -1,0 +1,2609 @@
+{
+  "summary": {
+    "stage": "occurrences",
+    "n_units": 100,
+    "n_articles": 70
+  },
+  "data": [
+    {
+      "doc_id": "Boxing Day",
+      "text": "China",
+      "offset": [
+        5398,
+        5403
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "Boxing Day",
+        "hits": 1
+      },
+      "left": "In Hong Kong, despite the transfer of sovereignty from the UK to ",
+      "right": " in 1997, Boxing Day is a general holiday as the first weekday after Christmas.",
+      "window_offset": [
+        5333,
+        5482
+      ],
+      "reference": {
+        "doc_id": "Boxing Day",
+        "title": "Boxing Day",
+        "source": "wikipedia"
+      }
+    },
+    {
+      "doc_id": "Police misconduct",
+      "text": "China",
+      "offset": [
+        14881,
+        14886
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "Police misconduct",
+        "hits": 1
+      },
+      "left": "While the mall supports its officers actions according to the teen's lawyer: \"private mall security guards and police have no right to try to seize someone's camera or demand that photos be deleted – even on private property.\"\n\n",
+      "right": "\nThe collusion between local gangs and police officers is a serious problem in many Chinese cities.",
+      "window_offset": [
+        14653,
+        14985
+      ],
+      "reference": {
+        "doc_id": "Police misconduct",
+        "title": "Police misconduct",
+        "source": "wikipedia"
+      }
+    },
+    {
+      "doc_id": "Imperial overstretch",
+      "text": "China",
+      "offset": [
+        1116,
+        1121
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "Imperial overstretch",
+        "hits": 1
+      },
+      "left": "Likewise the principle three Axis powers all overextended themselves during World War II:  Nazi Germany, waging war since 1939 in Western and Eastern Europe, was encircled, invaded, and fell in 1945; Imperial Japan led a total war in ",
+      "right": " and the Pacific Ocean; and fascist Italy, opening in 1940 simultaneous fronts in Africa, the Balkans, and the Mediterranean, suffered setbacks and fell in 1943.",
+      "window_offset": [
+        882,
+        1282
+      ],
+      "reference": {
+        "doc_id": "Imperial overstretch",
+        "title": "Imperial overstretch",
+        "source": "wikipedia"
+      }
+    },
+    {
+      "doc_id": "Larry McCaffery",
+      "text": "China",
+      "offset": [
+        4234,
+        4239
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "Larry McCaffery",
+        "hits": 1
+      },
+      "left": "",
+      "right": ", Beijing Foreign Studies University, 1988–1990.",
+      "window_offset": [
+        4234,
+        4287
+      ],
+      "reference": {
+        "doc_id": "Larry McCaffery",
+        "title": "Larry McCaffery",
+        "source": "wikipedia"
+      }
+    },
+    {
+      "doc_id": "Bandırma",
+      "text": "China",
+      "offset": [
+        896,
+        901
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "Bandırma",
+        "hits": 2
+      },
+      "left": "Bandırma's twin towns are Kamen, Germany, Tongxiang, ",
+      "right": ", Cary North Caroline, USA; and Mardin, Turkey.",
+      "window_offset": [
+        843,
+        948
+      ],
+      "reference": {
+        "doc_id": "Bandırma",
+        "title": "Bandırma",
+        "source": "wikipedia"
+      }
+    },
+    {
+      "doc_id": "Schleich",
+      "text": "China",
+      "offset": [
+        5343,
+        5348
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "Schleich",
+        "hits": 2
+      },
+      "left": "Sites \nSchleich produces its figurines and playsets in Germany, Portugal, Romania, Moldova, Vietnam, Tunisia and ",
+      "right": ".",
+      "window_offset": [
+        5230,
+        5349
+      ],
+      "reference": {
+        "doc_id": "Schleich",
+        "title": "Schleich",
+        "source": "wikipedia"
+      }
+    },
+    {
+      "doc_id": "Siddharth Anand",
+      "text": "China",
+      "offset": [
+        255,
+        260
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "Siddharth Anand",
+        "hits": 2
+      },
+      "left": "Pathaan became the second highest grossing Hindi film worldwide, excluding ",
+      "right": ", and broke the record for the highest grossing opening weekend for a Hindi film, bringing in 600 crores in its first weekend.",
+      "window_offset": [
+        180,
+        386
+      ],
+      "reference": {
+        "doc_id": "Siddharth Anand",
+        "title": "Siddharth Anand",
+        "source": "wikipedia"
+      }
+    },
+    {
+      "doc_id": "Criticism of atheism",
+      "text": "China",
+      "offset": [
+        3326,
+        3331
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "Criticism of atheism",
+        "hits": 5
+      },
+      "left": "The 1937 papal encyclical Divini Redemptoris denounced the atheism of the Soviet Union under Joseph Stalin, which was later influential in the establishment of  state atheism across Eastern Europe and elsewhere, including Mao Zedong's ",
+      "right": ", Kim's North Korea and Pol Pot's Cambodia.",
+      "window_offset": [
+        3091,
+        3374
+      ],
+      "reference": {
+        "doc_id": "Criticism of atheism",
+        "title": "Criticism of atheism",
+        "source": "wikipedia"
+      }
+    },
+    {
+      "doc_id": "Juno Award for Instrumental Album of the Year",
+      "text": "China",
+      "offset": [
+        1657,
+        1662
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "Juno Award for Instrumental Album of the Year",
+        "hits": 1
+      },
+      "left": "Winners\n\nInstrumental Artist(s) of the Year (1976 - 1987)\n1976 - Hagood Hardy\n1977 - Hagood Hardy\n1978 - André Gagnon\n1979 - Liona Boyd\n1980 - Frank Mills\n1981 - Frank Mills\n1982 - Liona Boyd\n1983 - Liona Boyd\n1984 - Liona Boyd\n1985 - Canadian Brass\n1986 - David Foster\n1987 - David Foster\n\nInstrumental Artist(s) of the Year (1989 - 1998)\n1989 - David Foster\n1990 - Manteca\n1991 - Ofra Harnoy\n1992 - Shadowy Men on a Shadowy Planet\n1993 - Ofra Harnoy\n1994 - Ofra Harnoy\n1995 - André Gagnon\n1996 - Liona Boyd\n1997 - Ashley MacIsaac\n1998 - Leahy\n\nBest Instrumental Album (1999 - 2002)\n2000 - Natalie MacMaster, In My Hands\n2001 - Jesse Cook, Free Fall\n2002 - Oscar Lopez, Armando's Fire\n\nInstrumental Album of the Year (2003 - Present)\n2003 - Robert Michaels, Allegro\n2004 - I Sorenti, Italian Love Songs\n2005 - Oscar Lopez, Mi Destino/My Destiny\n2006 - Daniel Lanois, Belladonna\n2007 - Sisters Euclid, Run Neil Run\n2008 - Jayme Stone, The Utmost\n2009 - DJ Brace, DJ Brace presents The Electric Nosehair Orchestra, Nostomania\n2010 - Bell Orchestre, As Seen Through The Windows\n2011 - Fond of Tigers, Continent & Western\n2012 - Stretch Orchestra, Stretch Orchestra\n2013 - Pugs and Crows, Fantastic Pictures\n2014 - Esmerine, Dalmak\n2015 - Quartango, Encuentro\n2016 - Colin Stetson and Sarah Neufeld, Never Were the Way She Was\n2017 - The Fretless, Bird's Nest\n2018 - Do Make Say Think, Stubborn Persistent Illusions\n2019 - Gordon Grdina, ",
+      "right": " Cloud\n2020 - Alexandra Stréliski, Inscape\n2021 - Blitz//Berlin, Movements III\n2022 - David Myles, That Tall Distance\n2023 - Esmerine, Everything Was Forever Until It Was No More",
+      "window_offset": [
+        222,
+        1840
+      ],
+      "reference": {
+        "doc_id": "Juno Award for Instrumental Album of the Year",
+        "title": "Juno Award for Instrumental Album of the Year",
+        "source": "wikipedia"
+      }
+    },
+    {
+      "doc_id": "Mr. India (1987 film)",
+      "text": "China",
+      "offset": [
+        1446,
+        1451
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "Mr. India (1987 film)",
+        "hits": 2
+      },
+      "left": "It emerged as a commercial success and became the second highest-grossing film of the year at the Indian box office after Hukumat, where it earned  against a  budget; it was also an overseas hit in ",
+      "right": ".",
+      "window_offset": [
+        1248,
+        1452
+      ],
+      "reference": {
+        "doc_id": "Mr. India (1987 film)",
+        "title": "Mr. India (1987 film)",
+        "source": "wikipedia"
+      }
+    },
+    {
+      "doc_id": "Richard Blahut",
+      "text": "China",
+      "offset": [
+        780,
+        785
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "Richard Blahut",
+        "hits": 1
+      },
+      "left": "He has taught at Princeton University, the Swiss Federal Institute of Technology, the NATO Advanced Study Institute, and has also been a Consulting Professor at the South ",
+      "right": " University of Technology.",
+      "window_offset": [
+        609,
+        811
+      ],
+      "reference": {
+        "doc_id": "Richard Blahut",
+        "title": "Richard Blahut",
+        "source": "wikipedia"
+      }
+    },
+    {
+      "doc_id": "Romance of the Three Kingdoms II",
+      "text": "China",
+      "offset": [
+        298,
+        303
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "Romance of the Three Kingdoms II",
+        "hits": 4
+      },
+      "left": "Gameplay\nUpon starting the game, players choose from one of six scenarios that determine the initial layout of power in ancient ",
+      "right": ".",
+      "window_offset": [
+        170,
+        304
+      ],
+      "reference": {
+        "doc_id": "Romance of the Three Kingdoms II",
+        "title": "Romance of the Three Kingdoms II",
+        "source": "wikipedia"
+      }
+    },
+    {
+      "doc_id": "Thomas Farrell (United States Army officer)",
+      "text": "China",
+      "offset": [
+        6587,
+        6592
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "Thomas Farrell (United States Army officer)",
+        "hits": 6
+      },
+      "left": "",
+      "right": "-Burma-India \nIn September 1943, the Chief of Army Service Forces, Lieutenant General Brehon B.",
+      "window_offset": [
+        6587,
+        6687
+      ],
+      "reference": {
+        "doc_id": "Thomas Farrell (United States Army officer)",
+        "title": "Thomas Farrell (United States Army officer)",
+        "source": "wikipedia"
+      }
+    },
+    {
+      "doc_id": "Craspedacusta sowerbii",
+      "text": "China",
+      "offset": [
+        337,
+        342
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "Craspedacusta sowerbii",
+        "hits": 3
+      },
+      "left": "Originally from the Yangtze basin in ",
+      "right": ", C.",
+      "window_offset": [
+        300,
+        346
+      ],
+      "reference": {
+        "doc_id": "Craspedacusta sowerbii",
+        "title": "Craspedacusta sowerbii",
+        "source": "wikipedia"
+      }
+    },
+    {
+      "doc_id": "Black Crown",
+      "text": "China",
+      "offset": [
+        1113,
+        1118
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "Black Crown",
+        "hits": 1
+      },
+      "left": "By seeing, hearing, touching or thinking of him, they will be led to happiness\n\nOrigin \nThe Karmapas were traditionally the teachers of the successive Ming dynasty Emperors of ",
+      "right": ".",
+      "window_offset": [
+        937,
+        1119
+      ],
+      "reference": {
+        "doc_id": "Black Crown",
+        "title": "Black Crown",
+        "source": "wikipedia"
+      }
+    },
+    {
+      "doc_id": "Robert George Broadwood",
+      "text": "China",
+      "offset": [
+        119,
+        124
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "Robert George Broadwood",
+        "hits": 2
+      },
+      "left": "Lieutenant General Robert George Broadwood, CB (14 March 1862 – 21 June 1917) was Commander of British Troops in South ",
+      "right": " and also served in the Boer War where played a large role in the Battle of Driefontein.",
+      "window_offset": [
+        0,
+        212
+      ],
+      "reference": {
+        "doc_id": "Robert George Broadwood",
+        "title": "Robert George Broadwood",
+        "source": "wikipedia"
+      }
+    },
+    {
+      "doc_id": "Brick",
+      "text": "China",
+      "offset": [
+        5423,
+        5428
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "Brick",
+        "hits": 5
+      },
+      "left": "Using the 17th-century encyclopaedic text Tiangong Kaiwu, historian Timothy Brook outlined the brick production process of Ming dynasty ",
+      "right": ":\n\nEurope \n\nEarly civilisations around the Mediterranean, including the Ancient Greeks and Romans, adopted the use of fired bricks.",
+      "window_offset": [
+        5287,
+        5559
+      ],
+      "reference": {
+        "doc_id": "Brick",
+        "title": "Brick",
+        "source": "wikipedia"
+      }
+    },
+    {
+      "doc_id": "Geography of Cambodia",
+      "text": "China",
+      "offset": [
+        4880,
+        4885
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "Geography of Cambodia",
+        "hits": 7
+      },
+      "left": "The Mekong traverses the north to south-east portions of the country, where the low-lying plains extend into Vietnam and reach the South ",
+      "right": " Sea at the Mekong Delta region.",
+      "window_offset": [
+        4743,
+        4917
+      ],
+      "reference": {
+        "doc_id": "Geography of Cambodia",
+        "title": "Geography of Cambodia",
+        "source": "wikipedia"
+      }
+    },
+    {
+      "doc_id": "Ginger milk curd",
+      "text": "China",
+      "offset": [
+        223,
+        228
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "Ginger milk curd",
+        "hits": 1
+      },
+      "left": "Ginger milk curd, also known as ginger-juice milk curd, ginger milk pudding or simply ginger milk, is a Chinese hot dessert originated in Shawan Ancient Town, Panyu District, Guangzhou in the Guangdong Province in southern ",
+      "right": ".",
+      "window_offset": [
+        0,
+        229
+      ],
+      "reference": {
+        "doc_id": "Ginger milk curd",
+        "title": "Ginger milk curd",
+        "source": "wikipedia"
+      }
+    },
+    {
+      "doc_id": "Acetylene",
+      "text": "China",
+      "offset": [
+        3280,
+        3285
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "Acetylene",
+        "hits": 3
+      },
+      "left": "Carbochemical method \nThe production of acetylene from calcium carbide is a traditional and still the dominant route:\n\nThe conditions for production of calcium carbide are environmentally unacceptable in most advanced countries, except ",
+      "right": ".",
+      "window_offset": [
+        3044,
+        3286
+      ],
+      "reference": {
+        "doc_id": "Acetylene",
+        "title": "Acetylene",
+        "source": "wikipedia"
+      }
+    },
+    {
+      "doc_id": "Confucianism",
+      "text": "China",
+      "offset": [
+        1835,
+        1840
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "Confucianism",
+        "hits": 31
+      },
+      "left": "They searched for new doctrines to replace Confucian teachings; some of these new ideologies include the \"Three Principles of the People\" with the establishment of the Republic of China, and then Maoism under the People's Republic of ",
+      "right": ".",
+      "window_offset": [
+        1601,
+        1841
+      ],
+      "reference": {
+        "doc_id": "Confucianism",
+        "title": "Confucianism",
+        "source": "wikipedia"
+      }
+    },
+    {
+      "doc_id": "Moraine Assembly",
+      "text": "China",
+      "offset": [
+        2005,
+        2010
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "Moraine Assembly",
+        "hits": 1
+      },
+      "left": "The announcement that the plant will be closed much earlier than initially stated will further hurt our members, their families and a Dayton community already rocked by plant closings and layoffs.\"\n\nPast products\n1983–2004 Chevrolet S-10 Blazer\n1983–2004 GMC S-15 Jimmy\n1987-1994 Grumman LLV Chassis\n1991–2004 Oldsmobile Bravada\n1998–2009 GMC Envoy\n2002–2009 Chevrolet TrailBlazer\n2004–2007 Buick Rainier\n2003–2008 Isuzu Ascender\n2005–2009 Saab 9-7X\n\nFuyao Glass\nIn 2014, GM Moraine Assembly was purchased from IRG by ",
+      "right": "-based Fuyao Glass Industry Group Co.",
+      "window_offset": [
+        1487,
+        2047
+      ],
+      "reference": {
+        "doc_id": "Moraine Assembly",
+        "title": "Moraine Assembly",
+        "source": "wikipedia"
+      }
+    },
+    {
+      "doc_id": "Wendy Wu: Homecoming Warrior",
+      "text": "China",
+      "offset": [
+        2012,
+        2017
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "Wendy Wu: Homecoming Warrior",
+        "hits": 1
+      },
+      "left": "Wendy's traditional grandmother knows that Shen is speaking the truth; her own mother (Wendy's great-grandmother) was the previous Yin Warrior who defeated Yan-Lo in ",
+      "right": " ninety years earlier.",
+      "window_offset": [
+        1846,
+        2039
+      ],
+      "reference": {
+        "doc_id": "Wendy Wu: Homecoming Warrior",
+        "title": "Wendy Wu: Homecoming Warrior",
+        "source": "wikipedia"
+      }
+    },
+    {
+      "doc_id": "Bandırma",
+      "text": "China",
+      "offset": [
+        10696,
+        10701
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "Bandırma",
+        "hits": 2
+      },
+      "left": "Twin towns – sister cities \n\nBandırma is twinned with:\n  Kamen, Germany since 1999\n  Tongxiang, ",
+      "right": " since 2002\n  Cary, United States since 2022\n\nNotable people \n Firdevsi-i Rumi, poet and scholar\n Bekir Sami Günsav, Military officer in the Ottoman and Turkish armies\n Ahmet Nuri Öztekin, Military officer in the Ottoman and Turkish armies\n Ethem Psheu, Ottoman – Circassian partisan leader and fighter in the Turkish War of Independence\n Ziya Güler, Lieutenant General\n Erkan Arıkan, German TV presenter\n Hande Erçel, actress and model",
+      "window_offset": [
+        10600,
+        11137
+      ],
+      "reference": {
+        "doc_id": "Bandırma",
+        "title": "Bandırma",
+        "source": "wikipedia"
+      }
+    },
+    {
+      "doc_id": "Benin",
+      "text": "China",
+      "offset": [
+        8360,
+        8365
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "Benin",
+        "hits": 1
+      },
+      "left": "Establishing relations with ",
+      "right": ", North Korea, and Libya, he put \"nearly all\" businesses and economic activities under state control, causing foreign investment in Benin to dry up.",
+      "window_offset": [
+        8332,
+        8513
+      ],
+      "reference": {
+        "doc_id": "Benin",
+        "title": "Benin",
+        "source": "wikipedia"
+      }
+    },
+    {
+      "doc_id": "Thomas Farrell (United States Army officer)",
+      "text": "China",
+      "offset": [
+        1043,
+        1048
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "Thomas Farrell (United States Army officer)",
+        "hits": 6
+      },
+      "left": "He went to the ",
+      "right": "-Burma-India theater to help build the Ledo Road.",
+      "window_offset": [
+        1028,
+        1097
+      ],
+      "reference": {
+        "doc_id": "Thomas Farrell (United States Army officer)",
+        "title": "Thomas Farrell (United States Army officer)",
+        "source": "wikipedia"
+      }
+    },
+    {
+      "doc_id": "Chile at the 1948 Summer Olympics",
+      "text": "China",
+      "offset": [
+        342,
+        347
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "Chile at the 1948 Summer Olympics",
+        "hits": 1
+      },
+      "left": "Athletics\n\nBasketball\n\nMen's Team Competition\nPreliminary Round (Group B)\n Defeated ",
+      "right": " (44-39)\n Defeated Iraq (100-18)\n Defeated Philippines (68-39)\n Lost to Belgium (36-38)\n Lost to South Korea (21-28)\nQuarterfinals\n Lost to France (52-53)\nClassification Matches\n 5th/8th place: Defeated Czechoslovakia (38-36)\n 5th/6th place: Lost to Uruguay (32-50) → Sixth place\n\nBoxing\n\nCycling\n\nFour cyclists, all men, represented Chile in 1948.",
+      "window_offset": [
+        258,
+        695
+      ],
+      "reference": {
+        "doc_id": "Chile at the 1948 Summer Olympics",
+        "title": "Chile at the 1948 Summer Olympics",
+        "source": "wikipedia"
+      }
+    },
+    {
+      "doc_id": "Arbor Day",
+      "text": "China",
+      "offset": [
+        5465,
+        5470
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "Arbor Day",
+        "hits": 9
+      },
+      "left": "In 1916, the government announced that all provinces of the Republic of China would celebrate the on the same day as the Qingming Festival, April 5, despite the differences in climate across ",
+      "right": ", which is on the first day of the fifth solar term of the traditional Chinese lunisolar calendar.",
+      "window_offset": [
+        5274,
+        5568
+      ],
+      "reference": {
+        "doc_id": "Arbor Day",
+        "title": "Arbor Day",
+        "source": "wikipedia"
+      }
+    },
+    {
+      "doc_id": "Territorial evolution of Russia",
+      "text": "China",
+      "offset": [
+        2655,
+        2660
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "Territorial evolution of Russia",
+        "hits": 2
+      },
+      "left": "Qing ",
+      "right": " defeated Russia in the early Sino-Russian border conflicts, although the Russian Empire later acquired Russian Manchuria in the Amur Annexation.",
+      "window_offset": [
+        2650,
+        2805
+      ],
+      "reference": {
+        "doc_id": "Territorial evolution of Russia",
+        "title": "Territorial evolution of Russia",
+        "source": "wikipedia"
+      }
+    },
+    {
+      "doc_id": "Chai Zemin",
+      "text": "China",
+      "offset": [
+        1694,
+        1699
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "Chai Zemin",
+        "hits": 12
+      },
+      "left": "Chai thus became the first China's ambassador to the United States thirty years after the founding of the People's Republic of ",
+      "right": ".",
+      "window_offset": [
+        1567,
+        1700
+      ],
+      "reference": {
+        "doc_id": "Chai Zemin",
+        "title": "Chai Zemin",
+        "source": "wikipedia"
+      }
+    },
+    {
+      "doc_id": "Transport in Armenia",
+      "text": "China",
+      "offset": [
+        5161,
+        5166
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "Transport in Armenia",
+        "hits": 1
+      },
+      "left": "Armenia is pursuing further loans from ",
+      "right": " as part of the Belt and Road Initiative to complete the north–south highway.",
+      "window_offset": [
+        5122,
+        5243
+      ],
+      "reference": {
+        "doc_id": "Transport in Armenia",
+        "title": "Transport in Armenia",
+        "source": "wikipedia"
+      }
+    },
+    {
+      "doc_id": "Belinda Snell",
+      "text": "China",
+      "offset": [
+        5858,
+        5863
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "Belinda Snell",
+        "hits": 1
+      },
+      "left": "In June 2010, she was viewed by national team coach Carrie Graf as one of a quartet of strong players that would represent Australia in a tour of ",
+      "right": ", the United States and Europe.",
+      "window_offset": [
+        5712,
+        5894
+      ],
+      "reference": {
+        "doc_id": "Belinda Snell",
+        "title": "Belinda Snell",
+        "source": "wikipedia"
+      }
+    },
+    {
+      "doc_id": "Electronic common technical document",
+      "text": "China",
+      "offset": [
+        2057,
+        2062
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "Electronic common technical document",
+        "hits": 3
+      },
+      "left": "China \nIn November 2017, ",
+      "right": " Food and Drug Administration (CFDA) publishes draft eCTD structure for drug registration for public consultations.",
+      "window_offset": [
+        2032,
+        2177
+      ],
+      "reference": {
+        "doc_id": "Electronic common technical document",
+        "title": "Electronic common technical document",
+        "source": "wikipedia"
+      }
+    },
+    {
+      "doc_id": "Ajay Rochester",
+      "text": "China",
+      "offset": [
+        3234,
+        3239
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "Ajay Rochester",
+        "hits": 1
+      },
+      "left": "Rochester is also the face and ambassador for Triathlonpink.com and walked the Great Wall of ",
+      "right": " to raise funds to build the Olivia Newton-John Wellness Centre.",
+      "window_offset": [
+        3141,
+        3303
+      ],
+      "reference": {
+        "doc_id": "Ajay Rochester",
+        "title": "Ajay Rochester",
+        "source": "wikipedia"
+      }
+    },
+    {
+      "doc_id": "Economy of Brazil",
+      "text": "China",
+      "offset": [
+        5832,
+        5837
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "Economy of Brazil",
+        "hits": 6
+      },
+      "left": "The country's scientific and technological development is argued to be attractive to foreign direct investment, in 2019, Brazil occupied the 4th largest destination for foreign investments, behind only the United States, ",
+      "right": " and Singapore.",
+      "window_offset": [
+        5611,
+        5852
+      ],
+      "reference": {
+        "doc_id": "Economy of Brazil",
+        "title": "Economy of Brazil",
+        "source": "wikipedia"
+      }
+    },
+    {
+      "doc_id": "Shrimp toast",
+      "text": "China",
+      "offset": [
+        1005,
+        1010
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "Shrimp toast",
+        "hits": 1
+      },
+      "left": "Japan\nThe dish was introduced to Japan during the Meiji period through the port of Nagasaki, whose local Shippoku cuisine blended the cookery of ",
+      "right": ", Japan, and the West.",
+      "window_offset": [
+        860,
+        1032
+      ],
+      "reference": {
+        "doc_id": "Shrimp toast",
+        "title": "Shrimp toast",
+        "source": "wikipedia"
+      }
+    },
+    {
+      "doc_id": "2007 in association football",
+      "text": "China",
+      "offset": [
+        8350,
+        8355
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "2007 in association football",
+        "hits": 2
+      },
+      "left": "AFC nations\n\nAustralia: Melbourne Victory\nBahrain: Muharraq\nBangladesh: Abahani\nBhutan: Transport United\nCambodia:\nBrunei: No championship held\nBurma: Kanbawza\n",
+      "right": ": Changchun Yatai\nEast Timor:\nGuam: Quality Distributors\nHong Kong: South China\nIndia: Dempo SC\nIndonesia:\nIran: Saipa\nIraq: Arbil\nJapan: Kashima Antlers\nJordan: Al-Wihdat\nKuwait: Al Kuwait\nKyrgyzstan: Dordoi-Dynamo Naryn\nLaos: Lao-American College\nLebanon: Al-Ansar\nMacao: GD Lam Pak\nMalaysia: Kedah FA\nMaldives: New Radiant\nMongolia: Erchim\nNepal: Mahendra Police Club\nNorth Korea:\nOman: Al-Nahda\nPakistan: Pakistan Army\nPhilippines: National Capital Region\nQatar: Al-Sadd\nSaudi Arabia: Al-Hilal\nSingapore: SAFFC\nSouth Korea: Pohang Steelers\nSri Lanka: Ratnam SC\nSyria: Al-Karamah\nTaiwan: Taiwan Power Company\nTajikistan: Regar-TadAZ Tursunzoda\nThailand: Chonburi\nTurkmenistan: FC Aşgabat\nUnited Arab Emirates: Al Wasl\nUzbekistan: Pakhtakor Tashkent\nVietnam: Bình Dương\nYemen: Al-Ahli\n\nOFC nations\n\nAmerican Samoa: Konica\nCook Islands:\nFiji: Ba\nNew Caledonia: JS Baco\nNew Zealand: Auckland City\nNiue:\nNorthern Mariana Islands: Fiesta Inter Saipan\nPalau: Team Bangladesh\nPapua New Guinea: Cancelled\nSamoa:\nSolomon Islands: Kossa\nTahiti: AS Manu-Ura\nTonga:\nTuvalu:\nVanuatu: Tafea\n\nNotable managerial changes\n\n January 2 – Omiya Ardija appoints Robert Verbeek as their new manager to replace Toshiya Miura.",
+      "window_offset": [
+        8190,
+        9560
+      ],
+      "reference": {
+        "doc_id": "2007 in association football",
+        "title": "2007 in association football",
+        "source": "wikipedia"
+      }
+    },
+    {
+      "doc_id": "Art",
+      "text": "China",
+      "offset": [
+        8903,
+        8908
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "Art",
+        "hits": 2
+      },
+      "left": "Many great traditions in art have a foundation in the art of one of the great ancient civilizations: Ancient Egypt, Mesopotamia, Persia, India, ",
+      "right": ", Ancient Greece, Rome, as well as Inca, Maya, and Olmec.",
+      "window_offset": [
+        8759,
+        8965
+      ],
+      "reference": {
+        "doc_id": "Art",
+        "title": "Art",
+        "source": "wikipedia"
+      }
+    },
+    {
+      "doc_id": "Geography of Cambodia",
+      "text": "China",
+      "offset": [
+        2799,
+        2804
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "Geography of Cambodia",
+        "hits": 7
+      },
+      "left": "The current geological structure of South ",
+      "right": " and South-East Asia is determined to be the response to the \"Indo-sinian\" collision in South-East Asia during the Carboniferous.",
+      "window_offset": [
+        2757,
+        2933
+      ],
+      "reference": {
+        "doc_id": "Geography of Cambodia",
+        "title": "Geography of Cambodia",
+        "source": "wikipedia"
+      }
+    },
+    {
+      "doc_id": "Yong Peng",
+      "text": "China",
+      "offset": [
+        601,
+        606
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "Yong Peng",
+        "hits": 3
+      },
+      "left": "Coincidentally the political and social chaos in Southern ",
+      "right": " during that period (ref: History of China) made the Chinese migrants an obvious choice.",
+      "window_offset": [
+        543,
+        694
+      ],
+      "reference": {
+        "doc_id": "Yong Peng",
+        "title": "Yong Peng",
+        "source": "wikipedia"
+      }
+    },
+    {
+      "doc_id": "Dual wield",
+      "text": "China",
+      "offset": [
+        3424,
+        3429
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "Dual wield",
+        "hits": 2
+      },
+      "left": "During Wei–Jie war, Ran Min, emperor of the short-lived Ran Wei empire of ",
+      "right": ", wielded two weapons, one in each hand, and fought fiercely, inflicting many casualties on the Xianbei soldiers while mounted on the famous horse Zhu Long (\"Red Dragon\").",
+      "window_offset": [
+        3350,
+        3600
+      ],
+      "reference": {
+        "doc_id": "Dual wield",
+        "title": "Dual wield",
+        "source": "wikipedia"
+      }
+    },
+    {
+      "doc_id": "Cream wave",
+      "text": "China",
+      "offset": [
+        1753,
+        1758
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "Cream wave",
+        "hits": 2
+      },
+      "left": "Subspecies\nScopula floslactata floslactata (Europe to ",
+      "right": ")\nScopula floslactata claudata Prout, 1913 (Japan, Korea, Russia: Primorye and South Kuriles)",
+      "window_offset": [
+        1699,
+        1851
+      ],
+      "reference": {
+        "doc_id": "Cream wave",
+        "title": "Cream wave",
+        "source": "wikipedia"
+      }
+    },
+    {
+      "doc_id": "Electronic common technical document",
+      "text": "China",
+      "offset": [
+        2207,
+        2212
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "Electronic common technical document",
+        "hits": 3
+      },
+      "left": "This is a big transition for ",
+      "right": " to move from paper submission to eCTD submissions.",
+      "window_offset": [
+        2178,
+        2263
+      ],
+      "reference": {
+        "doc_id": "Electronic common technical document",
+        "title": "Electronic common technical document",
+        "source": "wikipedia"
+      }
+    },
+    {
+      "doc_id": "Haplogroup Q-M242",
+      "text": "China",
+      "offset": [
+        11390,
+        11395
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "Haplogroup Q-M242",
+        "hits": 22
+      },
+      "left": "The average frequency of Q-M242 in northern ",
+      "right": " is around 4.",
+      "window_offset": [
+        11346,
+        11408
+      ],
+      "reference": {
+        "doc_id": "Haplogroup Q-M242",
+        "title": "Haplogroup Q-M242",
+        "source": "wikipedia"
+      }
+    },
+    {
+      "doc_id": "Dingxi",
+      "text": "China",
+      "offset": [
+        2207,
+        2212
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "Dingxi",
+        "hits": 6
+      },
+      "left": "Dingxi's Anding County is ",
+      "right": "'s number one grower of yams.",
+      "window_offset": [
+        2181,
+        2241
+      ],
+      "reference": {
+        "doc_id": "Dingxi",
+        "title": "Dingxi",
+        "source": "wikipedia"
+      }
+    },
+    {
+      "doc_id": "Acetylene",
+      "text": "China",
+      "offset": [
+        7553,
+        7558
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "Acetylene",
+        "hits": 3
+      },
+      "left": "Except in ",
+      "right": ", use of acetylene as a chemical feedstock has declined by 70% from 1965 to 2007 owing to cost and environmental considerations.",
+      "window_offset": [
+        7543,
+        7686
+      ],
+      "reference": {
+        "doc_id": "Acetylene",
+        "title": "Acetylene",
+        "source": "wikipedia"
+      }
+    },
+    {
+      "doc_id": "Chai Zemin",
+      "text": "China",
+      "offset": [
+        533,
+        538
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "Chai Zemin",
+        "hits": 12
+      },
+      "left": "He was appointed ",
+      "right": "'s ambassador to Hungary in 1961, to Guinea in 1964, and to Egypt in 1970.",
+      "window_offset": [
+        516,
+        612
+      ],
+      "reference": {
+        "doc_id": "Chai Zemin",
+        "title": "Chai Zemin",
+        "source": "wikipedia"
+      }
+    },
+    {
+      "doc_id": "Haplogroup K (mtDNA)",
+      "text": "China",
+      "offset": [
+        3180,
+        3185
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "Haplogroup K (mtDNA)",
+        "hits": 1
+      },
+      "left": "In eastern ",
+      "right": ", mtDNA haplogroup K has been found in 1.",
+      "window_offset": [
+        3169,
+        3226
+      ],
+      "reference": {
+        "doc_id": "Haplogroup K (mtDNA)",
+        "title": "Haplogroup K (mtDNA)",
+        "source": "wikipedia"
+      }
+    },
+    {
+      "doc_id": "Amway",
+      "text": "China",
+      "offset": [
+        6605,
+        6610
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "Amway",
+        "hits": 17
+      },
+      "left": "In 2008, ",
+      "right": " was Amway's largest market, reporting 28% growth and sales of 17 billion yuan (US$2.",
+      "window_offset": [
+        6596,
+        6695
+      ],
+      "reference": {
+        "doc_id": "Amway",
+        "title": "Amway",
+        "source": "wikipedia"
+      }
+    },
+    {
+      "doc_id": "Brick",
+      "text": "China",
+      "offset": [
+        3322,
+        3327
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "Brick",
+        "hits": 5
+      },
+      "left": "China \nThe earliest fired bricks appeared in Neolithic ",
+      "right": " around 4400 BC at Chengtoushan, a walled settlement of the Daxi culture.",
+      "window_offset": [
+        3267,
+        3400
+      ],
+      "reference": {
+        "doc_id": "Brick",
+        "title": "Brick",
+        "source": "wikipedia"
+      }
+    },
+    {
+      "doc_id": "Hulusi",
+      "text": "China",
+      "offset": [
+        1027,
+        1032
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "Hulusi",
+        "hits": 3
+      },
+      "left": "The hulusi was originally used primarily in the Shan State of Myanmar, Yunnan province and Assam by a number of ethnic-minority groups, in particular the Dai people who call the instrument \"pi lamtao\" (筚朗叨 – the word \"pi\" means woodwind instruments, and the word \"lamtao\"(namtao) means gourd), and has gained nationwide popularity throughout ",
+      "right": " and is also used by various indigenous ethnic groups of Assam; similar to the popularity of the harmonica in the West, and \"improved\" versions have been produced outside the indigenous realms.",
+      "window_offset": [
+        685,
+        1225
+      ],
+      "reference": {
+        "doc_id": "Hulusi",
+        "title": "Hulusi",
+        "source": "wikipedia"
+      }
+    },
+    {
+      "doc_id": "Chronicles of an Age of Darkness",
+      "text": "China",
+      "offset": [
+        13054,
+        13059
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "Chronicles of an Age of Darkness",
+        "hits": 1
+      },
+      "left": "",
+      "right": " Miéville wrote an introductory essay for the Paizo reissue calling it a fan favorite and an anti-Bildungsroman, noting that Cook's pirates avoided both romanticism and didacticism.",
+      "window_offset": [
+        13054,
+        13240
+      ],
+      "reference": {
+        "doc_id": "Chronicles of an Age of Darkness",
+        "title": "Chronicles of an Age of Darkness",
+        "source": "wikipedia"
+      }
+    },
+    {
+      "doc_id": "Geography of Cambodia",
+      "text": "China",
+      "offset": [
+        3158,
+        3163
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "Geography of Cambodia",
+        "hits": 7
+      },
+      "left": "The Indochina continental block, which is separated from the South ",
+      "right": " Block by the Jinshajiang-Ailaoshan Suture zone, is an amalgamation of the Viet-Lao, Khorat-Kontum, Uttaradit (UTD), and Chiang Mai-West Kachin terranes, all of which are separated by suture zones or ductile shear zones.",
+      "window_offset": [
+        3091,
+        3383
+      ],
+      "reference": {
+        "doc_id": "Geography of Cambodia",
+        "title": "Geography of Cambodia",
+        "source": "wikipedia"
+      }
+    },
+    {
+      "doc_id": "Japan Academy Prize (academics)",
+      "text": "China",
+      "offset": [
+        5982,
+        5987
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "Japan Academy Prize (academics)",
+        "hits": 1
+      },
+      "left": "Recipients (of Japan Academy Prize) \n\n 2020 \n Minoru Ozima\n2016 (106th)\n Kazutoshi Mori\n Yoshihiro Kawaoka\n2015 (105th)\n Hideo Hosono\n Hiroaki Mitsuya\n2014 (104th)\n Isamu Akasaki\n Takao Kondo\n Hiraku Nakajima\n 2013 (103rd)\nYoshinori Tokura\n 2012 (102nd)\nTakaaki Kajita\nShimon Sakaguchi\n2011 (101st)\n Takurō Mochizuki - \"Study of pure twister D-modules\"\n2010 (100th)\n Shinya Yamanaka\n2008 (98th)\n Keiji Morokuma - \"Theoretical Studies of Design of Structure, Function and Reactivity of Molecules\"\n Takaya Hosoka - \"The Persecution of Jews and Christians in the Early Roman Principate\"\n Fumio Ohtake - \"Inequality in Japan\"\n Yoshinori Fujiyoshi - \"Structure Determination of Membrane Proteins based on the Development of an Innovative Cryo-Electron Microscope\"\n Naomasa Nakai - Study of Active Galactic Nuclei and Super-Massive Black Holes based on VLBI Observations of Water-Vapor Maser Emission\nAkira Hasegawa - \"Discovery of Optical Soliton Properties in Fibers and of Self-organization of Plasma Turbulence\"\nKanji Ohyama - \t\"Gene Content, Organization and Molecular Evolution of Plant Organellar Genomes and Sex Chromosomes —Insights from the Case of the Liverwort Marchantia polymorpha—\"\nKenji Kangawa - \"Discovery of Novel Bioactive Peptides with Special Reference to Ghrelin\"\nYoshiyuki Nagai - \"Elucidation of the Molecular Basis of Paramyxovirus Pathogenicity and Generation of a Novel Class of Expression Vector\"\n2007 (97th)\nSenzô Hidemura - Agriculture and Society at the Last Stage of Satsuma Feudal Fief —A Study of Moriya Family, a Rural Warrior in Kōyama-Gō—\nShizuo Akira -Pathogen Recognition by Innate Immunity and its Signaling\nMasaaki Sugiyama - The Mongol Empire and Dai-ön Ulus\nAsahiko Taira - Accretion Tectonics and Evolution of the Japan Islands\nShinji Kawaji - Experimental Studies of Two-Dimensional Electron Systems\"\nHisashi Yamamoto and Kohei Tamao - Exploitation of Chemical and Physical Properties of Main-group Element Compounds based on Flexibility for High Coordination (Joint Research)\nYukio Hori and Koji Kato - Studies on Tribology (Joint Research)\nToshisuke Maruyama - Water Demand-Supply Analysis in Large Spatial Areas Based on Evapotranspiration and Runoff\nYasushi Miyashita - The Discovery of Associative Memory Neurons in the Cerebral Cortex and Studies of the Cognitive Memory System\n 2006 (96th)\nShuh Narumiya - Studies on the Prostaglandin Receptors\nShinsaku Iwahara -Electronic Payment and Law\nKotaro Suzumura -Welfare Economics beyond Welfarist-consequentialism\nNoboru Mataga -\tStudies on Molecular Interactions and Chemical Reaction Dynamics of Photo-excited Molecules\nYoshinori Ohsumi -Molecular Mechanism and Physiological Function of Autophagy\nAtsuto Suzuki -Studies of Antineutrino Science\nKen Sakamura -Research on the Computer Architecture with High Real-time Performance\nKoki Horikoshi -Studies of Alkaliphilic Microorganisms: Their Diversity, Physiology, and Applications\nToshio Wagai -Studies on the Foundation and Development of Diagnostic Ultrasound\n 2005 (95th)\n Kazuya Kato\n Tetsuya Shiokawa for \"Recherches sur Pascal\" (\"Research on Arithmetic Geometry\")\n Shuichiro Kimura for \"A History of the German Idea of Welfare State\"\n Yukihiko Kiyokawa for \"Formation of Modern Industrial Labor Force in Asia — Economic Development, Culture and Job Consciousness\"\n Takashi Nakamura for \"Theoretical Investigation of the Formation of Black Holes and the Emission of Gravitational Waves\" \n Hiroyuki Sakaki and Hideo Ohno for \"Studies on Quantum Control of Electrons by Semiconductor Nanostructures and Ferromagnetism\" \n Hiroshi Kida for \"Studies on Control of Influenza — Mechanism of Emergence of Pandemic Influenza Virus Strains in Poultry, Domestic Animals and Humans, and Molecular Basis of the Neutralization of Viral Infectivity with Antibodies\" \n Yukihiko Kitamura for \"Development and Malignant Transformation of Mast Cells and Interstitial Cells of Cajal through KIT Receptors\" \n Masakatsu Shibasaki for \"Studies on the Development of Asymmetric Catalysts and its Application to Medicinal Chemistry\"\n 2004 (94th)\n Takafusa Nakamura\n Hiroo Kanamori\n Akira Suzuki\n Akira Fujishima\n 2003 (93rd)\nMitsuhiro Yanagida - Regulation of Cell Cycle and Chromosome Segregation\nNoboru Karashima - History and Society in South India: The Cholas to Vijayanagar\nMari Nomura - The Jews in Vienna\nKenji Fukaya - Research in Differential Geometry\nKoichi Itoh, Hiizu Iwamura and Minoru Kinoshita - Study of Molecular Magnet (Joint Research)\nYasutoshi Senoo - Researches on Fluid Dynamics of Centrifugal Turbomachines\nYoshimi Okada - Molecular Biology of Plant Virus RNA Genomes and its Application to Agriculture\nHiroshi Okamoto - Studies on Experimental Diabetes and Its Prevention\nMakoto Endo - Studies on the Mechanisms of Mobilization of Calcium Ion in Muscle Cells\n 2002 (92nd)\nSumio Iijima\nAkiho Miyashiro\n 2001 (91st)\nFumio Hayashi\nMakoto Asashima\n 2000 (90th)\n Shigekazu Nagata\n Morikazu Toda\n Tadatsugu Taniguchi\n 1999 (89th)\n Yoshito Kishi\n Nobutaka Hirokawa\n 1998 (88th)\n Toshio Yanagida\n Yasutaka Ihara\n 1997 (87th)\n Shigetada Nakanishi\n Norio Kaifu\n 1996 (86th)\n Tasuku Honjo\n Shinzo Watanabe\n Masatoshi Takeichi\n 1995 (85th)\n Ryōji Noyori\n Shun'ichi Amari\n 1994 (84th)\n Makoto Kumada\n 1993 (83rd)\nIssei Tanaka - \"A Study of the Ritual Theatres in ",
+      "right": "\"\nYasuo Tanaka - \"The Relativistic Properties of Celestial X-ray Sources\"\nTakashi Negishi - \"History of Economic Theory\"\nAkito Arima - \"Theoretical Studies on Dynamical Models and Electromagnetic Interactions of Atomic Nuclei\"\nMichio Jimbo - \"Studies on Solvable Lattice Models and Quantum Groups\"\nTakanori Okoshi - \"Research on Coherent Optical Fiber Communications\"\nToshiro Kinoshita - \"Genetical Studies on the Interaction between Cytoplasmic and Nuclear Genomes, and the Application of These Studies to Actual Crop Breeding\"\nHajime Yamamoto - \"Use of Lasers for Caries Prevention and Other Applications in Dentistry\"\nKeiya Tada and Goro Kikuchi - \"Studies on Hyperglycinemia (Joint Research)\"\n 1992 (82nd)\nTadamitsu Kishimoto\nKenichi Honda\n 1991 (81st)\nAkira Tonomura\nTomisaku Kawasaki\n 1990 (80th)\nKoji Nakanishi\nMasahiko Aoki\nShigeru Iitaka, Shigefumi Mori, Yujiro Kawamata\nSatoshi Ōmura\n 1989 (79th)\nSengaku Mayeda\nMasatoshi Koshiba\n 1988 (78th)\nMasaki Kashiwara\n 1986 (76th)\nMasao Ito\nMasayoshi Nagata\nHitoshi Nozaki\nYasutomi Nishizuka\n 1985 (75th)\nToshihide Maskawa, Makoto Kobayashi\nTomoko Ohta\nYoshiaki Arata\nShosaku Numa\n 1984 (74th)\nZuiho Yamaguchi\n 1982 (72nd)\nShizuo Kakutani\n 1979 (69th)\nHiroshi Inose\n 1978 (68th)\nKiyosi Itô\n 1977 (67th)\nYoshimasa Hirata\nSyun-Ichi Akasofu\n 1976 (66th)\nTakashi Sugimura\nMikio Sato\nTamio Yamakawa\n 1974 (64th)\nKimishige Ishizaka\nMichio Suzuki\nJun-ichi Nishizawa\n 1973 (63rd)\nJun Kondo\nSasagu Arai\n 1972 (62nd)\nSetsuro Ebashi\n 1971 (61st)\nChushiro Hayashi\n 1970 (60th)\nSusumu Nakanishi\nChushiro Hayashi\nHeisuke Hironaka\n 1968 (58th)\nMotoo Kimura\n 1967 (57th)\nOsamu Hayaishi\n 1965 (55th)\nHiroshi Tamiya\nLeo Esaki\n 1964 (54th)\nKazuhiko Nishijima\n 1962 (52nd)\nKenkichi Iwasawa\nKenichi Fukui\nHamao Umezawa\n 1961 (51st)\nShigeo Kishibe\n 1959 (49th)\nTatsuo Nishida\n 1958 (48th)\nMotoo Kimura\n 1957 (47th)\nKanda Nobuo\nKunihiko Kodaira\n 1956 (46th)\nTakahiko Yamanouchi\n 1954 (44th)\nTadashi Nakayama\nHisashi Kuno\n 1953 (43rd)\nGuan Jing\n 1952 (42nd)\nHideyo Arisaka\n 1951 (41st)\nKiyoshi Oka\nTakeshi Nagata\n 1950 (40th)\nYūkichi Takeda\nKinichiro Sakaguchi\n 1949 (39th)\nKenjiro Shoda\n 1948 (38th)\nIssac Koga\nMasao Kotani\n 1945 (35th)\nKinpei Matsuoka\n 1941 (31st)\nSeiichi Iwao\nShinobu Ishihara\nUkichiro Nakaya\n 1940 (30th)\nMokichi Saitō\n 1937 (27th)\nRyōzō Kanehira\n 1932 (22nd)\nMotonori Matuyama\nShintaro Uda\nSeishi Kikuchi\n 1931 (21st)\nHakaru Masumoto\n 1930 (20th)\nOkuro Oikawa\n 1929 (19th)\nHisao Tanabe\nKenzo Futaki\n 1928 (18th)\nYuzuru Hiraga\n 1927 (17th)\nTakenoshin Nakai\nKeizo Dohi\n 1926 (16th)\n\n 1925 (15th)\n\n 1924 (14th)\n\nUmetaro Suzuki\n\n 1923 (13th)\nNo award\n 1922 (12th)\n\n 1921 (11th)\n\n 1920 (10th)\n\nSakuhei Fujiwhara\nBunzō Hayata\n 1919 (9th)\n\nKatsusaburō Yamagiwa\n\nTokiji Ishikawa\n 1918 (8th)\nFujiro Katsurada\n\n 1917 (7th)\n\n 1916 (6th)\n\nTsunetaro Kujirai\n\nMasajiro Kitamura\nKotaro Honda\n 1915 (5th)\n\nKametaro Toyama\n 1914 (4th)\n\nShirota Kusakabe\n 1913 (3rd)\n\n 1912 (2nd)\nJōkichi Takamine",
+      "window_offset": [
+        684,
+        8914
+      ],
+      "reference": {
+        "doc_id": "Japan Academy Prize (academics)",
+        "title": "Japan Academy Prize (academics)",
+        "source": "wikipedia"
+      }
+    },
+    {
+      "doc_id": "April 22",
+      "text": "China",
+      "offset": [
+        1890,
+        1895
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "April 22",
+        "hits": 1
+      },
+      "left": "1944 – The 1st Air Commando Group using Sikorsky R-4 helicopters stage the first use of helicopters in combat with combat search and rescue operations in the ",
+      "right": " Burma India Theater.",
+      "window_offset": [
+        1732,
+        1916
+      ],
+      "reference": {
+        "doc_id": "April 22",
+        "title": "April 22",
+        "source": "wikipedia"
+      }
+    },
+    {
+      "doc_id": "Romance of the Three Kingdoms II",
+      "text": "China",
+      "offset": [
+        1367,
+        1372
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "Romance of the Three Kingdoms II",
+        "hits": 4
+      },
+      "left": "The player wins the game by conquering all territories in ",
+      "right": ".",
+      "window_offset": [
+        1309,
+        1373
+      ],
+      "reference": {
+        "doc_id": "Romance of the Three Kingdoms II",
+        "title": "Romance of the Three Kingdoms II",
+        "source": "wikipedia"
+      }
+    },
+    {
+      "doc_id": "Apocrypha",
+      "text": "China",
+      "offset": [
+        3321,
+        3326
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "Apocrypha",
+        "hits": 2
+      },
+      "left": "From their roots in Zhou era ",
+      "right": " (1066 to 256 BC), these items came to be surpassed in value by texts by the Han dynasty (206 BC to AD 220).",
+      "window_offset": [
+        3292,
+        3434
+      ],
+      "reference": {
+        "doc_id": "Apocrypha",
+        "title": "Apocrypha",
+        "source": "wikipedia"
+      }
+    },
+    {
+      "doc_id": "Acetylene",
+      "text": "China",
+      "offset": [
+        1749,
+        1754
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "Acetylene",
+        "hits": 3
+      },
+      "left": "Preparation\nExcept for ",
+      "right": " acetylene production is dominated by partial combustion of natural gas.",
+      "window_offset": [
+        1726,
+        1826
+      ],
+      "reference": {
+        "doc_id": "Acetylene",
+        "title": "Acetylene",
+        "source": "wikipedia"
+      }
+    },
+    {
+      "doc_id": "Art",
+      "text": "China",
+      "offset": [
+        10693,
+        10698
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "Art",
+        "hits": 2
+      },
+      "left": "",
+      "right": " saw the flourishing of many art forms: jade carving, bronzework, pottery (including the stunning terracotta army of Emperor Qin), poetry, calligraphy, music, painting, drama, fiction, etc.",
+      "window_offset": [
+        10693,
+        10887
+      ],
+      "reference": {
+        "doc_id": "Art",
+        "title": "Art",
+        "source": "wikipedia"
+      }
+    },
+    {
+      "doc_id": "Chai Zemin",
+      "text": "China",
+      "offset": [
+        1412,
+        1417
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "Chai Zemin",
+        "hits": 12
+      },
+      "left": "It was agreed at the end of 1978 that ",
+      "right": " and the United States would officially establish relations on January 1, 1979, and set up embassies and appoint ambassadors to each other's country.",
+      "window_offset": [
+        1374,
+        1566
+      ],
+      "reference": {
+        "doc_id": "Chai Zemin",
+        "title": "Chai Zemin",
+        "source": "wikipedia"
+      }
+    },
+    {
+      "doc_id": "Supercop 2",
+      "text": "China",
+      "offset": [
+        3943,
+        3948
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "Supercop 2",
+        "hits": 2
+      },
+      "left": "Chu\n\nAlternative titles\n(original title)\nChiu kup gai wak\nArgentina\nProjecto S\nAustralia\nProject S\nBrazil (video title)\t\nPolicial Acima de Tudo\nBrazil\t\nPolice Story 3, Parte 2: Policial Acima de Tudo\nCanada (French title)\t\nChiu kup gai wak\nCanada (English title)\nSupercop 2\n",
+      "right": " (Cantonese title) (poster title)\t\n超級警察2 超級計劃\nDenmark (video title)\nOnce a Cop\nFinland\t\nOnce a Cop\nFrance\t\nProject S\nFrance (video box title)\nSupercop 2\nGermany\nMega Cop\nGreece\nSupercop 2\nHong Kong (English title)\nProject S\nHong Kong (English title) (series title)\nPolice Story 3: Supercop 2\nHong Kong (Mandarin title)\t\nChao ji ji hua\nHungary\nVolt egyszer egy zsaru\nJapan\t\nプロジェクトS\nJapan (Rōmaji title)\nPurojekuto S\nNew Zealand (English title)\nProject S\nPhilippines (English title)\nSupercop 2\nPoland\nPolicyjna opowieść 4: Projekt S\nRomania\nSupercop\nRussia\t\nСупер полицейский 2\nSlovenia\nProjekt S\nSpain\nSupercop 2\nSweden\nOnce a Cop\nUK\nProject S\nUK (video box title)\t\nProject S: Police Story 4\nUSA\nSupercop 2\nUSA (alternative title)\nOnce a Cop\nInternational (English title) (alternative title)\t\nProject S\nInternational (English title)\nSupercop 2\n\nBox office\nIn Hong Kong, the film grossed HK$9,337,853, as of 8 November 1993.",
+      "window_offset": [
+        3669,
+        4870
+      ],
+      "reference": {
+        "doc_id": "Supercop 2",
+        "title": "Supercop 2",
+        "source": "wikipedia"
+      }
+    },
+    {
+      "doc_id": "April 30",
+      "text": "China",
+      "offset": [
+        5924,
+        5929
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "April 30",
+        "hits": 1
+      },
+      "left": "2014 – A bomb blast in Ürümqi, ",
+      "right": " kills three people and injures 79 others.",
+      "window_offset": [
+        5893,
+        5971
+      ],
+      "reference": {
+        "doc_id": "April 30",
+        "title": "April 30",
+        "source": "wikipedia"
+      }
+    },
+    {
+      "doc_id": "Cymbal",
+      "text": "China",
+      "offset": [
+        10777,
+        10782
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "Cymbal",
+        "hits": 2
+      },
+      "left": "List of cymbal types \n\nCymbal types include:\n Bell cymbal\n ",
+      "right": " cymbal\n Clash cymbal\n Crash cymbal\n Crash/ride cymbal\n Finger cymbal\n Flat ride cymbal\n Hi-hat\n Ride cymbal\n Sizzle cymbal\n Splash cymbal\n Swish cymbal\n Suspended cymbal\n Taal – Indian cymbal (clash cymbal)",
+      "window_offset": [
+        10718,
+        10989
+      ],
+      "reference": {
+        "doc_id": "Cymbal",
+        "title": "Cymbal",
+        "source": "wikipedia"
+      }
+    },
+    {
+      "doc_id": "Albert Sidney Johnston",
+      "text": "China",
+      "offset": [
+        2860,
+        2865
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "Albert Sidney Johnston",
+        "hits": 1
+      },
+      "left": "Johnston named the property \"",
+      "right": " Grove\".",
+      "window_offset": [
+        2831,
+        2873
+      ],
+      "reference": {
+        "doc_id": "Albert Sidney Johnston",
+        "title": "Albert Sidney Johnston",
+        "source": "wikipedia"
+      }
+    },
+    {
+      "doc_id": "Beacon",
+      "text": "China",
+      "offset": [
+        2065,
+        2070
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "Beacon",
+        "hits": 3
+      },
+      "left": "In imperial China, sentinels on and near the Great Wall of ",
+      "right": " used a sophisticated system of daytime smoke and nighttime flame to send signals along long chains of beacon towers.",
+      "window_offset": [
+        2006,
+        2187
+      ],
+      "reference": {
+        "doc_id": "Beacon",
+        "title": "Beacon",
+        "source": "wikipedia"
+      }
+    },
+    {
+      "doc_id": "Cream wave",
+      "text": "China",
+      "offset": [
+        613,
+        618
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "Cream wave",
+        "hits": 2
+      },
+      "left": "It extends east across the Palearctic from the Urals to the Russian Far East (Sakhalin) to Korea, north-eastern  ",
+      "right": " and Japan.",
+      "window_offset": [
+        500,
+        629
+      ],
+      "reference": {
+        "doc_id": "Cream wave",
+        "title": "Cream wave",
+        "source": "wikipedia"
+      }
+    },
+    {
+      "doc_id": "Haplogroup Q-M242",
+      "text": "China",
+      "offset": [
+        7218,
+        7223
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "Haplogroup Q-M242",
+        "hits": 22
+      },
+      "left": "Q-M242 is found in Russia, Siberia (Kets, Selkups, Siberian Yupik people, Nivkhs, Chukchi people, Yukaghirs, Tuvans, Altai people, Koryaks, etc.), Mongolia, ",
+      "right": ", Uyghurs, Tibet, Korea, Japan, Indonesia, Vietnam, Thailand, India, Pakistan, Afghanistan, Iran, Iraq, Saudi Arabia, Turkmenistan, Uzbekistan, and so on.",
+      "window_offset": [
+        7061,
+        7377
+      ],
+      "reference": {
+        "doc_id": "Haplogroup Q-M242",
+        "title": "Haplogroup Q-M242",
+        "source": "wikipedia"
+      }
+    },
+    {
+      "doc_id": "Metal Fırtına",
+      "text": "China",
+      "offset": [
+        1448,
+        1453
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "Metal Fırtına",
+        "hits": 2
+      },
+      "left": "Turkey responds by forming a military alliance with ",
+      "right": ", Russia and Germany.",
+      "window_offset": [
+        1396,
+        1474
+      ],
+      "reference": {
+        "doc_id": "Metal Fırtına",
+        "title": "Metal Fırtına",
+        "source": "wikipedia"
+      }
+    },
+    {
+      "doc_id": "Dingxi",
+      "text": "China",
+      "offset": [
+        338,
+        343
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "Dingxi",
+        "hits": 6
+      },
+      "left": "History\nDingxi was important in the development of some of ",
+      "right": "'s earliest cultures, specifically along the Wei River, one of the Yellow River's biggest tributaries.",
+      "window_offset": [
+        279,
+        445
+      ],
+      "reference": {
+        "doc_id": "Dingxi",
+        "title": "Dingxi",
+        "source": "wikipedia"
+      }
+    },
+    {
+      "doc_id": "Bauxite",
+      "text": "China",
+      "offset": [
+        2148,
+        2153
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "Bauxite",
+        "hits": 1
+      },
+      "left": "Production and reserves\n\nAustralia is the largest producer of bauxite, followed by Guinea and ",
+      "right": ".",
+      "window_offset": [
+        2054,
+        2154
+      ],
+      "reference": {
+        "doc_id": "Bauxite",
+        "title": "Bauxite",
+        "source": "wikipedia"
+      }
+    },
+    {
+      "doc_id": "Romance of the Three Kingdoms II",
+      "text": "China",
+      "offset": [
+        2029,
+        2034
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "Romance of the Three Kingdoms II",
+        "hits": 4
+      },
+      "left": "Intercepting messengers\nAbility to create new lords on the map based on custom characters created by players\n\nReception\nComputer Gaming World stated that Romance of the Three Kingdoms II \"did a better job of simulating the chaos of\" second-century ",
+      "right": " than the game's predecessor.",
+      "window_offset": [
+        1781,
+        2063
+      ],
+      "reference": {
+        "doc_id": "Romance of the Three Kingdoms II",
+        "title": "Romance of the Three Kingdoms II",
+        "source": "wikipedia"
+      }
+    },
+    {
+      "doc_id": "Expressways of Shanghai",
+      "text": "China",
+      "offset": [
+        2304,
+        2309
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "Expressways of Shanghai",
+        "hits": 1
+      },
+      "left": "In August 2009, Shanghai replaced its system of naming expressways with the prefix A with the letter prefix S, in order to conform to the standard designations for provincial-level highways within ",
+      "right": ".",
+      "window_offset": [
+        2107,
+        2310
+      ],
+      "reference": {
+        "doc_id": "Expressways of Shanghai",
+        "title": "Expressways of Shanghai",
+        "source": "wikipedia"
+      }
+    },
+    {
+      "doc_id": "Brick",
+      "text": "China",
+      "offset": [
+        4453,
+        4458
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "Brick",
+        "hits": 5
+      },
+      "left": "By the end of the third century BC in ",
+      "right": ", both hollow and small bricks were available for use in building walls and ceilings.",
+      "window_offset": [
+        4415,
+        4543
+      ],
+      "reference": {
+        "doc_id": "Brick",
+        "title": "Brick",
+        "source": "wikipedia"
+      }
+    },
+    {
+      "doc_id": "Craspedacusta sowerbii",
+      "text": "China",
+      "offset": [
+        3427,
+        3432
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "Craspedacusta sowerbii",
+        "hits": 3
+      },
+      "left": "Since 2008 the freshwater jellyfish have been sighted every September and October in the Zhaojiaya Reservoir near Zhangjiajie, Hunan, ",
+      "right": ".",
+      "window_offset": [
+        3293,
+        3433
+      ],
+      "reference": {
+        "doc_id": "Craspedacusta sowerbii",
+        "title": "Craspedacusta sowerbii",
+        "source": "wikipedia"
+      }
+    },
+    {
+      "doc_id": "Craspedacusta sowerbii",
+      "text": "China",
+      "offset": [
+        1556,
+        1561
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "Craspedacusta sowerbii",
+        "hits": 3
+      },
+      "left": "sowerbii is native to the Yangtze basin in ",
+      "right": ", but has been introduced on every continent except for Antarctica.",
+      "window_offset": [
+        1513,
+        1628
+      ],
+      "reference": {
+        "doc_id": "Craspedacusta sowerbii",
+        "title": "Craspedacusta sowerbii",
+        "source": "wikipedia"
+      }
+    },
+    {
+      "doc_id": "Arbor Day",
+      "text": "China",
+      "offset": [
+        4988,
+        4993
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "Arbor Day",
+        "hits": 9
+      },
+      "left": "Chile \n\"Dia del Arbol\" was celebrated on June 28, 2022, as defined by Chile's Environment Ministry\n\nGreater China\n\nRepublic of ",
+      "right": "\nArbor Day (植樹節) was founded by the forester Ling Daoyang in 1915 and has been a traditional holiday in the Republic of China since 1916.",
+      "window_offset": [
+        4861,
+        5130
+      ],
+      "reference": {
+        "doc_id": "Arbor Day",
+        "title": "Arbor Day",
+        "source": "wikipedia"
+      }
+    },
+    {
+      "doc_id": "2007 in association football",
+      "text": "China",
+      "offset": [
+        8429,
+        8434
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "2007 in association football",
+        "hits": 2
+      },
+      "left": "AFC nations\n\nAustralia: Melbourne Victory\nBahrain: Muharraq\nBangladesh: Abahani\nBhutan: Transport United\nCambodia:\nBrunei: No championship held\nBurma: Kanbawza\nChina: Changchun Yatai\nEast Timor:\nGuam: Quality Distributors\nHong Kong: South ",
+      "right": "\nIndia: Dempo SC\nIndonesia:\nIran: Saipa\nIraq: Arbil\nJapan: Kashima Antlers\nJordan: Al-Wihdat\nKuwait: Al Kuwait\nKyrgyzstan: Dordoi-Dynamo Naryn\nLaos: Lao-American College\nLebanon: Al-Ansar\nMacao: GD Lam Pak\nMalaysia: Kedah FA\nMaldives: New Radiant\nMongolia: Erchim\nNepal: Mahendra Police Club\nNorth Korea:\nOman: Al-Nahda\nPakistan: Pakistan Army\nPhilippines: National Capital Region\nQatar: Al-Sadd\nSaudi Arabia: Al-Hilal\nSingapore: SAFFC\nSouth Korea: Pohang Steelers\nSri Lanka: Ratnam SC\nSyria: Al-Karamah\nTaiwan: Taiwan Power Company\nTajikistan: Regar-TadAZ Tursunzoda\nThailand: Chonburi\nTurkmenistan: FC Aşgabat\nUnited Arab Emirates: Al Wasl\nUzbekistan: Pakhtakor Tashkent\nVietnam: Bình Dương\nYemen: Al-Ahli\n\nOFC nations\n\nAmerican Samoa: Konica\nCook Islands:\nFiji: Ba\nNew Caledonia: JS Baco\nNew Zealand: Auckland City\nNiue:\nNorthern Mariana Islands: Fiesta Inter Saipan\nPalau: Team Bangladesh\nPapua New Guinea: Cancelled\nSamoa:\nSolomon Islands: Kossa\nTahiti: AS Manu-Ura\nTonga:\nTuvalu:\nVanuatu: Tafea\n\nNotable managerial changes\n\n January 2 – Omiya Ardija appoints Robert Verbeek as their new manager to replace Toshiya Miura.",
+      "window_offset": [
+        8190,
+        9560
+      ],
+      "reference": {
+        "doc_id": "2007 in association football",
+        "title": "2007 in association football",
+        "source": "wikipedia"
+      }
+    },
+    {
+      "doc_id": "Foreign relations of Colombia",
+      "text": "China",
+      "offset": [
+        6184,
+        6189
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "Foreign relations of Colombia",
+        "hits": 2
+      },
+      "left": "Its recent trade agreements with Korea, ",
+      "right": " and Japan, have focused on economic and technical cooperation between those nations.",
+      "window_offset": [
+        6144,
+        6274
+      ],
+      "reference": {
+        "doc_id": "Foreign relations of Colombia",
+        "title": "Foreign relations of Colombia",
+        "source": "wikipedia"
+      }
+    },
+    {
+      "doc_id": "Acupuncture",
+      "text": "China",
+      "offset": [
+        12562,
+        12567
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "Acupuncture",
+        "hits": 32
+      },
+      "left": "Auriculotherapy, commonly known as ear acupuncture, auricular acupuncture, or auriculoacupuncture, is considered to date back to ancient ",
+      "right": ".",
+      "window_offset": [
+        12425,
+        12568
+      ],
+      "reference": {
+        "doc_id": "Acupuncture",
+        "title": "Acupuncture",
+        "source": "wikipedia"
+      }
+    },
+    {
+      "doc_id": "Hulusi",
+      "text": "China",
+      "offset": [
+        2020,
+        2025
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "Hulusi",
+        "hits": 3
+      },
+      "left": "It is also called Huluxi in Assam.hulusi\n\nPerformers\nAlthough the hulusi is still predominantly performed in Yunnan (",
+      "right": "), Shan State (Myanmar) and Assam it has in recent years been adopted by European composers and performers.",
+      "window_offset": [
+        1903,
+        2132
+      ],
+      "reference": {
+        "doc_id": "Hulusi",
+        "title": "Hulusi",
+        "source": "wikipedia"
+      }
+    },
+    {
+      "doc_id": "Foreign relations of Colombia",
+      "text": "China",
+      "offset": [
+        419,
+        424
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "Foreign relations of Colombia",
+        "hits": 2
+      },
+      "left": "Since 2008, Colombia's Ministry of Trade and Commerce has either reached or strengthened Bilateral Trade Agreements with South Korea, Japan and ",
+      "right": " building stronger commerce interchange and development in the Pacific Rim.",
+      "window_offset": [
+        275,
+        499
+      ],
+      "reference": {
+        "doc_id": "Foreign relations of Colombia",
+        "title": "Foreign relations of Colombia",
+        "source": "wikipedia"
+      }
+    },
+    {
+      "doc_id": "Andrew S. Tanenbaum",
+      "text": "China",
+      "offset": [
+        13098,
+        13103
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "Andrew S. Tanenbaum",
+        "hits": 1
+      },
+      "left": "Keynote talks\nTanenbaum has been keynote speaker at numerous conferences, most recently\n ICDCS 2022 Bologna, Italy, July 12, 2022\n Qualcomm Security Summit San Diego, May 18, 2022\n RIOT Summit 2020 Online Event, September 14, 2020\n FrOSCon 2015  Sankt Augustin, Germany, August 22, 2015\n BSDCan 2015 Ottawa, Canada, June 12, 2015\n HAXPO 2015  Amsterdam May 28, 2015\n Codemotion 2015 Rome Italy, March 28, 2015\n SIREN 2010 Veldhoven, The Netherlands, November 2, 2010\n FOSDEM Brussels, Belgium, February 7, 2010\n NSCNE '09 Changsha, ",
+      "right": ", November 5, 2009\n E-Democracy 2009 Conference Athens, Greece, September 25, 2009\n Free and Open Source Conference Sankt Augustin, Germany, August 23, 2008\n XV Semana Informática  of the Instituto Superior Técnico, Lisbon, Portugal, March 13, 2008\n NLUUG 25 year anniversary conference, Amsterdam, November 7, 2007\n linux.",
+      "window_offset": [
+        12566,
+        13426
+      ],
+      "reference": {
+        "doc_id": "Andrew S. Tanenbaum",
+        "title": "Andrew S. Tanenbaum",
+        "source": "wikipedia"
+      }
+    },
+    {
+      "doc_id": "Dingxi",
+      "text": "China",
+      "offset": [
+        2895,
+        2900
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "Dingxi",
+        "hits": 6
+      },
+      "left": "Food \n\n Shouzhuarou, cooked mutton on the bone\n Dingxi Niangpi, a type of noodle similar to Liangpi\n Longxi Qianrou, a dish made from donkey tail\n Minxian Fenyu, a type of noodle that looks like a small fish or tadpole\n\nTransportation \nG22 Qingdao–Lanzhou Expressway\nG30 Lianyungang–Khorgas Expressway\n",
+      "right": " National Highway 312\nLonghai railway\nXuzhou-Lanzhou High-Speed Railway",
+      "window_offset": [
+        2593,
+        2971
+      ],
+      "reference": {
+        "doc_id": "Dingxi",
+        "title": "Dingxi",
+        "source": "wikipedia"
+      }
+    },
+    {
+      "doc_id": "John Evans (Australian politician)",
+      "text": "China",
+      "offset": [
+        570,
+        575
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "John Evans (Australian politician)",
+        "hits": 1
+      },
+      "left": "His father, a merchant seaman, arranged an apprenticeship for him on his part-owned barque, Helen, trading to ",
+      "right": " and Japan.",
+      "window_offset": [
+        460,
+        586
+      ],
+      "reference": {
+        "doc_id": "John Evans (Australian politician)",
+        "title": "John Evans (Australian politician)",
+        "source": "wikipedia"
+      }
+    },
+    {
+      "doc_id": "Apocrypha",
+      "text": "China",
+      "offset": [
+        2968,
+        2973
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "Apocrypha",
+        "hits": 2
+      },
+      "left": "Sinologist Anna Seidel refers to texts and even items produced by ancient Chinese sages as apocryphal and studied their uses during Six Dynasties ",
+      "right": " (A.",
+      "window_offset": [
+        2822,
+        2977
+      ],
+      "reference": {
+        "doc_id": "Apocrypha",
+        "title": "Apocrypha",
+        "source": "wikipedia"
+      }
+    },
+    {
+      "doc_id": "Yong Peng",
+      "text": "China",
+      "offset": [
+        643,
+        648
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "Yong Peng",
+        "hits": 3
+      },
+      "left": "Coincidentally the political and social chaos in Southern China during that period (ref: History of ",
+      "right": ") made the Chinese migrants an obvious choice.",
+      "window_offset": [
+        543,
+        694
+      ],
+      "reference": {
+        "doc_id": "Yong Peng",
+        "title": "Yong Peng",
+        "source": "wikipedia"
+      }
+    },
+    {
+      "doc_id": "The Left Hand of God",
+      "text": "China",
+      "offset": [
+        255,
+        260
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "The Left Hand of God",
+        "hits": 2
+      },
+      "left": "Set in a  small American mission in ",
+      "right": " in 1947, at a time of civil war, it stars Humphrey Bogart as a hunted man masquerading as a Catholic priest and Gene Tierney in the role of a nurse, with a supporting cast including Lee J.",
+      "window_offset": [
+        219,
+        449
+      ],
+      "reference": {
+        "doc_id": "The Left Hand of God",
+        "title": "The Left Hand of God",
+        "source": "wikipedia"
+      }
+    },
+    {
+      "doc_id": "Trisakti University",
+      "text": "China",
+      "offset": [
+        8178,
+        8183
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "Trisakti University",
+        "hits": 1
+      },
+      "left": "Besides, there are alumni who work abroad, such as in America, Europe, Australia, Canada, Africa, Middle East, ",
+      "right": ", Malaysia and Singapore.",
+      "window_offset": [
+        8067,
+        8208
+      ],
+      "reference": {
+        "doc_id": "Trisakti University",
+        "title": "Trisakti University",
+        "source": "wikipedia"
+      }
+    },
+    {
+      "doc_id": "Pachliopta aristolochiae",
+      "text": "China",
+      "offset": [
+        574,
+        579
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "Pachliopta aristolochiae",
+        "hits": 2
+      },
+      "left": "In ",
+      "right": ", it is distributed in southern and eastern China (including Hainan, Guangdong province) and Hong Kong.",
+      "window_offset": [
+        571,
+        682
+      ],
+      "reference": {
+        "doc_id": "Pachliopta aristolochiae",
+        "title": "Pachliopta aristolochiae",
+        "source": "wikipedia"
+      }
+    },
+    {
+      "doc_id": "APA Corporation",
+      "text": "China",
+      "offset": [
+        4735,
+        4740
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "APA Corporation",
+        "hits": 1
+      },
+      "left": "In June 2006, the company sold its oil production interest in ",
+      "right": " to Australia-based Roc Oil Company for US$260 million.",
+      "window_offset": [
+        4673,
+        4795
+      ],
+      "reference": {
+        "doc_id": "APA Corporation",
+        "title": "APA Corporation",
+        "source": "wikipedia"
+      }
+    },
+    {
+      "doc_id": "Beacon",
+      "text": "China",
+      "offset": [
+        2563,
+        2568
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "Beacon",
+        "hits": 3
+      },
+      "left": "",
+      "right": "'s system of beacon towers was not extant prior to the Han dynasty.",
+      "window_offset": [
+        2563,
+        2635
+      ],
+      "reference": {
+        "doc_id": "Beacon",
+        "title": "Beacon",
+        "source": "wikipedia"
+      }
+    },
+    {
+      "doc_id": "Acupuncture",
+      "text": "China",
+      "offset": [
+        8069,
+        8074
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "Acupuncture",
+        "hits": 32
+      },
+      "left": "Japanese acupuncturists use extremely thin needles that are used superficially, sometimes without penetrating the skin, and surrounded by a guide tube (a 17th-century invention adopted in ",
+      "right": " and the West).",
+      "window_offset": [
+        7881,
+        8089
+      ],
+      "reference": {
+        "doc_id": "Acupuncture",
+        "title": "Acupuncture",
+        "source": "wikipedia"
+      }
+    },
+    {
+      "doc_id": "Honda Life",
+      "text": "China",
+      "offset": [
+        392,
+        397
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "Honda Life",
+        "hits": 1
+      },
+      "left": "In 2020, Dongfeng Honda revived the \"Life\" nameplate in ",
+      "right": " as a rebadged variant of the Fit produced by Guangqi Honda.",
+      "window_offset": [
+        336,
+        457
+      ],
+      "reference": {
+        "doc_id": "Honda Life",
+        "title": "Honda Life",
+        "source": "wikipedia"
+      }
+    },
+    {
+      "doc_id": "Transport in Cuba",
+      "text": "China",
+      "offset": [
+        755,
+        760
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "Transport in Cuba",
+        "hits": 1
+      },
+      "left": "With the order of 12 new Chinese locomotives in 2006, built specifically for Cuban Railways at ",
+      "right": " Northern Locomotives and Rolling Stock Works, services have been improving in reliability.",
+      "window_offset": [
+        660,
+        851
+      ],
+      "reference": {
+        "doc_id": "Transport in Cuba",
+        "title": "Transport in Cuba",
+        "source": "wikipedia"
+      }
+    },
+    {
+      "doc_id": "Édouard Empain",
+      "text": "China",
+      "offset": [
+        1240,
+        1245
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "Édouard Empain",
+        "hits": 1
+      },
+      "left": "The Empain group of companies expanded greatly throughout the 1890s, constructing electric urban tramlines in Europe as well as railways in Russia, ",
+      "right": ", the Belgian Congo, and in Cairo, Egypt.",
+      "window_offset": [
+        1092,
+        1286
+      ],
+      "reference": {
+        "doc_id": "Édouard Empain",
+        "title": "Édouard Empain",
+        "source": "wikipedia"
+      }
+    },
+    {
+      "doc_id": "Cefradine",
+      "text": "China",
+      "offset": [
+        1831,
+        1836
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "Cefradine",
+        "hits": 1
+      },
+      "left": "Bangladesh: Ancef, Ancef forte, Aphrin, Avlosef, Cefadin, Cephadin, Cephran, Cephran-DS, Cusef, Cusef DS, Dicef , Dicef forte, Dolocef, Efrad, Elocef, Extracef, Extracef-DS, Intracef, Kefdrin, Lebac, Lebac Forte, Medicef, Mega-Cef, Megacin, Polycef, Procef, Procef, Procef forte, Rocef, Rocef Forte DS, Sefin, Sefin DS, Sefnin, Sefrad, Sefrad DS, Sefril, Sefril-DS, Sefro, Sefro-HS, Sephar, Sephar-DS, Septa, Sinaceph, SK-Cef, Sk-Cef DS, Supracef and Supracef-F, Torped, Ultrasef, Vecef, Vecef-DS, Velogen, Sinaceph, Velox\n  ",
+      "right": ": Cefradine, Cephradine, Kebili, Saifuding, Shen You, Taididing, Velosef, Xianyi, and Xindadelei\n  Colombia: Cefagram, Cefrakov, Cefranil , Cefrex, and Kliacef\n  Egypt: Cefadrin, Cefadrine, Cephradine, Cephraforte, Farcosef, Fortecef, Mepadrin, Ultracef, and Velosef\n  France: Dexef\n  Hong Kong: Cefradine  and ChinaQualisef-250\n  Indonesia: Dynacef, Velodine, and Velodrom\n  Lebanon: Eskacef, Julphacef, and Velosef\n  Lithuania: Tafril\n  Myanmar: Sinaceph\n  Oman: Ceframed, Eskasef, Omadine, and Velocef\n  Pakistan: Abidine, Ada-Cef, Ag-cef, Aksosef, Amspor, Anasef, Antimic, Atcosef, Bactocef, Biocef, Biodine, Velora, Velosef\n  Peru: Abiocef, Cefradinal, Cefradur, Cefrid, Terbodina II, Velocef, Velomicin\n  Philippines: Altozef, Racep, Senadex, Solphride, Yudinef, Zefadin, Zefradil, and Zolicef\n  Poland: Tafril\n  Portugal: Cefalmin, Cefradur\n  South Africa: Cefril A\n  South Korea: Cefradine and Tricef\n  Taiwan: Cefadin, Cefamid, Cefin, Cekodin, Cephradine, Ceponin, Lacef, Licef-A, Lisacef, Lofadine, Recef, S-60, Sefree, Sephros, Topcef, Tydine, Unifradine, and U-Save\n  UK: Cefradune (Kent)\n  Vietnam: Eurosefro and Incef",
+      "window_offset": [
+        1306,
+        2967
+      ],
+      "reference": {
+        "doc_id": "Cefradine",
+        "title": "Cefradine",
+        "source": "wikipedia"
+      }
+    },
+    {
+      "doc_id": "Body Shock",
+      "text": "China",
+      "offset": [
+        1394,
+        1399
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "Body Shock",
+        "hits": 1
+      },
+      "left": "The Boy Who Gave Birth to His Twin (Alamjan Nematilaev from Kazakhstan)\n Wild Child (also titled Wild Child: The Story of Feral Children in the United States)\n Anatomy of a Shark Bite\n Riddle of the Elephant Man (Joseph Merrick from the United Kingdom)\n The Man Who Ate his Lover (Armin Meiwes from Germany)\n The Man Who Slept for 19 Years (Terry Wallis from the United States)\n Orgasmatron\n The Girl with X-Ray Eyes (Natasha Demkina from Saransk, Russia)\n Megatumour (Lucica Bunghez from Romania and Matt Peperell from England)\n When Anaesthesia Fails (Anesthetic awareness)\n The Curse of the Mermaid (Milagros Cerrón from Peru)\n Half Ton Man (Patrick Deuel from the United States)\n The 80-Year-old Children (The Hussein family from India)\n Born with Two Heads (Manar Maged from Egypt)\n The Boy in the Bubble (David Vetter from the United States)\n Kill Me to Cure Me (Brett Kehrer from the United States)\n World's Biggest Boy (Dzhambulat Khatokhov from Kabardino-Balkaria, Russia)\n Half Ton Mum\n The Girl with Eight Limbs (Lakshmi Tatma from Bihar, India)\n I am the Elephant Man (Huang Chuncai from ",
+      "right": ")\n The Girl with Two Faces (Lali Kumar from India)\n Half Ton Son (Billy Robbins from Houston, Texas, United States)\n Two Foot Tall Teen (Jyoti Amge, from Nagpur, India)\n Age 8 and Wanting a Sex Change\n The Girl Who Cries Blood (Twinkle Dwivedi from Lucknow, India)\n Our Daughter, the Mermaid (Shiloh Pepin from Maine)\n The Twins Who Share A Brain (Krista and Tatiana Hogan from Vernon, Canada)\n Dad's Having a Baby (Thomas and Scott Moore from California, US)\n The 27 Inch Man (Edwardo Hernandez)\n Turtle Boy\n World's Tallest Man (Sultan Kösen from Turkey)\n The Man with the 10-Stone Testicles (Wesley Warren, Jr.",
+      "window_offset": [
+        294,
+        2012
+      ],
+      "reference": {
+        "doc_id": "Body Shock",
+        "title": "Body Shock",
+        "source": "wikipedia"
+      }
+    },
+    {
+      "doc_id": "Lady Pink",
+      "text": "China",
+      "offset": [
+        3925,
+        3930
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "Lady Pink",
+        "hits": 1
+      },
+      "left": "",
+      "right": ", One Child Only (1992) - spray enamel on canvas, in a private collection.",
+      "window_offset": [
+        3925,
+        4004
+      ],
+      "reference": {
+        "doc_id": "Lady Pink",
+        "title": "Lady Pink",
+        "source": "wikipedia"
+      }
+    },
+    {
+      "doc_id": "Amway",
+      "text": "China",
+      "offset": [
+        9248,
+        9253
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "Amway",
+        "hits": 17
+      },
+      "left": "In 2015, it was reported that according to ",
+      "right": " Confidential consumer brands survey, Amway Nutrilite was the most popular vitamin and dietary supplement brand in China.",
+      "window_offset": [
+        9205,
+        9374
+      ],
+      "reference": {
+        "doc_id": "Amway",
+        "title": "Amway",
+        "source": "wikipedia"
+      }
+    },
+    {
+      "doc_id": "Thomas Farrell (United States Army officer)",
+      "text": "China",
+      "offset": [
+        7662,
+        7667
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "Thomas Farrell (United States Army officer)",
+        "hits": 6
+      },
+      "left": "In addition to this work, Farrell had to support Operation Matterhorn, the deployment of B-29 bombers to ",
+      "right": " and India, which involved the construction and expansion of a series of air bases.",
+      "window_offset": [
+        7557,
+        7750
+      ],
+      "reference": {
+        "doc_id": "Thomas Farrell (United States Army officer)",
+        "title": "Thomas Farrell (United States Army officer)",
+        "source": "wikipedia"
+      }
+    }
+  ]
+}
