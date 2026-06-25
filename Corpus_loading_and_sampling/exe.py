@@ -10,7 +10,7 @@ samples/china_segment/, and a later run with "north korea" writes to
 samples/north_korea_segment/.
 
 Usage:
-    python exe.py
+    python demo.py
 
 At each prompt, pressing Enter uses the default shown in [brackets].
 """
@@ -94,10 +94,13 @@ def get_corpus(search_term, default_lang="en"):
 
 def _corpus_dataset(term, lang):
     """Dataset path (Hugging Face): large-scale sampling (no 429)."""
-    k = ask_int("How many articles do you want to sample (k)?", 100)
-    min_occ = ask_int("Minimum term occurrences per article", 2)
+    print("\nFirst, how many Wikipedia articles to bring INTO THE CORPUS.")
+    print("(This is the raw material; the actual sampling comes later.)")
+    k = ask_int("How many articles to fetch into the corpus", 300)
+    min_occ = ask_int("Minimum times the word must appear in an article", 2)
     max_iter = ask_int(
-        "How many articles to scan at most? (more = slower)", 200000)
+        "How many Wikipedia articles to scan while fetching "
+        "(higher = more thorough but slower)", 200000)
     seed = ask_int("Random seed", 123)
     print(f"\nSampling '{term}' over Wikipedia ({lang}) via dataset...")
     print("  (the first time it downloads the dataset; this may take a while)")
@@ -261,6 +264,8 @@ def _segment_two_stages(corpus, word, mode, cfg, log, out_dir):
                       f"({cfg['strategy_docs']}, max {cfg['max_docs']}).")
     print(f"\nSTAGE 1: {len(subcorpus)} documents -> {list(subcorpus)}")
 
+    _warn_if_cap_blocks_target(len(subcorpus), cfg)
+
     kwic_path = os.path.join(out_dir, "stage2_kwic.json")
     conc = sp.stage2_occurrences(
         subcorpus, word,
@@ -278,6 +283,8 @@ def _segment_two_stages(corpus, word, mode, cfg, log, out_dir):
 def _segment_one_stage(corpus, word, mode, cfg, log, out_dir):
     """Single stage: all occurrences in the corpus -> strategy -> window."""
     occurrences = sp.extract_segments(corpus, word, mode)
+    n_articles_with_word = len({u["doc_id"] for u in occurrences})
+    _warn_if_cap_blocks_target(n_articles_with_word, cfg)
     if cfg["max_per_doc"] is not None:
         if cfg.get("min_distance", 0) > 0:
             occurrences = sp.cap_per_group_spaced(
@@ -305,6 +312,38 @@ def _segment_one_stage(corpus, word, mode, cfg, log, out_dir):
                  "n_articles": len({u['doc_id'] for u in conc})},
         artifact=kwic_path)
     _report_concordance(conc, kwic_path, cfg)
+
+
+def _warn_if_cap_blocks_target(n_articles, cfg):
+    """Warn (clearly, before processing) if the per-article cap makes the
+    requested number of occurrences impossible to reach.
+
+    The ceiling of total occurrences is n_articles * max_per_doc. If the
+    requested minimum/maximum is above that ceiling, no run can reach it, so we
+    say so and suggest how many articles (or what cap) would be needed.
+    """
+    cap = cfg.get("max_per_doc")
+    if not cap:
+        return  # no per-article cap -> no ceiling from this
+    target = cfg.get("max_occ") or cfg.get("min_occ")
+    if not target:
+        return
+    ceiling = n_articles * cap
+    if ceiling < target:
+        needed_articles = -(-target // cap)  # ceil division
+        needed_cap = -(-target // n_articles)
+        print("\n" + "!" * 60)
+        print(f"  HEADS UP: you asked for {target} occurrences, but with "
+              f"{n_articles} articles")
+        print(f"  and a cap of {cap} per article the most you can get is "
+              f"{n_articles} x {cap} = {ceiling}.")
+        print(f"  To reach {target} you would need either:")
+        print(f"    - at least {needed_articles} articles "
+              f"(keeping {cap} per article), or")
+        print(f"    - a cap of at least {needed_cap} per article "
+              f"(with {n_articles} articles).")
+        print(f"  The run will continue and give you up to {ceiling}.")
+        print("!" * 60)
 
 
 def _report_concordance(conc, kwic_path, cfg):
@@ -407,7 +446,7 @@ def main():
 
     # output folder per term and unit, so runs don't overwrite each other
     label = slugify(target) if target else "all"
-    out_dir = os.path.join("samples", f"{label}_{unit}")
+    out_dir = os.path.join("Corpus_loading_and_sampling", "samples", f"{label}_{unit}")
     os.makedirs(out_dir, exist_ok=True)
     print(f"\nOutput folder for this run: {out_dir}/")
 
@@ -424,12 +463,19 @@ def main():
         only_source = ask("Restrict to one of them? (empty = all)", "")
     else:
         only_source = ""
+    print("\nNow, of the articles that contain your word, how many to keep "
+          "for the sample.")
     cfg = {
         "only_source": only_source or None,
-        "min_docs": ask_int("Minimum articles", 1),
-        "max_docs": ask_int("Maximum articles (0 = no cap)", 0) or None,
-        "min_occ": ask_int("Minimum occurrences", 1),
-        "max_occ": ask_int("Maximum occurrences (0 = no cap)", 0) or None,
+        "min_docs": ask_int(
+            "Minimum articles to keep (fewest acceptable)", 1),
+        "max_docs": ask_int(
+            "Maximum articles to keep (0 = keep all that have the word)",
+            0) or None,
+        "min_occ": ask_int("Minimum occurrences to keep (fewest acceptable)",
+                           1),
+        "max_occ": ask_int(
+            "Maximum occurrences to keep (0 = no cap)", 0) or None,
         "max_per_doc": ask_int(
             "Maximum occurrences per article (0 = no cap)", 0) or None,
         "seed": ask_int("Random seed (reproducibility)", 0),
@@ -454,9 +500,10 @@ def main():
             cfg["strategy_docs"], cfg["key_docs"] = choose_strategy(
                 "Strategy for STAGE 1 (selecting articles)", corpus)
             if _needs_count(cfg["strategy_docs"]) and not cfg["max_docs"]:
-                cfg["max_docs"] = ask_int(
-                    f"'{cfg['strategy_docs']}' needs a number of articles",
-                    100)
+                print(f"\n'{cfg['strategy_docs']}' draws a fixed number of "
+                      f"articles at random, but you left 'maximum articles' "
+                      f"as 0 (all). Tell it how many to draw:")
+                cfg["max_docs"] = ask_int("Number of articles to draw", 100)
             cfg["strategy_occ"], cfg["key_occ"] = choose_strategy(
                 "Strategy for STAGE 2 (selecting occurrences)", corpus)
         else:
@@ -467,8 +514,10 @@ def main():
             "Sampling strategy", corpus)
 
     if _needs_count(cfg["strategy_occ"]) and not cfg["max_occ"]:
-        cfg["max_occ"] = ask_int(
-            f"'{cfg['strategy_occ']}' needs a number of occurrences", 100)
+        print(f"\n'{cfg['strategy_occ']}' draws a fixed number of occurrences "
+              f"at random, but you left 'maximum occurrences' as 0. "
+              f"Tell it how many to draw:")
+        cfg["max_occ"] = ask_int("Number of occurrences to draw", 100)
     # Ask the context window FIRST (it defines how much context you keep),
     # then the minimum distance between occurrences (which depends on it).
     if unit == "segment":
