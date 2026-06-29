@@ -32,7 +32,7 @@ import os
 import random
 import re
 import time
-from typing import Any, Dict, Iterable, Optional
+from typing import Any, Dict, Iterable, List, Optional
 
 import requests
 
@@ -200,33 +200,300 @@ def load_from_wikipedia(titles: Iterable[str], lang: str = "en",
 # Path 2: corpus to be defined (project texts, from files)
 # ---------------------------------------------------------------------------
 
+def inspect_file_tree(folder: str, extension: str = ".txt") -> Dict[str, Any]:
+    """Describe the files that would be loaded from a corpus folder.
+
+    The exe uses this before loading a local corpus so the user can see how
+    many folder levels the corpus has and decide which path levels should
+    become metadata keys.
+    """
+    if not os.path.isdir(folder):
+        raise NotADirectoryError(f"Folder does not exist: {folder}")
+
+    paths = _collect_file_paths(folder, extension=extension, recursive=True)
+    folder_depths = []
+    folder_values: List[set] = []
+    for path in paths:
+        rel_path = os.path.relpath(path, folder)
+        folder_parts = _relative_folder_parts(rel_path)
+        folder_depths.append(len(folder_parts))
+        for i, value in enumerate(folder_parts):
+            while len(folder_values) <= i:
+                folder_values.append(set())
+            folder_values[i].add(value)
+
+    return {
+        "n_files": len(paths),
+        "min_folder_depth": min(folder_depths) if folder_depths else 0,
+        "max_folder_depth": max(folder_depths) if folder_depths else 0,
+        "examples": [os.path.relpath(p, folder) for p in paths[:5]],
+        "folder_values_by_level": [
+            sorted(values)[:8] for values in folder_values
+        ],
+    }
+
+
 def load_from_files(folder: str, extension: str = ".txt",
                     encoding: str = "utf-8",
-                    meta_per_document: Optional[Dict[str, Dict]] = None
+                    meta_per_document: Optional[Dict[str, Dict]] = None,
+                    recursive: bool = False,
+                    folder_metadata_keys: Optional[Iterable[str]] = None,
+                    file_metadata_key: Optional[str] = None,
+                    source_from_metadata_key: Optional[str] = None,
+                    metadata_from_path: bool = False
                     ) -> Corpus:
     """Build a corpus by reading every file in a folder.
 
-    Each document's id is the file name without extension. You can attach
-    per-document metadata via 'meta_per_document', a dict {id: {key: value}},
-    to document source, period, author, etc.
+    By default this reads only the files directly inside 'folder', keeping the
+    original behavior: each document's id is the file name without extension.
+
+    If recursive=True, it reads matching files in all subfolders and uses the
+    relative path without extension as the id, with path separators replaced by
+    "__". This avoids collisions such as several folders containing
+    article_1.txt.
+
+    Folder and file names can be promoted to metadata in a corpus-agnostic
+    way:
+
+      - folder_metadata_keys gives one metadata key per folder level.
+      - file_metadata_key stores the file stem, without extension.
+      - source_from_metadata_key copies one metadata value into 'source', so
+        the existing source filter and stratified sampling can use it.
+
+    Example:
+
+        folder_metadata_keys=["year", "newspaper"],
+        file_metadata_key="article_id",
+        source_from_metadata_key="newspaper"
+
+    for a file such as 2018/ElPais/article_1.txt adds:
+
+        {"year": "2018", "newspaper": "ElPais", "article_id": "article_1"}
+
+    You can also attach per-document metadata via 'meta_per_document', a dict
+    {id: {key: value}}, to document source, period, author, etc.
+
+    metadata_from_path=True is kept for backward compatibility with the old
+    year/newspaper/article layout. Prefer the generic metadata-key arguments
+    for new corpora.
     """
     if not os.path.isdir(folder):
         raise NotADirectoryError(f"Folder does not exist: {folder}")
     meta_per_document = meta_per_document or {}
+    if metadata_from_path:
+        source_from_metadata_key = source_from_metadata_key or "newspaper"
 
     corpus: Corpus = {}
-    for name in sorted(os.listdir(folder)):
-        if not name.endswith(extension):
-            continue
-        path = os.path.join(folder, name)
-        doc_id = os.path.splitext(name)[0]
+    paths = _collect_file_paths(folder, extension=extension,
+                                recursive=recursive)
+
+    for path in sorted(paths):
+        rel_path = os.path.relpath(path, folder)
+        rel_no_ext = os.path.splitext(rel_path)[0]
+        doc_id = rel_no_ext.replace(os.sep, "__")
         with open(path, "r", encoding=encoding) as f:
             body = f.read()
-        meta = {"source": "project", "file": name}
+        meta = {
+            "source": "project",
+            "corpus_source": "files",
+            "file": rel_path,
+        }
+        if metadata_from_path:
+            meta.update(_metadata_from_year_newspaper_path(rel_path))
+        else:
+            meta.update(_metadata_from_relative_path(
+                rel_path,
+                folder_metadata_keys=folder_metadata_keys,
+                file_metadata_key=file_metadata_key,
+            ))
+        if source_from_metadata_key and source_from_metadata_key in meta:
+            meta["source"] = meta[source_from_metadata_key]
         meta.update(meta_per_document.get(doc_id, {}))
         corpus[doc_id] = make_document(body=body, meta=meta)
     validate_corpus(corpus)
     return corpus
+
+
+def load_from_single_file(
+        path: str,
+        document_separator: str,
+        encoding: str = "utf-8",
+        has_metadata: bool = False,
+        metadata_body_separator: str = "",
+        metadata_field_separator: str = "",
+        metadata_key_value_separator: str = "=",
+        source_from_metadata_key: Optional[str] = None) -> Corpus:
+    """Build a corpus from one text file containing several documents.
+
+    'document_separator' splits the file into documents. If has_metadata is
+    False, every chunk is treated directly as a document body.
+
+    If has_metadata is True, each chunk must contain a metadata block followed
+    by the body. 'metadata_body_separator' splits those two sections.
+    'metadata_field_separator' separates metadata fields, and
+    'metadata_key_value_separator' separates each metadata key from its value.
+
+    Example document chunk:
+
+        id=doc_1|year=2018|newspaper=ElPais
+
+        Article body...
+
+    with metadata_body_separator="\\n\\n", metadata_field_separator="|", and
+    metadata_key_value_separator="=".
+    """
+    if not os.path.isfile(path):
+        raise FileNotFoundError(f"Corpus file does not exist: {path}")
+
+    with open(path, "r", encoding=encoding) as f:
+        raw = f.read()
+
+    raw_docs = ([raw] if document_separator == ""
+                else raw.split(document_separator))
+    corpus: Corpus = {}
+    base_name = os.path.splitext(os.path.basename(path))[0]
+
+    for i, raw_doc in enumerate(raw_docs, 1):
+        raw_doc = raw_doc.strip()
+        if not raw_doc:
+            continue
+        meta = {
+            "source": "project",
+            "corpus_source": "single_file",
+            "file": os.path.basename(path),
+            "document_index": i,
+        }
+        body = raw_doc
+        if has_metadata:
+            extra_meta, body = _split_document_metadata(
+                raw_doc,
+                metadata_body_separator=metadata_body_separator,
+                metadata_field_separator=metadata_field_separator,
+                metadata_key_value_separator=metadata_key_value_separator,
+            )
+            meta.update(extra_meta)
+        if source_from_metadata_key and source_from_metadata_key in meta:
+            meta["source"] = meta[source_from_metadata_key]
+        doc_id = _single_file_doc_id(base_name, i, meta, corpus)
+        corpus[doc_id] = make_document(body=body.strip(), meta=meta)
+
+    validate_corpus(corpus)
+    return corpus
+
+
+def _collect_file_paths(folder: str, extension: str,
+                        recursive: bool) -> List[str]:
+    paths = []
+    if recursive:
+        for root, _, files in os.walk(folder):
+            for name in files:
+                if name.endswith(extension):
+                    paths.append(os.path.join(root, name))
+    else:
+        for name in os.listdir(folder):
+            path = os.path.join(folder, name)
+            if os.path.isfile(path) and name.endswith(extension):
+                paths.append(path)
+    return sorted(paths)
+
+
+def _relative_folder_parts(rel_path: str) -> List[str]:
+    folder = os.path.dirname(rel_path)
+    return [] if not folder else folder.split(os.sep)
+
+
+def _metadata_from_relative_path(
+        rel_path: str,
+        folder_metadata_keys: Optional[Iterable[str]] = None,
+        file_metadata_key: Optional[str] = None) -> Dict[str, str]:
+    meta = {}
+    folder_parts = _relative_folder_parts(rel_path)
+    for key, value in zip(folder_metadata_keys or [], folder_parts):
+        key = str(key).strip()
+        if key:
+            meta[key] = value
+    if file_metadata_key:
+        key = str(file_metadata_key).strip()
+        if key:
+            meta[key] = os.path.splitext(os.path.basename(rel_path))[0]
+    return meta
+
+
+def _metadata_from_year_newspaper_path(rel_path: str) -> Dict[str, str]:
+    parts = rel_path.split(os.sep)
+    year_index = next(
+        (i for i, part in enumerate(parts[:-2])
+         if re.fullmatch(r"\d{4}", part)),
+        None,
+    )
+    if year_index is None:
+        return {}
+    year, newspaper = parts[year_index], parts[year_index + 1]
+    return {
+        "year": year,
+        "newspaper": newspaper,
+        "article_id": os.path.splitext(parts[-1])[0],
+    }
+
+
+def _split_document_metadata(
+        raw_doc: str,
+        metadata_body_separator: str,
+        metadata_field_separator: str,
+        metadata_key_value_separator: str) -> tuple:
+    if not metadata_body_separator:
+        raise ValueError("metadata_body_separator cannot be empty when "
+                         "has_metadata=True")
+    if metadata_body_separator not in raw_doc:
+        raise ValueError("A document does not contain the metadata/body "
+                         f"separator {metadata_body_separator!r}")
+    raw_meta, body = raw_doc.split(metadata_body_separator, 1)
+    return (
+        _parse_metadata_fields(
+            raw_meta,
+            field_separator=metadata_field_separator,
+            key_value_separator=metadata_key_value_separator,
+        ),
+        body,
+    )
+
+
+def _parse_metadata_fields(raw_meta: str, field_separator: str,
+                           key_value_separator: str) -> Dict[str, str]:
+    fields = ([raw_meta] if not field_separator
+              else raw_meta.split(field_separator))
+    meta = {}
+    positional = 1
+    for field in fields:
+        field = field.strip()
+        if not field:
+            continue
+        if key_value_separator and key_value_separator in field:
+            key, value = field.split(key_value_separator, 1)
+            key = key.strip()
+            if key:
+                meta[key] = value.strip()
+            continue
+        meta[f"meta_{positional}"] = field
+        positional += 1
+    return meta
+
+
+def _single_file_doc_id(base_name: str, index: int, meta: Dict[str, Any],
+                        corpus: Corpus) -> str:
+    candidate = (
+        meta.get("doc_id") or meta.get("id") or meta.get("title")
+        or f"{base_name}_{index:04d}"
+    )
+    candidate = str(candidate).strip() or f"{base_name}_{index:04d}"
+    doc_id = re.sub(r"[^\w.-]+", "_", candidate)
+    doc_id = doc_id.strip("_") or f"{base_name}_{index:04d}"
+    if doc_id not in corpus:
+        return doc_id
+    n = 2
+    while f"{doc_id}_{n}" in corpus:
+        n += 1
+    return f"{doc_id}_{n}"
 
 
 # ---------------------------------------------------------------------------

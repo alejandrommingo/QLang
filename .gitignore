@@ -169,3 +169,7 @@ venv/
 .ipynb_checkpoints/
 .DS_Store
 
+# Local corpora used for experiments
+ART2/Corpus_loading_and_sampling/corpora/corpora_clean/
+ART2/Corpus_loading_and_sampling/samples/all_document/
+ART2/Corpus_loading_and_sampling/samples/all_documents/

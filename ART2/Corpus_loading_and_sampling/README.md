@@ -16,10 +16,10 @@ This folder contains:
 | `tracelog.py` | Keeps the record of every decision (the audit trail). |
 | `exe.py` | The interactive program that asks you questions and runs everything. |
 
-To run: put the files in one folder and run `python exe.py` (from a terminal,
-not the VS Code Run button — the program asks you questions and needs a real
-terminal to type answers). You need Python 3, plus `requests` and `datasets`:
-`pip install requests datasets`.
+To run: put your own corpus inside the local `corpora/` folder and run
+`python exe.py` (from a terminal, not the VS Code Run button — the program asks
+you questions and needs a real terminal to type answers). You need Python 3,
+plus `requests` and `datasets`: `pip install requests datasets`.
 
 The samples it produces are saved under `samples/<term>_<unit>/`.
 
@@ -51,7 +51,34 @@ about it (`meta`): `{ "Title": { "body": "...", "meta": {"source": "wikipedia"} 
 
 **Path 2 — your own files:**
 
-- **`load_from_files(folder)`** — Reads every `.txt` in a folder into documents.
+- Put the corpus first under `corpora/`. The exe asks only for the file or
+  folder name inside that directory, for example `corpora_clean` or
+  `my_corpus.txt`.
+- **`inspect_file_tree(folder)`** — Counts the files in a folder corpus and
+  reports how many folder levels there are before loading it.
+- **`load_from_files(folder, recursive=True, folder_metadata_keys=[...],
+  file_metadata_key=...)`** — Reads one document per `.txt` file. Folder names
+  and file names can be stored as metadata with user-defined keys. For example,
+  for `2018/ElPais/article_1.txt`, the user may decide that folder level 1 is
+  `year`, folder level 2 is `newspaper`, and the file name is `article_id`.
+  The same mechanism also works for any other hierarchy.
+- **`load_from_single_file(path, document_separator=...)`** — Reads several
+  documents from one text file. If the file has metadata, each document can be
+  split into a metadata block and a body, then the metadata block can be split
+  into fields such as `key=value`.
+
+For folder corpora, the exe first inspects the recursive structure. It then
+asks whether to include folder/file names as metadata. If yes, it asks what
+each folder level and the file name mean, and uses those answers as metadata
+keys. If you want one of those metadata fields to drive the existing source
+filter and stratified sampling, name that key when asked which key should be
+copied into `source`.
+
+For one-file corpora, the exe asks the document separator. If the documents
+have metadata, it also asks the separator between metadata and body, the
+separator between metadata fields, and the separator between metadata keys and
+values. If there are no metadata, each separated chunk is read directly as a
+document body.
 
 **Path 3 — large-scale Wikipedia sampling (recommended):**
 
@@ -188,7 +215,8 @@ the two-stage segment option.)
 2. **The target:**
    - segment: **word to search**, then **match type** (exact / variants / loose);
    - sentence/document: **expression it must contain** (empty = all).
-3. **Where does the corpus come from?** — `wikipedia` or `manual`.
+3. **Where does the corpus come from?** — `wikipedia`,
+   `local corpus in corpora`, or `manual`.
    - If Wikipedia: **how to fetch** — `dataset` (recommended) or `api`.
    - **Language** — `en` or `es`.
    - **If dataset** (these bring articles INTO THE CORPUS — the raw material,
@@ -201,6 +229,16 @@ the two-stage segment option.)
        thorough but slower.
      - **Random seed.**
    - **If api:** how many articles to fetch.
+   - **If local corpus in corpora:** the corpus file or folder name inside
+     `corpora/`, then file encoding.
+     - If it is a folder: file extension, recursive structure summary, whether
+       to include folder/file names as metadata, metadata key per folder level,
+       metadata key for the file name, and optionally which key should become
+       `source`.
+     - If it is one file: document separator. If it has metadata, the metadata
+       / body separator, metadata-field separator, metadata key/value
+       separator, and optionally which metadata key should become `source`.
+       If it has no metadata, each separated chunk is read as plain body text.
    - **If manual:** paste each text and its source, blank line to finish.
 4. **Restrict to one source?** — only asked if the corpus mixes sources.
 5. **Of the articles that contain your word, how many to keep:**

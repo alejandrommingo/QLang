@@ -22,6 +22,9 @@ import corpus_loading as cl
 import sampling as sp
 from tracelog import TraceLog
 
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+CORPORA_DIR = os.path.join(BASE_DIR, "corpora")
+
 
 # ===========================================================================
 # Console helpers
@@ -66,14 +69,46 @@ def slugify(text):
     return s or "term"
 
 
+def decode_separator(text):
+    """Let users type separators such as \\n\\n or 'none' in the terminal."""
+    if str(text).strip().lower() in ("none", "empty", "ninguno"):
+        return ""
+    return bytes(str(text), "utf-8").decode("unicode_escape")
+
+
+def metadata_key_answer(text):
+    """Normalize metadata-key prompts; 'skip' means do not store that level."""
+    value = str(text).strip()
+    if value.lower() in ("skip", "none", "no", "-"):
+        return None
+    return value or None
+
+
+def corpus_entry_path(name):
+    """Resolve a user corpus name inside the local corpora directory."""
+    clean_name = str(name).strip().strip("/\\")
+    path = os.path.normpath(os.path.join(CORPORA_DIR, clean_name))
+    root = os.path.normpath(CORPORA_DIR)
+    if os.path.commonpath([root, path]) != root:
+        raise ValueError("The corpus must be inside the 'corpora' folder.")
+    return path
+
+
+def short_list(values, limit=5):
+    values = list(values)
+    text = ", ".join(str(v) for v in values[:limit])
+    return text + ("..." if len(values) > limit else "")
+
+
 # ===========================================================================
 # Step 1 -- get the corpus
 # ===========================================================================
 
 def get_corpus(search_term, default_lang="en"):
-    """Ask where the corpus comes from: Wikipedia (API or dataset) or manual."""
+    """Ask where the corpus comes from: Wikipedia, files or manual input."""
     origin = choose("\nWhere does the corpus come from?",
-                    ["wikipedia", "manual"], "wikipedia")
+                    ["wikipedia", "local corpus in corpora", "manual"],
+                    "wikipedia")
 
     if origin == "wikipedia":
         via = choose(
@@ -88,6 +123,9 @@ def get_corpus(search_term, default_lang="en"):
         if via.startswith("dataset"):
             return _corpus_dataset(search_term, lang)
         return _corpus_api(search_term, lang)
+
+    if origin == "local corpus in corpora":
+        return _corpus_files(), "files", "es"
 
     return _corpus_manual(), "manual", "en"
 
@@ -140,6 +178,146 @@ def _corpus_api(term, lang):
         print("  No articles found for that term.")
     print(f"  fetched {len(corpus)} articles.")
     return corpus, "wikipedia", lang
+
+
+def _corpus_files():
+    """Load a user corpus stored inside the local corpora folder."""
+    print("\nLoading a local corpus.")
+    print(f"Put your corpus first inside: {CORPORA_DIR}")
+    corpus_name, path = _ask_local_corpus_entry()
+    encoding = ask("File encoding", "utf-8")
+    if os.path.isdir(path):
+        return _corpus_folder(path, encoding)
+    if os.path.isfile(path):
+        return _corpus_single_file(path, encoding)
+    raise FileNotFoundError(f"Corpus not found: {corpus_name}")
+
+
+def _ask_local_corpus_entry():
+    while True:
+        name = ask("Corpus file or folder name inside 'corpora'",
+                   "corpora_clean")
+        try:
+            path = corpus_entry_path(name)
+        except ValueError as e:
+            print(f"  ({e})")
+            continue
+        if os.path.isdir(path) or os.path.isfile(path):
+            return name, path
+        print(f"  (not found: {path})")
+
+
+def _corpus_folder(folder, encoding):
+    """Load one .txt document per file from a possibly nested folder tree."""
+    extension = ask("File extension to read", ".txt")
+    tree = cl.inspect_file_tree(folder, extension=extension)
+    if tree["n_files"] == 0:
+        raise FileNotFoundError(
+            f"No {extension} files found under {folder}")
+
+    min_depth = tree["min_folder_depth"]
+    max_depth = tree["max_folder_depth"]
+    if min_depth == max_depth:
+        depth_text = f"{max_depth} folder level(s)"
+    else:
+        depth_text = f"{min_depth}-{max_depth} folder level(s)"
+    print(f"\nFound {tree['n_files']} {extension} files with {depth_text}.")
+    if tree["examples"]:
+        print(f"  examples: {short_list(tree['examples'])}")
+
+    folder_keys, file_key, source_key = _ask_path_metadata(tree)
+    corpus = cl.load_from_files(
+        folder,
+        extension=extension,
+        encoding=encoding,
+        recursive=True,
+        folder_metadata_keys=folder_keys,
+        file_metadata_key=file_key,
+        source_from_metadata_key=source_key,
+    )
+    print(f"  loaded {len(corpus)} documents from {folder}.")
+    _show_metadata_values(corpus, folder_keys + ([file_key] if file_key else []))
+    return corpus
+
+
+def _ask_path_metadata(tree):
+    include = choose("Include folder/file names as metadata?",
+                     ["yes", "no"], "yes") == "yes"
+    if not include:
+        return [], None, None
+
+    folder_keys = []
+    for i in range(tree["max_folder_depth"]):
+        examples = tree["folder_values_by_level"][i]
+        prompt = (f"Metadata key for folder level {i + 1} "
+                  f"(examples: {short_list(examples)}; type skip to ignore)")
+        key = metadata_key_answer(ask(prompt, f"folder_{i + 1}"))
+        folder_keys.append(key)
+
+    file_key = metadata_key_answer(ask(
+        "Metadata key for the file name without extension "
+        "(type skip to ignore)", "file_name"))
+
+    available_keys = [k for k in folder_keys + ([file_key] if file_key else [])
+                      if k]
+    if not available_keys:
+        return folder_keys, file_key, None
+
+    default_source = "source" if "source" in available_keys else None
+    prompt = ("Metadata key to copy into 'source' for filtering/stratified "
+              "sampling (empty = keep source='project')")
+    source_key = ask(prompt, default_source) if default_source else ask(prompt)
+    source_key = metadata_key_answer(source_key)
+    if source_key and source_key not in available_keys:
+        print(f"  (source key '{source_key}' is not one of the path metadata "
+              "keys; source will stay as 'project')")
+        source_key = None
+    return folder_keys, file_key, source_key
+
+
+def _corpus_single_file(path, encoding):
+    """Load several documents from one file using user-provided separators."""
+    print("\nThis corpus is stored in a single file.")
+    print("Type separators with escapes when needed, e.g. \\n\\n.")
+    doc_sep = decode_separator(ask(
+        "Separator between documents (type none to read one document)",
+        "\\n\\n---\\n\\n"))
+    has_metadata = choose("Does each document start with metadata?",
+                          ["no", "yes"], "no") == "yes"
+    meta_body_sep = ""
+    meta_field_sep = ""
+    meta_key_value_sep = "="
+    source_key = None
+    if has_metadata:
+        meta_body_sep = decode_separator(ask(
+            "Separator between metadata block and body", "\\n\\n"))
+        meta_field_sep = decode_separator(ask(
+            "Separator between metadata fields", "|"))
+        meta_key_value_sep = decode_separator(ask(
+            "Separator between metadata keys and values", "="))
+        source_key = metadata_key_answer(ask(
+            "Metadata key to copy into 'source' for filtering/stratified "
+            "sampling (empty = keep source='project')"))
+    corpus = cl.load_from_single_file(
+        path,
+        document_separator=doc_sep,
+        encoding=encoding,
+        has_metadata=has_metadata,
+        metadata_body_separator=meta_body_sep,
+        metadata_field_separator=meta_field_sep,
+        metadata_key_value_separator=meta_key_value_sep,
+        source_from_metadata_key=source_key,
+    )
+    print(f"  loaded {len(corpus)} documents from {path}.")
+    return corpus
+
+
+def _show_metadata_values(corpus, keys):
+    for key in [k for k in keys if k]:
+        values = sorted({doc["meta"].get(key) for doc in corpus.values()
+                         if doc["meta"].get(key)})
+        if values:
+            print(f"  {key}: {short_list(values, limit=8)}")
 
 
 def _corpus_manual():
