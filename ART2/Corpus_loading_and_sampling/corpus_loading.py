@@ -32,6 +32,7 @@ import os
 import random
 import re
 import time
+from itertools import islice
 from typing import Any, Dict, Iterable, List, Optional
 
 import requests
@@ -46,6 +47,35 @@ import requests
 # clearly.
 Document = Dict[str, Any]
 Corpus = Dict[str, Document]
+
+
+def _simple_progress(iterable, total=None, desc="", unit="item"):
+    label = desc or "Progress"
+    total = int(total) if total is not None else None
+    step = max(total // 20, 1) if total else 1000
+    for i, item in enumerate(iterable, 1):
+        yield item
+        if total:
+            if i == 1 or i == total or i % step == 0:
+                pct = min(100, int(i * 100 / total))
+                filled = pct // 5
+                bar = "#" * filled + "." * (20 - filled)
+                end = "\n" if i >= total else "\r"
+                print(f"{label}: [{bar}] {i}/{total} {unit}", end=end,
+                      flush=True)
+        elif i % step == 0:
+            print(f"{label}: {i} {unit}", flush=True)
+
+
+def _progress(iterable, total=None, desc="", unit="item", enabled=False):
+    """Wrap an iterable with tqdm when progress output is requested."""
+    if not enabled:
+        return iterable
+    try:
+        from tqdm import tqdm
+    except ImportError:
+        return _simple_progress(iterable, total=total, desc=desc, unit=unit)
+    return tqdm(iterable, total=total, desc=desc, unit=unit)
 
 
 def make_document(body: str, meta: Optional[Dict[str, Any]] = None) -> Document:
@@ -172,7 +202,8 @@ def fetch_wikipedia_article(title: str, lang: str = "en",
 
 def load_from_wikipedia(titles: Iterable[str], lang: str = "en",
                         skip_missing: bool = True,
-                        pause: float = 0.3) -> Corpus:
+                        pause: float = 0.3,
+                        show_progress: bool = False) -> Corpus:
     """Build a corpus from a list of Wikipedia titles.
 
     Iterates over fetch_wikipedia_article and assembles the common format.
@@ -182,7 +213,10 @@ def load_from_wikipedia(titles: Iterable[str], lang: str = "en",
     """
     corpus: Corpus = {}
     titles = list(titles)
-    for i, title in enumerate(titles):
+    iterator = _progress(titles, total=len(titles),
+                         desc="Downloading Wikipedia articles",
+                         unit="article", enabled=show_progress)
+    for i, title in enumerate(iterator):
         doc = fetch_wikipedia_article(title, lang=lang)
         if i < len(titles) - 1:
             time.sleep(pause)
@@ -200,7 +234,8 @@ def load_from_wikipedia(titles: Iterable[str], lang: str = "en",
 # Path 2: corpus to be defined (project texts, from files)
 # ---------------------------------------------------------------------------
 
-def inspect_file_tree(folder: str, extension: str = ".txt") -> Dict[str, Any]:
+def inspect_file_tree(folder: str, extension: str = ".txt",
+                      show_progress: bool = False) -> Dict[str, Any]:
     """Describe the files that would be loaded from a corpus folder.
 
     The exe uses this before loading a local corpus so the user can see how
@@ -213,7 +248,8 @@ def inspect_file_tree(folder: str, extension: str = ".txt") -> Dict[str, Any]:
     paths = _collect_file_paths(folder, extension=extension, recursive=True)
     folder_depths = []
     folder_values: List[set] = []
-    for path in paths:
+    for path in _progress(paths, total=len(paths), desc="Inspecting files",
+                          unit="file", enabled=show_progress):
         rel_path = os.path.relpath(path, folder)
         folder_parts = _relative_folder_parts(rel_path)
         folder_depths.append(len(folder_parts))
@@ -240,7 +276,8 @@ def load_from_files(folder: str, extension: str = ".txt",
                     folder_metadata_keys: Optional[Iterable[str]] = None,
                     file_metadata_key: Optional[str] = None,
                     source_from_metadata_key: Optional[str] = None,
-                    metadata_from_path: bool = False
+                    metadata_from_path: bool = False,
+                    show_progress: bool = False
                     ) -> Corpus:
     """Build a corpus by reading every file in a folder.
 
@@ -287,7 +324,11 @@ def load_from_files(folder: str, extension: str = ".txt",
     paths = _collect_file_paths(folder, extension=extension,
                                 recursive=recursive)
 
-    for path in sorted(paths):
+    sorted_paths = sorted(paths)
+    iterator = _progress(sorted_paths, total=len(sorted_paths),
+                         desc="Loading corpus files", unit="file",
+                         enabled=show_progress)
+    for path in iterator:
         rel_path = os.path.relpath(path, folder)
         rel_no_ext = os.path.splitext(rel_path)[0]
         doc_id = rel_no_ext.replace(os.sep, "__")
@@ -322,7 +363,8 @@ def load_from_single_file(
         metadata_body_separator: str = "",
         metadata_field_separator: str = "",
         metadata_key_value_separator: str = "=",
-        source_from_metadata_key: Optional[str] = None) -> Corpus:
+        source_from_metadata_key: Optional[str] = None,
+        show_progress: bool = False) -> Corpus:
     """Build a corpus from one text file containing several documents.
 
     'document_separator' splits the file into documents. If has_metadata is
@@ -353,7 +395,10 @@ def load_from_single_file(
     corpus: Corpus = {}
     base_name = os.path.splitext(os.path.basename(path))[0]
 
-    for i, raw_doc in enumerate(raw_docs, 1):
+    iterator = _progress(raw_docs, total=len(raw_docs),
+                         desc="Parsing documents", unit="doc",
+                         enabled=show_progress)
+    for i, raw_doc in enumerate(iterator, 1):
         raw_doc = raw_doc.strip()
         if not raw_doc:
             continue
@@ -520,7 +565,8 @@ def search_wikipedia_titles(term: str, lang: str = "en", n: int = 20,
 
 
 def search_and_load_wikipedia(term: str, lang: str = "en", n: int = 20,
-                              exclude: Optional[set] = None) -> Corpus:
+                              exclude: Optional[set] = None,
+                              show_progress: bool = False) -> Corpus:
     """Search for articles mentioning the term and download them as a corpus.
 
     'exclude' is a set of titles not to download again.
@@ -528,7 +574,8 @@ def search_and_load_wikipedia(term: str, lang: str = "en", n: int = 20,
     exclude = exclude or set()
     titles = search_wikipedia_titles(term, lang=lang, n=n)
     titles = [t for t in titles if t not in exclude]
-    return load_from_wikipedia(titles, lang=lang)
+    return load_from_wikipedia(titles, lang=lang,
+                               show_progress=show_progress)
 
 
 # ===========================================================================
@@ -588,7 +635,8 @@ def sample_wikipedia_dataset(
         term, lang: str = "en", k: int = 100, seed: int = 123,
         max_iter: Optional[int] = 500000, min_occurrences: int = 2,
         min_chars: int = 1000, max_chars: int = 15000,
-        progress_every: int = 0) -> Corpus:
+        progress_every: int = 0,
+        show_progress: bool = False) -> Corpus:
     """Sample k Wikipedia articles containing the term, via the dataset.
 
     Streams the 'wikimedia/wikipedia' dataset and uses reservoir sampling to
@@ -626,10 +674,13 @@ def sample_wikipedia_dataset(
     reservoir: list = []
     candidates = 0
 
-    for i, ex in enumerate(ds):
-        if max_iter is not None and i >= max_iter:
-            break
-        if progress_every and i and i % progress_every == 0:
+    stream = ds if max_iter is None else islice(ds, max_iter)
+    iterator = _progress(stream, total=max_iter,
+                         desc="Scanning Wikipedia dataset", unit="article",
+                         enabled=show_progress)
+    for i, ex in enumerate(iterator):
+        if progress_every and not show_progress and i and \
+                i % progress_every == 0:
             print(f"    scanned {i} articles, {candidates} matches so far...")
 
         text = ex.get("text", "")

@@ -100,6 +100,33 @@ def short_list(values, limit=5):
     return text + ("..." if len(values) > limit else "")
 
 
+def progress_iter(iterable, total=None, desc="", unit="item"):
+    """Wrap an iterable with tqdm for the interactive exe."""
+    try:
+        from tqdm import tqdm
+    except ImportError:
+        return simple_progress(iterable, total=total, desc=desc, unit=unit)
+    return tqdm(iterable, total=total, desc=desc, unit=unit)
+
+
+def simple_progress(iterable, total=None, desc="", unit="item"):
+    label = desc or "Progress"
+    total = int(total) if total is not None else None
+    step = max(total // 20, 1) if total else 1000
+    for i, item in enumerate(iterable, 1):
+        yield item
+        if total:
+            if i == 1 or i == total or i % step == 0:
+                pct = min(100, int(i * 100 / total))
+                filled = pct // 5
+                bar = "#" * filled + "." * (20 - filled)
+                end = "\n" if i >= total else "\r"
+                print(f"{label}: [{bar}] {i}/{total} {unit}", end=end,
+                      flush=True)
+        elif i % step == 0:
+            print(f"{label}: {i} {unit}", flush=True)
+
+
 # ===========================================================================
 # Step 1 -- get the corpus
 # ===========================================================================
@@ -145,7 +172,8 @@ def _corpus_dataset(term, lang):
     try:
         corpus = cl.sample_wikipedia_dataset(
             term, lang=lang, k=k, seed=seed, max_iter=max_iter,
-            min_occurrences=min_occ, progress_every=20000)
+            min_occurrences=min_occ, progress_every=20000,
+            show_progress=True)
     except Exception as e:
         print(f"\n  ERROR with the dataset: {e}")
         op = choose("What now?",
@@ -164,7 +192,8 @@ def _corpus_api(term, lang):
     n = ask_int("How many articles to fetch at most?", 15)
     print(f"\nSearching Wikipedia ({lang}) for articles about '{term}'...")
     try:
-        corpus = cl.search_and_load_wikipedia(term, lang=lang, n=n)
+        corpus = cl.search_and_load_wikipedia(
+            term, lang=lang, n=n, show_progress=True)
     except Exception as e:
         print(f"\n  ERROR querying the API: {e}")
         op = choose("What now?",
@@ -210,7 +239,8 @@ def _ask_local_corpus_entry():
 def _corpus_folder(folder, encoding):
     """Load one .txt document per file from a possibly nested folder tree."""
     extension = ask("File extension to read", ".txt")
-    tree = cl.inspect_file_tree(folder, extension=extension)
+    tree = cl.inspect_file_tree(folder, extension=extension,
+                                show_progress=True)
     if tree["n_files"] == 0:
         raise FileNotFoundError(
             f"No {extension} files found under {folder}")
@@ -234,6 +264,7 @@ def _corpus_folder(folder, encoding):
         folder_metadata_keys=folder_keys,
         file_metadata_key=file_key,
         source_from_metadata_key=source_key,
+        show_progress=True,
     )
     print(f"  loaded {len(corpus)} documents from {folder}.")
     _show_metadata_values(corpus, folder_keys + ([file_key] if file_key else []))
@@ -307,6 +338,7 @@ def _corpus_single_file(path, encoding):
         metadata_field_separator=meta_field_sep,
         metadata_key_value_separator=meta_key_value_sep,
         source_from_metadata_key=source_key,
+        show_progress=True,
     )
     print(f"  loaded {len(corpus)} documents from {path}.")
     return corpus
@@ -339,7 +371,8 @@ def _corpus_manual():
 def ensure_minimum_wikipedia(corpus, word, mode, min_docs, lang):
     """Fetch more Wikipedia articles via API if the minimum is not reached."""
     def n_with(c):
-        return len(sp.select_documents_with_word(c, word, mode))
+        return len(sp.select_documents_with_word(
+            c, word, mode, show_progress=True))
 
     if n_with(corpus) >= min_docs:
         return corpus
@@ -348,7 +381,8 @@ def ensure_minimum_wikipedia(corpus, word, mode, min_docs, lang):
           f"Extending the Wikipedia search...")
     try:
         more = cl.search_and_load_wikipedia(
-            word, lang=lang, n=max(min_docs * 3, 20), exclude=set(corpus))
+            word, lang=lang, n=max(min_docs * 3, 20), exclude=set(corpus),
+            show_progress=True)
     except Exception as e:
         print(f"  (could not extend: {e})")
         return corpus
@@ -378,9 +412,14 @@ def save_corpus_and_show(corpus, log, out_dir):
                justification="Starting corpus.", artifact=path)
 
 
-def add_reference(units):
+def add_reference(units, show_progress=False):
     """Attach a readable reference to the source article to each unit."""
-    for u in units:
+    iterator = (
+        progress_iter(units, total=len(units), desc="Adding references",
+                      unit="unit")
+        if show_progress else units
+    )
+    for u in iterator:
         u["reference"] = {
             "doc_id": u["doc_id"],
             "title": u["meta"].get("title", u["doc_id"]),
@@ -439,7 +478,8 @@ def _segment_two_stages(corpus, word, mode, cfg, log, out_dir):
         key=cfg["key_docs"], mode=mode, seed=cfg["seed"],
         save_to=sub_path, log=log,
         justification=f"Documents with '{word}' "
-                      f"({cfg['strategy_docs']}, max {cfg['max_docs']}).")
+                      f"({cfg['strategy_docs']}, max {cfg['max_docs']}).",
+        show_progress=True)
     print(f"\nSTAGE 1: {len(subcorpus)} documents -> {list(subcorpus)}")
 
     _warn_if_cap_blocks_target(len(subcorpus), cfg)
@@ -454,29 +494,34 @@ def _segment_two_stages(corpus, word, mode, cfg, log, out_dir):
         seed=cfg["seed"], save_to=kwic_path, log=log,
         justification=(f"Occurrences ({cfg['strategy_occ']}) with "
                        f"'{cfg['window']}' window; "
-                       f"max {cfg['max_per_doc']} per document."))
+                       f"max {cfg['max_per_doc']} per document."),
+        show_progress=True)
     _report_concordance(conc, kwic_path, cfg)
 
 
 def _segment_one_stage(corpus, word, mode, cfg, log, out_dir):
     """Single stage: all occurrences in the corpus -> strategy -> window."""
-    occurrences = sp.extract_segments(corpus, word, mode)
+    occurrences = sp.extract_segments(corpus, word, mode,
+                                      show_progress=True)
     n_articles_with_word = len({u["doc_id"] for u in occurrences})
     _warn_if_cap_blocks_target(n_articles_with_word, cfg)
     if cfg["max_per_doc"] is not None:
         if cfg.get("min_distance", 0) > 0:
             occurrences = sp.cap_per_group_spaced(
                 occurrences, cfg["max_per_doc"], lambda u: u["doc_id"],
-                cfg["min_distance"], cfg["seed"])
+                cfg["min_distance"], cfg["seed"], show_progress=True)
         else:
             occurrences = sp.cap_per_group(
                 occurrences, cfg["max_per_doc"], lambda u: u["doc_id"],
-                cfg["seed"])
+                cfg["seed"], show_progress=True)
     occurrences = sp._apply_strategy(
         occurrences, cfg["strategy_occ"], cfg["max_occ"],
-        cfg["key_occ"], cfg["seed"])
-    conc = [sp.extract_window(corpus, occ, cfg["window"], cfg["window_size"])
-            for occ in occurrences]
+        cfg["key_occ"], cfg["seed"], show_progress=True)
+    conc = [
+        sp.extract_window(corpus, occ, cfg["window"], cfg["window_size"])
+        for occ in progress_iter(occurrences, total=len(occurrences),
+                                 desc="Building KWIC windows", unit="occ")
+    ]
     kwic_path = os.path.join(out_dir, "occurrences_kwic.json")
     sp.save_units(conc, kwic_path, stage="single_stage_occurrences")
     log.record(
@@ -526,7 +571,7 @@ def _warn_if_cap_blocks_target(n_articles, cfg):
 
 def _report_concordance(conc, kwic_path, cfg):
     """Add reference, re-save, and print the concordance + spread."""
-    conc = add_reference(conc)
+    conc = add_reference(conc, show_progress=True)
     sp.save_units(conc, kwic_path, stage="occurrences")
     if len(conc) < cfg["min_occ"]:
         print(f"\nNote: a minimum of {cfg['min_occ']} occurrences was asked "
@@ -550,19 +595,24 @@ def case_sentence_or_doc(corpus, unit, expression, cfg, log, out_dir):
         corpus = filter_source(corpus, cfg["only_source"])
         print(f"\nFiltered to source '{cfg['only_source']}': {list(corpus)}")
 
-    units = (sp.extract_sentences(corpus) if unit == "sentence"
-             else sp.extract_documents(corpus))
+    units = (sp.extract_sentences(corpus, show_progress=True)
+             if unit == "sentence"
+             else sp.extract_documents(corpus, show_progress=True))
 
     if expression:
         pattern = sp.build_pattern(expression, sp.MATCH_LOOSE)
-        units = [u for u in units if pattern.search(u["text"])]
+        units = [
+            u for u in progress_iter(units, total=len(units),
+                                     desc="Filtering units", unit="unit")
+            if pattern.search(u["text"])
+        ]
 
     if cfg["max_occ"]:
         units = sp._apply_strategy(
             units, cfg["strategy_occ"], cfg["max_occ"],
-            cfg["key_occ"], cfg["seed"])
+            cfg["key_occ"], cfg["seed"], show_progress=True)
 
-    units = add_reference(units)
+    units = add_reference(units, show_progress=True)
     path = os.path.join(out_dir, f"{unit}_sample.json")
     sp.save_units(units, path, stage=f"sample[{unit}]")
     log.record(

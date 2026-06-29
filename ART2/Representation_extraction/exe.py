@@ -66,6 +66,33 @@ def choose(text, options, default):
         print("  (number out of range)")
 
 
+def progress_iter(iterable, total=None, desc="", unit="item"):
+    """Wrap an iterable with tqdm for the interactive exe."""
+    try:
+        from tqdm import tqdm
+    except ImportError:
+        return simple_progress(iterable, total=total, desc=desc, unit=unit)
+    return tqdm(iterable, total=total, desc=desc, unit=unit)
+
+
+def simple_progress(iterable, total=None, desc="", unit="item"):
+    label = desc or "Progress"
+    total = int(total) if total is not None else None
+    step = max(total // 20, 1) if total else 1000
+    for i, item in enumerate(iterable, 1):
+        yield item
+        if total:
+            if i == 1 or i == total or i % step == 0:
+                pct = min(100, int(i * 100 / total))
+                filled = pct // 5
+                bar = "#" * filled + "." * (20 - filled)
+                end = "\n" if i >= total else "\r"
+                print(f"{label}: [{bar}] {i}/{total} {unit}", end=end,
+                      flush=True)
+        elif i % step == 0:
+            print(f"{label}: {i} {unit}", flush=True)
+
+
 # ---------------------------------------------------------------------------
 # Finding the tokenized samples in the sibling folder
 # ---------------------------------------------------------------------------
@@ -125,7 +152,8 @@ def _static_path(units, model_name, out_dir, log):
 
     results = {}
     try:
-        for w in words:
+        for w in progress_iter(words, total=len(words),
+                               desc="Computing static vectors", unit="word"):
             vec = sv.get_static_vector(w, model_name=model_name,
                                        normalize=normalize)
             results[w] = vec.tolist()
@@ -236,7 +264,8 @@ def main():
                  if ask("Save the fragmented units? (y/N)", "N").lower()
                  .startswith("y") else None)
     units = fr.fragment_units(units, max_tokens=max_tokens, strategy=strat,
-                              window=window, stride=stride, save_to=frag_path)
+                              window=window, stride=stride, save_to=frag_path,
+                              show_progress=True)
     print(f"After fragmentation: {len(units)} units/fragments")
 
     # 2) RUN THE MODEL
@@ -259,7 +288,8 @@ def main():
                              n_last=n_last, batch_size=batch_size,
                              save_to=tok_path, log=log,
                              justification=f"Run {model_name}, layers="
-                             f"{layer_mode}.")
+                             f"{layer_mode}.",
+                             show_progress=True)
     except Exception as e:
         print(f"\n  ERROR running the model: {e}")
         print("  (check the model id and that 'transformers' and 'torch' are "
@@ -278,7 +308,8 @@ def main():
     units = ag.aggregate_units(units, strategy=agg,
                                representative=representative,
                                save_to=agg_path, log=log,
-                               justification=f"Aggregate with {agg}.")
+                               justification=f"Aggregate with {agg}.",
+                               show_progress=True)
     n_vec = sum(1 for u in units if u.get("vector") is not None)
     print(f"\nAggregated: {n_vec} units have a vector. Saved: {agg_path}")
 
@@ -292,7 +323,8 @@ def main():
             c = ct.build_contour(units, word=word, save_to=contour_path,
                                  log=log,
                                  justification="Contour of the target word "
-                                 "across its contexts.")
+                                 "across its contexts.",
+                                 show_progress=True)
             print(f"\nContour built: {c['shape'][0]} occurrences x "
                   f"{c['shape'][1]} dimensions. Saved: {contour_path}")
         except ValueError as e:

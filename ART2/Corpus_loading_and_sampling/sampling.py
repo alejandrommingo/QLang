@@ -41,6 +41,35 @@ Unit = Dict[str, Any]
 Key = Callable[[Unit], Any]
 
 
+def _simple_progress(iterable, total=None, desc="", unit="item"):
+    label = desc or "Progress"
+    total = int(total) if total is not None else None
+    step = max(total // 20, 1) if total else 1000
+    for i, item in enumerate(iterable, 1):
+        yield item
+        if total:
+            if i == 1 or i == total or i % step == 0:
+                pct = min(100, int(i * 100 / total))
+                filled = pct // 5
+                bar = "#" * filled + "." * (20 - filled)
+                end = "\n" if i >= total else "\r"
+                print(f"{label}: [{bar}] {i}/{total} {unit}", end=end,
+                      flush=True)
+        elif i % step == 0:
+            print(f"{label}: {i} {unit}", flush=True)
+
+
+def _progress(iterable, total=None, desc="", unit="item", enabled=False):
+    """Wrap an iterable with tqdm when progress output is requested."""
+    if not enabled:
+        return iterable
+    try:
+        from tqdm import tqdm
+    except ImportError:
+        return _simple_progress(iterable, total=total, desc=desc, unit=unit)
+    return tqdm(iterable, total=total, desc=desc, unit=unit)
+
+
 # ===========================================================================
 # A) TARGET UNIT -- extractors
 # ===========================================================================
@@ -73,7 +102,8 @@ def _unit(doc_id: str, text: str, start: int, end: int,
 
 
 def extract_segments(corpus: Corpus, word: str,
-                     mode: str = MATCH_EXACT) -> List[Unit]:
+                     mode: str = MATCH_EXACT,
+                     show_progress: bool = False) -> List[Unit]:
     """Each appearance of 'word' in the corpus, as a unit with its offset.
 
     This is the second stage of the two-stage segment sampling: occurrences
@@ -83,7 +113,10 @@ def extract_segments(corpus: Corpus, word: str,
     cl.validate_corpus(corpus)
     pattern = build_pattern(word, mode)
     units: List[Unit] = []
-    for doc_id, doc in corpus.items():
+    items = corpus.items()
+    for doc_id, doc in _progress(items, total=len(corpus),
+                                 desc="Finding segment occurrences",
+                                 unit="doc", enabled=show_progress):
         body = doc["body"]
         meta = doc.get("meta", {})
         for m in pattern.finditer(body):
@@ -93,7 +126,8 @@ def extract_segments(corpus: Corpus, word: str,
     return units
 
 
-def extract_sentences(corpus: Corpus) -> List[Unit]:
+def extract_sentences(corpus: Corpus,
+                      show_progress: bool = False) -> List[Unit]:
     """One unit per sentence. Splits on . ! ? followed by whitespace.
 
     The methodology warns sentence splitting is delicate (abbreviations,
@@ -101,7 +135,10 @@ def extract_sentences(corpus: Corpus) -> List[Unit]:
     """
     cl.validate_corpus(corpus)
     units: List[Unit] = []
-    for doc_id, doc in corpus.items():
+    items = corpus.items()
+    for doc_id, doc in _progress(items, total=len(corpus),
+                                 desc="Extracting sentences", unit="doc",
+                                 enabled=show_progress):
         body = doc["body"]
         meta = doc.get("meta", {})
         for start, end in _sentence_bounds(body):
@@ -127,11 +164,15 @@ def _sentence_bounds(body: str) -> List[tuple]:
     return bounds
 
 
-def extract_documents(corpus: Corpus) -> List[Unit]:
+def extract_documents(corpus: Corpus,
+                      show_progress: bool = False) -> List[Unit]:
     """Each whole document as a unit (the unit is its own source)."""
     cl.validate_corpus(corpus)
     units: List[Unit] = []
-    for doc_id, doc in corpus.items():
+    items = corpus.items()
+    for doc_id, doc in _progress(items, total=len(corpus),
+                                 desc="Extracting documents", unit="doc",
+                                 enabled=show_progress):
         body = doc["body"]
         units.append(
             _unit(doc_id, body, 0, len(body), doc.get("meta", {})))
@@ -139,7 +180,8 @@ def extract_documents(corpus: Corpus) -> List[Unit]:
 
 
 def select_documents_with_word(corpus: Corpus, word: str,
-                               mode: str = MATCH_EXACT) -> List[Unit]:
+                               mode: str = MATCH_EXACT,
+                               show_progress: bool = False) -> List[Unit]:
     """Documents containing the word, as document-units.
 
     This is the base of STAGE 1 of segment sampling: out of the whole corpus
@@ -148,9 +190,12 @@ def select_documents_with_word(corpus: Corpus, word: str,
     """
     cl.validate_corpus(corpus)
     pattern = build_pattern(word, mode)
+    items = corpus.items()
     return [_unit(doc_id, doc["body"], 0, len(doc["body"]),
                   doc.get("meta", {}))
-            for doc_id, doc in corpus.items()
+            for doc_id, doc in _progress(
+                items, total=len(corpus), desc="Selecting documents",
+                unit="doc", enabled=show_progress)
             if pattern.search(doc["body"])]
 
 
@@ -179,7 +224,8 @@ def random_simple(units: List[Unit], n: int,
 
 
 def stratified(units: List[Unit], n_total: int, key: Key,
-               seed: Optional[int] = None) -> List[Unit]:
+               seed: Optional[int] = None,
+               show_progress: bool = False) -> List[Unit]:
     """n_total units preserving each stratum's proportion.
 
     Groups units by 'key(u)' and gives each group a quota proportional to its
@@ -191,13 +237,18 @@ def stratified(units: List[Unit], n_total: int, key: Key,
     rng = random.Random(seed)
 
     groups: Dict[Any, List[Unit]] = {}
-    for u in units:
+    for u in _progress(units, total=len(units),
+                       desc="Grouping strata", unit="unit",
+                       enabled=show_progress):
         groups.setdefault(key(u), []).append(u)
 
     total = len(units)
     result: List[Unit] = []
     assigned = 0
-    for group in groups.values():
+    grouped = groups.values()
+    for group in _progress(grouped, total=len(groups),
+                           desc="Sampling strata", unit="stratum",
+                           enabled=show_progress):
         quota = min(int(math.floor(n_total * len(group) / total)), len(group))
         result.extend(rng.sample(group, quota))
         assigned += quota
@@ -212,7 +263,8 @@ def stratified(units: List[Unit], n_total: int, key: Key,
 
 
 def reservoir(stream: Iterable[Unit], n: int,
-              seed: Optional[int] = None) -> List[Unit]:
+              seed: Optional[int] = None,
+              show_progress: bool = False) -> List[Unit]:
     """Fixed-size random sample of size n over a stream (algorithm R, Vitter).
 
     Walks the stream once, without knowing the total beforehand. For massive
@@ -220,7 +272,9 @@ def reservoir(stream: Iterable[Unit], n: int,
     """
     rng = random.Random(seed)
     pool: List[Unit] = []
-    for i, elem in enumerate(stream):
+    for i, elem in enumerate(_progress(stream, desc="Reservoir sampling",
+                                       unit="unit",
+                                       enabled=show_progress)):
         if i < n:
             pool.append(elem)
         else:
@@ -235,15 +289,21 @@ def reservoir(stream: Iterable[Unit], n: int,
 # ===========================================================================
 
 def cap_per_group(units: List[Unit], max_per_group: int, key: Key,
-                  seed: Optional[int] = None) -> List[Unit]:
+                  seed: Optional[int] = None,
+                  show_progress: bool = False) -> List[Unit]:
     """Cap how many units each group contributes (e.g. each document), so a
     single source does not dominate the sample."""
     rng = random.Random(seed)
     groups: Dict[Any, List[Unit]] = {}
-    for u in units:
+    for u in _progress(units, total=len(units),
+                       desc="Grouping for cap", unit="unit",
+                       enabled=show_progress):
         groups.setdefault(key(u), []).append(u)
     result: List[Unit] = []
-    for group in groups.values():
+    grouped = groups.values()
+    for group in _progress(grouped, total=len(groups),
+                           desc="Applying group cap", unit="group",
+                           enabled=show_progress):
         result.extend(rng.sample(group, max_per_group)
                       if len(group) > max_per_group else group)
     return result
@@ -260,7 +320,8 @@ def summary_per_group(units: List[Unit], key: Key) -> Dict[Any, int]:
 
 def cap_per_group_spaced(units: List[Unit], max_per_group: int, key: Key,
                          min_distance: int = 500,
-                         seed: Optional[int] = None) -> List[Unit]:
+                         seed: Optional[int] = None,
+                         show_progress: bool = False) -> List[Unit]:
     """Cap units per group, at random but keeping them spaced apart.
 
     Within each group it picks up to 'max_per_group' occurrences at random,
@@ -280,11 +341,16 @@ def cap_per_group_spaced(units: List[Unit], max_per_group: int, key: Key,
     """
     rng = random.Random(seed)
     groups: Dict[Any, List[Unit]] = {}
-    for u in units:
+    for u in _progress(units, total=len(units),
+                       desc="Grouping for spaced cap", unit="unit",
+                       enabled=show_progress):
         groups.setdefault(key(u), []).append(u)
 
     result: List[Unit] = []
-    for group in groups.values():
+    grouped = groups.values()
+    for group in _progress(grouped, total=len(groups),
+                           desc="Applying spaced cap", unit="group",
+                           enabled=show_progress):
         if len(group) <= max_per_group:
             result.extend(group)
             continue
@@ -457,7 +523,8 @@ def sample(corpus: Corpus, unit: str, strategy: str,
            key: Optional[Key] = None,
            max_per_group: Optional[int] = None,
            group_key: Optional[Key] = None,
-           seed: Optional[int] = None) -> List[Unit]:
+           seed: Optional[int] = None,
+           show_progress: bool = False) -> List[Unit]:
     """Orchestrate one extraction + one strategy, save and leave a trace.
 
     Combines the unit dimension ('segment'|'sentence'|'document') with the
@@ -468,19 +535,22 @@ def sample(corpus: Corpus, unit: str, strategy: str,
     if unit == "segment":
         if word is None:
             raise ValueError("unit 'segment' requires 'word'")
-        units = extract_segments(corpus, word, mode)
+        units = extract_segments(corpus, word, mode,
+                                 show_progress=show_progress)
     elif unit == "sentence":
-        units = extract_sentences(corpus)
+        units = extract_sentences(corpus, show_progress=show_progress)
     elif unit == "document":
-        units = extract_documents(corpus)
+        units = extract_documents(corpus, show_progress=show_progress)
     else:
         raise ValueError(f"unit '{unit}' not valid")
 
     if max_per_group is not None:
         k = group_key or (lambda u: u["doc_id"])
-        units = cap_per_group(units, max_per_group, k, seed)
+        units = cap_per_group(units, max_per_group, k, seed,
+                              show_progress=show_progress)
 
-    selection = _apply_strategy(units, strategy, n_total, key, seed)
+    selection = _apply_strategy(units, strategy, n_total, key, seed,
+                                show_progress=show_progress)
 
     if artifact is not None:
         save_units(selection, artifact, stage=f"sample[{unit}/{strategy}]")
@@ -505,7 +575,8 @@ def sample(corpus: Corpus, unit: str, strategy: str,
 
 def _apply_strategy(units: List[Unit], strategy: str,
                     n_total: Optional[int], key: Optional[Key],
-                    seed: Optional[int]) -> List[Unit]:
+                    seed: Optional[int],
+                    show_progress: bool = False) -> List[Unit]:
     """Apply the generic strategy named by 'strategy'."""
     if strategy == "exhaustive":
         return exhaustive(units)
@@ -516,11 +587,13 @@ def _apply_strategy(units: List[Unit], strategy: str,
     if strategy == "stratified":
         if n_total is None or key is None:
             raise ValueError("'stratified' requires n_total and key")
-        return stratified(units, n_total, key, seed)
+        return stratified(units, n_total, key, seed,
+                          show_progress=show_progress)
     if strategy == "reservoir":
         if n_total is None:
             raise ValueError("'reservoir' requires n_total")
-        return reservoir(iter(units), n_total, seed)
+        return reservoir(iter(units), n_total, seed,
+                         show_progress=show_progress)
     raise ValueError(f"strategy '{strategy}' not valid")
 
 
@@ -532,14 +605,17 @@ def stage1_documents(corpus: Corpus, word: str,
                      seed: Optional[int] = None,
                      save_to: Optional[str] = None,
                      log: Optional[TraceLog] = None,
-                     justification: str = "") -> Corpus:
+                     justification: str = "",
+                     show_progress: bool = False) -> Corpus:
     """Select the documents containing the segment and reduce them to N.
 
     Returns a sub-corpus (step 1 format) and, if 'save_to' is given, persists
     it so stage 2 can reuse it. Records the decision in the log.
     """
-    candidates = select_documents_with_word(corpus, word, mode)
-    chosen = _apply_strategy(candidates, strategy, n_documents, key, seed)
+    candidates = select_documents_with_word(
+        corpus, word, mode, show_progress=show_progress)
+    chosen = _apply_strategy(candidates, strategy, n_documents, key, seed,
+                             show_progress=show_progress)
     subcorpus: Corpus = {
         u["doc_id"]: cl.make_document(u["text"], u["meta"]) for u in chosen
     }
@@ -569,7 +645,8 @@ def stage2_occurrences(subcorpus: Corpus, word: str,
                        seed: Optional[int] = None,
                        save_to: Optional[str] = None,
                        log: Optional[TraceLog] = None,
-                       justification: str = "") -> List[Unit]:
+                       justification: str = "",
+                       show_progress: bool = False) -> List[Unit]:
     """Extract the segment occurrences from the sub-corpus and add context.
 
     Steps: locate occurrences (with offset) -> per-document cap (optional) ->
@@ -580,18 +657,25 @@ def stage2_occurrences(subcorpus: Corpus, word: str,
     occurrences at least 'min_distance' characters apart (random but spaced),
     so they come from diverse contexts instead of clustering together.
     """
-    occurrences = extract_segments(subcorpus, word, mode)
+    occurrences = extract_segments(subcorpus, word, mode,
+                                   show_progress=show_progress)
     if max_per_doc is not None:
         if min_distance > 0:
             occurrences = cap_per_group_spaced(
                 occurrences, max_per_doc, lambda u: u["doc_id"],
-                min_distance, seed)
+                min_distance, seed, show_progress=show_progress)
         else:
             occurrences = cap_per_group(
-                occurrences, max_per_doc, lambda u: u["doc_id"], seed)
-    occurrences = _apply_strategy(occurrences, strategy, n_total, key, seed)
-    concordance = [extract_window(subcorpus, occ, window_mode, window_size)
-                   for occ in occurrences]
+                occurrences, max_per_doc, lambda u: u["doc_id"], seed,
+                show_progress=show_progress)
+    occurrences = _apply_strategy(occurrences, strategy, n_total, key, seed,
+                                  show_progress=show_progress)
+    concordance = [
+        extract_window(subcorpus, occ, window_mode, window_size)
+        for occ in _progress(occurrences, total=len(occurrences),
+                             desc="Building KWIC windows", unit="occ",
+                             enabled=show_progress)
+    ]
     if save_to is not None:
         save_units(concordance, save_to, stage="stage2_occurrences")
     if log is not None:
@@ -622,7 +706,8 @@ def full_flow(corpus: Corpus, word: str,
               window_size: int = 10,
               seed: Optional[int] = None,
               artifact_prefix: Optional[str] = None,
-              log: Optional[TraceLog] = None) -> List[Unit]:
+              log: Optional[TraceLog] = None,
+              show_progress: bool = False) -> List[Unit]:
     """Run stage 1 and stage 2 in a row, with a different strategy per stage.
 
     If 'artifact_prefix' is given, saves sub-corpus and concordance with that
@@ -633,13 +718,15 @@ def full_flow(corpus: Corpus, word: str,
     subcorpus = stage1_documents(
         corpus, word, strategy_docs, n_documents, key_docs, mode, seed,
         save_to=art1, log=log,
-        justification="Stage 1: select documents containing the segment.")
+        justification="Stage 1: select documents containing the segment.",
+        show_progress=show_progress)
     return stage2_occurrences(
         subcorpus, word, strategy=strategy_occ, n_total=n_occurrences,
         key=key_occ, mode=mode, max_per_doc=max_per_doc,
         window_mode=window_mode, window_size=window_size, seed=seed,
         save_to=art2, log=log,
-        justification="Stage 2: occurrences with context (KWIC).")
+        justification="Stage 2: occurrences with context (KWIC).",
+        show_progress=show_progress)
 
 
 def print_kwic(concordance: List[Unit], width: int = 40) -> None:

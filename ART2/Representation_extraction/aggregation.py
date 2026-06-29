@@ -29,6 +29,36 @@ from typing import Any, Dict, List, Optional
 
 Unit = Dict[str, Any]
 
+
+def _simple_progress(iterable, total=None, desc="", unit="item"):
+    label = desc or "Progress"
+    total = int(total) if total is not None else None
+    step = max(total // 20, 1) if total else 1000
+    for i, item in enumerate(iterable, 1):
+        yield item
+        if total:
+            if i == 1 or i == total or i % step == 0:
+                pct = min(100, int(i * 100 / total))
+                filled = pct // 5
+                bar = "#" * filled + "." * (20 - filled)
+                end = "\n" if i >= total else "\r"
+                print(f"{label}: [{bar}] {i}/{total} {unit}", end=end,
+                      flush=True)
+        elif i % step == 0:
+            print(f"{label}: {i} {unit}", flush=True)
+
+
+def _progress(iterable, total=None, desc="", unit="item", enabled=False):
+    """Wrap an iterable with tqdm when progress output is requested."""
+    if not enabled:
+        return iterable
+    try:
+        from tqdm import tqdm
+    except ImportError:
+        return _simple_progress(iterable, total=total, desc=desc, unit=unit)
+    return tqdm(iterable, total=total, desc=desc, unit=unit)
+
+
 MEAN = "mean_pooling"
 REPRESENTATIVE = "representative_token"
 STRATEGIES = (MEAN, REPRESENTATIVE)
@@ -37,7 +67,8 @@ STRATEGIES = (MEAN, REPRESENTATIVE)
 def aggregate_units(units: List[Unit], strategy: str = MEAN,
                     representative: str = "cls",
                     save_to: Optional[str] = None,
-                    log=None, justification: str = "") -> List[Unit]:
+                    log=None, justification: str = "",
+                    show_progress: bool = False) -> List[Unit]:
     """Compose one vector per unit from its token vectors.
 
     'strategy' is 'mean_pooling' or 'representative_token'. For the
@@ -57,7 +88,8 @@ def aggregate_units(units: List[Unit], strategy: str = MEAN,
 
     out: List[Unit] = []
     n_ok = 0
-    for u in units:
+    for u in _progress(units, total=len(units), desc="Aggregating vectors",
+                       unit="unit", enabled=show_progress):
         token_vecs = u.get("token_vectors")
         if not token_vecs:
             v = dict(u)

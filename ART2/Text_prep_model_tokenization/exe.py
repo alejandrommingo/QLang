@@ -170,7 +170,8 @@ def main():
     prepared_path = os.path.join(out_dir, "prepared.json")
     prepared = tp.prepare_units(
         sample_path, steps=steps, save_to=prepared_path, log=log,
-        justification="Minimal text preparation before the model.")
+        justification="Minimal text preparation before the model.",
+        show_progress=True)
     print(f"\nText prepared and saved: {prepared_path}  ({len(prepared)} units)")
 
     # 3) REPRESENTATION: contextual model or LSA
@@ -219,19 +220,21 @@ def main():
         try:
             tk.tokenize_units(
                 prepared, model_name=model_name, save_to=tok_path, log=log,
-                justification=f"Tokenize and align with {model_name}.")
+                justification=f"Tokenize and align with {model_name}.",
+                show_progress=True)
             print(f"Tokenized + aligned, saved: {tok_path}")
         except Exception as e:
             print(f"\n  ERROR loading/tokenizing: {e}")
             print("  (check the model id and that 'transformers' is installed)")
     else:
         n_comp = int(ask("Number of LSA dimensions", "100"))
-        docs = lsa.documents_from_prepared(prepared)
+        docs = lsa.documents_from_prepared(prepared, show_progress=True)
         lsa_path = os.path.join(out_dir, "lsa_space.json")
         try:
             res = lsa.estimate_lsa(
                 docs, n_components=n_comp, save_to=lsa_path, log=log,
-                justification="Static LSA representation over the documents.")
+                justification="Static LSA representation over the documents.",
+                show_progress=True)
             print(f"\nLSA estimated: {res['n_components']} dims, "
                   f"{res['vocabulary_size']} words, saved: {lsa_path}")
         except Exception as e:
