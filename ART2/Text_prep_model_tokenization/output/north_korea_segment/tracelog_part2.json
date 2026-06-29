@@ -1,0 +1,43 @@
+[
+  {
+    "step": 4,
+    "operation": "prepare_text",
+    "parameters": {
+      "steps": [
+        "unicode_nfc",
+        "collapse_whitespace"
+      ],
+      "risky_steps_used": []
+    },
+    "justification": "Minimal text preparation before the model.",
+    "summary": {
+      "n_units": 73,
+      "transformations": [
+        "unicode_nfc",
+        "collapse_whitespace"
+      ],
+      "risky_used": false
+    },
+    "artifact": "Text_prep_model_tokenization\\output\\north_korea_segment\\prepared.json",
+    "timestamp": "2026-06-22T18:50:27"
+  },
+  {
+    "step": 5,
+    "operation": "estimate_lsa",
+    "parameters": {
+      "n_components": 52,
+      "use_tfidf": true,
+      "min_df": 1,
+      "seed": 0
+    },
+    "justification": "Static LSA representation over the documents.",
+    "summary": {
+      "n_documents": 53,
+      "vocabulary_size": 1737,
+      "n_components": 52,
+      "explained_variance": 0.9976036026922159
+    },
+    "artifact": "Text_prep_model_tokenization\\output\\north_korea_segment\\lsa_space.json",
+    "timestamp": "2026-06-22T18:50:32"
+  }
+]

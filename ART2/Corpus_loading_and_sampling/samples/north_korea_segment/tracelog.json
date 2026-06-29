@@ -1,0 +1,53 @@
+[
+  {
+    "step": 1,
+    "operation": "load_corpus",
+    "parameters": {},
+    "justification": "Starting corpus.",
+    "summary": {
+      "n_documents": 80
+    },
+    "artifact": "Corpus_loading_and_sampling\\samples\\north_korea_segment\\corpus_full.json",
+    "timestamp": "2026-06-22T18:47:31"
+  },
+  {
+    "step": 3,
+    "operation": "stage1_documents[reservoir]",
+    "parameters": {
+      "word": "North Korea",
+      "mode": "exact",
+      "strategy": "reservoir",
+      "n_documents": 200,
+      "seed": 0
+    },
+    "justification": "Documents with 'North Korea' (reservoir, max 200).",
+    "summary": {
+      "n_candidates": 53,
+      "n_chosen": 53
+    },
+    "artifact": "Corpus_loading_and_sampling\\samples\\north_korea_segment\\stage1_subcorpus.json",
+    "timestamp": "2026-06-22T18:48:22"
+  },
+  {
+    "step": 3,
+    "operation": "stage2_occurrences[random]",
+    "parameters": {
+      "word": "North Korea",
+      "mode": "exact",
+      "strategy": "random",
+      "n_total": 100,
+      "max_per_doc": 3,
+      "min_distance": 500,
+      "window_mode": "sentence",
+      "window_size": 0,
+      "seed": 0
+    },
+    "justification": "Occurrences (random) with 'sentence' window; max 3 per document.",
+    "summary": {
+      "n_occurrences": 73,
+      "n_articles": 53
+    },
+    "artifact": "Corpus_loading_and_sampling\\samples\\north_korea_segment\\stage2_kwic.json",
+    "timestamp": "2026-06-22T18:48:22"
+  }
+]
