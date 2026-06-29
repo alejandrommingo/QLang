@@ -9,8 +9,9 @@ Pipeline for the second folder of the project. It:
   3. lets you choose a representation:
        - contextual model (BERT / GPT-2 / any HF model): tokenize + align;
        - LSA (static): term-document matrix + SVD;
-     and saves that output (model_tokens.json or lsa_space.json) -- the text
-     AFTER loading the model / estimating LSA;
+     and saves that output (model_tokens.json or lsa_tensors.safetensors
+     plus LSA metadata/id files) -- the text AFTER loading the model /
+     estimating LSA;
   4. saves the Part 2 tracelog.
 
 Folder layout assumed:
@@ -228,15 +229,19 @@ def main():
             print("  (check the model id and that 'transformers' is installed)")
     else:
         n_comp = int(ask("Number of LSA dimensions", "100"))
-        docs = lsa.documents_from_prepared(prepared, show_progress=True)
-        lsa_path = os.path.join(out_dir, "lsa_space.json")
+        docs, doc_ids = lsa.documents_from_prepared(
+            prepared, show_progress=True, return_ids=True)
+        lsa_path = os.path.join(out_dir, "lsa_tensors.safetensors")
         try:
             res = lsa.estimate_lsa(
-                docs, n_components=n_comp, save_to=lsa_path, log=log,
+                docs, n_components=n_comp, document_ids=doc_ids,
+                save_to=lsa_path, log=log,
                 justification="Static LSA representation over the documents.",
                 show_progress=True)
             print(f"\nLSA estimated: {res['n_components']} dims, "
-                  f"{res['vocabulary_size']} words, saved: {lsa_path}")
+                  f"{res['vocabulary_size']} words")
+            for label, rel_path in res.get("output_files", {}).items():
+                print(f"  {label}: {os.path.join(out_dir, rel_path)}")
         except Exception as e:
             print(f"\n  ERROR estimating LSA: {e}")
 

@@ -173,3 +173,6 @@ venv/
 ART2/Corpus_loading_and_sampling/corpora/corpora_clean/
 ART2/Corpus_loading_and_sampling/samples/all_document/
 ART2/Corpus_loading_and_sampling/samples/all_documents/
+
+# Large local LSA outputs
+ART2/Text_prep_model_tokenization/output/all_document/

@@ -19,16 +19,18 @@ needs the document texts, so it works at the document level: it reads the
 prepared sample, recovers the documents involved, and builds the matrix over
 them.
 
-Output: a vector per word (at least the target word) plus the model pieces,
-saved to JSON, and a record in the TraceLog.
+Output: word/document singular vectors and singular values saved as
+safetensors, plus lightweight metadata and id files, and a record in the
+TraceLog.
 
-Needs: numpy and scikit-learn (pip install scikit-learn).
+Needs: numpy, scikit-learn, and safetensors.
 """
 
 from __future__ import annotations
 
 import json
-from typing import Any, Dict, List, Optional
+from pathlib import Path
+from typing import Any, Dict, List, Optional, Tuple, Union
 
 from tracelog import TraceLog
 
@@ -117,6 +119,8 @@ def _progress_bar(total, desc="", unit="step", enabled=False):
 def estimate_lsa(documents: List[str], target_words: Optional[List[str]] = None,
                  n_components: int = 100, use_tfidf: bool = True,
                  min_df: int = 1, seed: int = 0,
+                 document_ids: Optional[List[str]] = None,
+                 storage_dtype: str = "float32",
                  save_to: Optional[str] = None,
                  log: Optional[TraceLog] = None,
                  justification: str = "",
@@ -124,9 +128,14 @@ def estimate_lsa(documents: List[str], target_words: Optional[List[str]] = None,
     """Estimate an LSA space over a list of document texts.
 
     Builds a term-document matrix (TF-IDF by default) and reduces it with
-    Truncated SVD to 'n_components' dimensions. Returns a dict with the
-    vocabulary, the reduced word vectors, and (if given) the vectors of the
-    target words pulled out for convenience.
+    Truncated SVD to 'n_components' dimensions.
+
+    The saved files include:
+      - lsa_tensors.safetensors: word_vectors, document_vectors,
+        singular_values
+      - vocabulary.txt: row labels for word_vectors
+      - document_ids.txt: row labels for document_vectors
+      - lsa_metadata.json: dimensions, parameters, file paths, conventions
 
     'min_df' drops words appearing in fewer than that many documents (noise).
     Saves the result and records the decision in the log.
@@ -144,28 +153,35 @@ def estimate_lsa(documents: List[str], target_words: Optional[List[str]] = None,
     if len(documents) < 2:
         raise ValueError(
             "LSA needs at least 2 documents to find co-occurrence structure.")
+    if document_ids is not None and len(document_ids) != len(documents):
+        raise ValueError(
+            "document_ids must have the same length as documents.")
+    if storage_dtype not in {"float32", "float64"}:
+        raise ValueError("storage_dtype must be 'float32' or 'float64'.")
 
     total_steps = 3 + (1 if save_to is not None else 0)
     with _progress_bar(total_steps, desc="Estimating LSA", unit="step",
                        enabled=show_progress) as progress:
-        # 1) term-document matrix (here rows are documents; we transpose
-        #    meaning via the SVD on the document-term matrix, which is
-        #    equivalent for word vectors taken from the components).
+        # 1) document-term matrix. We transpose it below to factor the
+        #    term-document matrix and expose both term-side and document-side
+        #    singular vectors.
         Vectorizer = TfidfVectorizer if use_tfidf else CountVectorizer
         vectorizer = Vectorizer(min_df=min_df, lowercase=False)
         dtm = vectorizer.fit_transform(documents)          # docs x terms
         vocab = vectorizer.get_feature_names_out().tolist()
         progress.update(1)
 
-        # 2) reduce. We want WORD vectors, so we factor the term-document
-        #    matrix (transpose: terms x docs) and take the reduced term
-        #    representation.
+        # 2) reduce. Factor term-document matrix X = U Sigma V^T.
         n_comp = min(n_components, min(dtm.shape) - 1)
         if n_comp < 1:
             raise ValueError("Not enough data for the requested n_components.")
         svd = TruncatedSVD(n_components=n_comp, random_state=seed)
         term_doc = dtm.T                                   # terms x docs
-        word_vectors = svd.fit_transform(term_doc)         # terms x n_comp
+        word_vectors = svd.fit_transform(term_doc)         # U * Sigma
+        singular_values = svd.singular_values_
+        nonzero = singular_values != 0
+        word_vectors[:, nonzero] /= singular_values[nonzero]
+        word_vectors[:, ~nonzero] = 0.0                    # now U
         progress.update(1)
 
         # vectors for the requested target words (lowercased match fallback)
@@ -182,31 +198,60 @@ def estimate_lsa(documents: List[str], target_words: Optional[List[str]] = None,
             "method": "lsa",
             "n_components": n_comp,
             "use_tfidf": use_tfidf,
+            "min_df": min_df,
+            "seed": seed,
             "n_documents": len(documents),
             "vocabulary_size": len(vocab),
             "target_vectors": target_vectors,
+            "singular_values": singular_values.tolist(),
             "explained_variance_ratio_sum":
                 float(svd.explained_variance_ratio_.sum()),
+            "vector_convention": {
+                "matrix_factorized": "term-document matrix (terms x documents)",
+                "word_vectors": "left singular vectors for terms (U)",
+                "document_vectors": "right singular vectors for documents (V)",
+                "singular_values": "diagonal values of Sigma",
+                "coordinates": (
+                    "multiply vector columns by singular_values for "
+                    "U * Sigma or V * Sigma coordinates"
+                ),
+            },
+            "storage_dtype": storage_dtype,
         }
 
         if save_to is not None:
-            # store the full space compactly: vocab + vectors
-            payload = dict(result)
-            payload["vocabulary"] = vocab
-            payload["word_vectors"] = word_vectors.tolist()
-            _save_json({"summary": {"stage": "lsa", **result},
-                        "data": payload}, save_to)
+            output_files = _save_lsa_safetensors(
+                save_to=save_to,
+                result=result,
+                vocabulary=vocab,
+                document_ids=document_ids or [
+                    str(i) for i in range(len(documents))
+                ],
+                word_vectors=word_vectors,
+                document_vectors=svd.components_.T,
+                singular_values=singular_values,
+                storage_dtype=storage_dtype,
+            )
+            result["output_files"] = output_files
             progress.update(1)
     if log is not None:
         log.record(
             step=5, operation="estimate_lsa",
             parameters={"n_components": n_comp, "use_tfidf": use_tfidf,
-                        "min_df": min_df, "seed": seed},
+                        "min_df": min_df, "seed": seed,
+                        "storage_dtype": storage_dtype},
             justification=justification or
             "Static distributional representation (LSA) over the documents.",
             summary={"n_documents": len(documents),
                      "vocabulary_size": len(vocab),
                      "n_components": n_comp,
+                     "stored_elements": [
+                         "word_vectors",
+                         "document_vectors",
+                         "singular_values",
+                     ],
+                     "storage_format": "safetensors",
+                     "output_files": result.get("output_files"),
                      "explained_variance":
                          result["explained_variance_ratio_sum"]},
             artifact=save_to)
@@ -214,7 +259,9 @@ def estimate_lsa(documents: List[str], target_words: Optional[List[str]] = None,
 
 
 def documents_from_prepared(prepared: List[Unit],
-                            show_progress: bool = False) -> List[str]:
+                            show_progress: bool = False,
+                            return_ids: bool = False
+                            ) -> Union[List[str], Tuple[List[str], List[str]]]:
     """Recover one text per document from prepared units.
 
     LSA works at the document level. Prepared segment units carry context, not
@@ -230,9 +277,95 @@ def documents_from_prepared(prepared: List[Unit],
         left = u.get("left", "")
         right = u.get("right", "")
         by_doc.setdefault(u["doc_id"], []).append(f"{left} {piece} {right}")
-    return [" ".join(pieces) for pieces in by_doc.values()]
+    doc_ids = list(by_doc.keys())
+    documents = [" ".join(by_doc[doc_id]) for doc_id in doc_ids]
+    if return_ids:
+        return documents, doc_ids
+    return documents
 
 
-def _save_json(obj, path: str) -> None:
-    with open(path, "w", encoding="utf-8") as f:
-        json.dump(obj, f, ensure_ascii=False, indent=2)
+def _lsa_output_paths(save_to: str) -> Dict[str, Path]:
+    path = Path(save_to)
+    if path.suffix == ".safetensors":
+        out_dir = path.parent
+        tensor_path = path
+    elif path.suffix:
+        out_dir = path.parent
+        tensor_path = out_dir / "lsa_tensors.safetensors"
+    else:
+        out_dir = path
+        tensor_path = out_dir / "lsa_tensors.safetensors"
+
+    return {
+        "tensors": tensor_path,
+        "metadata": out_dir / "lsa_metadata.json",
+        "vocabulary": out_dir / "vocabulary.txt",
+        "document_ids": out_dir / "document_ids.txt",
+    }
+
+
+def _write_lines(path: Path, values: List[str]) -> None:
+    with path.open("w", encoding="utf-8") as f:
+        for value in values:
+            f.write(str(value))
+            f.write("\n")
+
+
+def _relative_output_files(paths: Dict[str, Path]) -> Dict[str, str]:
+    base = paths["tensors"].parent
+    return {name: str(path.relative_to(base)) for name, path in paths.items()}
+
+
+def _save_lsa_safetensors(save_to: str, result: Dict[str, Any],
+                          vocabulary: List[str], document_ids: List[str],
+                          word_vectors, document_vectors, singular_values,
+                          storage_dtype: str) -> Dict[str, str]:
+    try:
+        import numpy as np
+        from safetensors.numpy import save_file
+    except ImportError as e:
+        raise ImportError(
+            "Saving LSA tensors needs safetensors. Install with: "
+            "pip install safetensors") from e
+
+    paths = _lsa_output_paths(save_to)
+    for path in paths.values():
+        path.parent.mkdir(parents=True, exist_ok=True)
+
+    vector_dtype = np.float32 if storage_dtype == "float32" else np.float64
+    tensors = {
+        "word_vectors": np.ascontiguousarray(word_vectors, dtype=vector_dtype),
+        "document_vectors": np.ascontiguousarray(
+            document_vectors, dtype=vector_dtype),
+        "singular_values": np.ascontiguousarray(
+            singular_values, dtype=np.float64),
+    }
+
+    tensor_metadata = {
+        "format": "lsa",
+        "word_vectors": "left singular vectors for terms (U)",
+        "document_vectors": "right singular vectors for documents (V)",
+        "singular_values": "diagonal values of Sigma",
+    }
+    save_file(tensors, str(paths["tensors"]), metadata=tensor_metadata)
+    _write_lines(paths["vocabulary"], vocabulary)
+    _write_lines(paths["document_ids"], document_ids)
+
+    files = _relative_output_files(paths)
+    metadata = {
+        "stage": "lsa",
+        "format": "safetensors",
+        "files": files,
+        "tensors": {
+            name: {
+                "shape": list(value.shape),
+                "dtype": str(value.dtype),
+            }
+            for name, value in tensors.items()
+        },
+        **result,
+    }
+    with paths["metadata"].open("w", encoding="utf-8") as f:
+        json.dump(metadata, f, ensure_ascii=False, indent=2)
+
+    return files

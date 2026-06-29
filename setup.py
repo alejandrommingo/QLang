@@ -18,7 +18,8 @@ setup(
         'pytest',
         'tqdm',
         'python-Levenshtein',
-        'scikit-learn'
+        'scikit-learn',
+        'safetensors'
     ],
     extras_require={
         'bert': ['transformers', 'torch', 'wordfreq'],

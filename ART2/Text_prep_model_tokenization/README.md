@@ -27,7 +27,8 @@ parent/
 
 This program finds the samples automatically in the sibling folder. Run it
 with `python exe.py` from a terminal. You need `pip install transformers
-scikit-learn` (transformers for the contextual models, scikit-learn for LSA).
+scikit-learn safetensors` (transformers for the contextual models,
+scikit-learn + safetensors for LSA).
 
 ---
 
@@ -102,9 +103,10 @@ vector.
 ### Functions
 
 - **`estimate_lsa(documents, target_words, n_components, ...)`** — Builds the
-  matrix and reduces it. Returns the vocabulary, the word vectors, the target
-  words' vectors, and how much variance the reduction kept. Needs at least 2
-  documents. Saves and logs.
+  matrix and reduces it. Saves the vocabulary, word singular vectors,
+  document singular vectors, singular values, the target words' vectors, and
+  how much variance the reduction kept. Needs at least 2 documents. Saves and
+  logs.
 - **`documents_from_prepared(prepared)`** — Recovers one text per document
   from the prepared units (LSA works at the document level).
 
@@ -131,7 +133,10 @@ Outputs go to `output/<run>/` inside this folder:
 |------|----------|
 | `prepared.json` | The text BEFORE the model (after minimal cleaning). |
 | `model_tokens.json` | If you chose a contextual model: tokens + alignment. |
-| `lsa_space.json` | If you chose LSA: the word vectors and the space. |
+| `lsa_tensors.safetensors` | If you chose LSA: word/document singular vectors and singular values. |
+| `lsa_metadata.json` | If you chose LSA: tensor shapes, parameters, conventions, and file map. |
+| `vocabulary.txt` | If you chose LSA: row labels for `word_vectors`. |
+| `document_ids.txt` | If you chose LSA: row labels for `document_vectors`. |
 | `tracelog_part2.json` | The record of every decision made here. |
 
 ## Every question, in order
@@ -150,7 +155,7 @@ Outputs go to `output/<run>/` inside this folder:
      multilingual BERT, XLM-RoBERTa, an MPNet sentence model, or "other" to
      type an id. It tokenizes and aligns, saving `model_tokens.json`.
    - **LSA** — then the **number of dimensions** (default 100). It estimates
-     the space, saving `lsa_space.json`.
+     the space, saving `lsa_tensors.safetensors` plus metadata/id files.
 
 At the end it prints the **tracelog** and lists the files written.
 
@@ -173,7 +178,9 @@ sample          →  samples/<term>_<unit>/stage2_kwic.json
 text_prep       →  output/<run>/prepared.json        (text before the model)
      │
      ├─ contextual  →  output/<run>/model_tokens.json   (tokens + alignment)
-     └─ LSA         →  output/<run>/lsa_space.json       (word vectors)
+     └─ LSA         →  output/<run>/lsa_tensors.safetensors
+                         + lsa_metadata.json
+                         + vocabulary.txt / document_ids.txt
                            │
                    tracelog_part2.json   (every decision, with its reason)
 ```
