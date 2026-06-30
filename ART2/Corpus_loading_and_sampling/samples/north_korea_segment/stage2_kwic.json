@@ -1,0 +1,1907 @@
+{
+  "summary": {
+    "stage": "occurrences",
+    "n_units": 73,
+    "n_articles": 53
+  },
+  "data": [
+    {
+      "doc_id": "April",
+      "text": "North Korea",
+      "offset": [
+        12871,
+        12882
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "April",
+        "hits": 3
+      },
+      "left": "(Costa Rica)\n International Louie Louie Day\n National Cheese Fondue Day (United States)\n World Parkinson's Day\n April 12\n Children's Day (Bolivia and Haiti)\n Commemoration of first human in space by Yuri Gagarin:\n Cosmonautics Day (Russia)\n International Day of Human Space Flight\n Yuri's Night (International observance)\n Halifax Day (North Carolina)\n National Grilled Cheese Sandwich Day (United States)\n National Redemption Day (Liberia)\n Walk on Your Wild Side Day\n April 13\n Jefferson's Birthday (United States)\n Katyn Memorial Day (Poland)\n Teacher's Day (Ecuador)\n First day of Thingyan (Myanmar) (April 13–16)\n Unfairly Prosecuted Persons Day (Slovakia)\n April 14\n ʔabusibaree (Okinawa Islands, Japan)\n Ambedkar Jayanti (India)\n Black Day (South Korea)\n Commemoration of Anfal Genocide Against the Kurds (Iraqi Kurdistan)\n Dhivehi Language Day (Maldives)\n Day of Mologa (Yaroslavl Oblast, Russia)\n Day of the Georgian language (Georgia (country))\n Season of Emancipation (April 14 to August 23) (Barbados)\n N'Ko Alphabet Day (Mande speakers)\n Pohela Boishakh (Bangladesh)\n Pana Sankranti (Odisha, India)\n Puthandu (Tamils) (India, Malaysia, Singapore, Sri Lanka)\n Second day of Songkran (Thailand) (Thailand)\n Pan American Day (several countries in the Americas)\n The first day of Takayama Spring Festival (Takayama, Gifu, Japan)\n Vaisakh (Punjab (region)), (India and Pakistan)\n Youth Day (Angola)\n April 15\n Day of the Sun (",
+      "right": ").",
+      "window_offset": [
+        11437,
+        12884
+      ],
+      "reference": {
+        "doc_id": "April",
+        "title": "April",
+        "source": "wikipedia"
+      }
+    },
+    {
+      "doc_id": "April",
+      "text": "North Korea",
+      "offset": [
+        14903,
+        14914
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "April",
+        "hits": 3
+      },
+      "left": "(United States, Philippines)\n Universal Day of Culture\n World Art Day\n April 16\n Birthday of José de Diego (Puerto Rico, United States)\n Birthday of Queen Margrethe II (Denmark)\n Emancipation Day (Washington, D.C., United States)\n Foursquare Day (International observance)\n Memorial Day for the Victims of the Holocaust (Hungary)\n National Healthcare Decisions Day (United States)\n Remembrance of Chemical Attack on Balisan and Sheikh Wasan (Iraqi Kurdistan)\n World Voice Day\n April 17\n Blah Blah Blah Day\n Evacuation Day (Syria)\n FAO Day (Iraq)\n Flag Day (American Samoa)\n Malbec World Day\n National Cheeseball Day (United States)\n National Espresso Day (Italy)\n Women's Day (Gabon)\n World Hemophilia Day\n April 18\n Anniversary of the Victory over the Teutonic Knights in the Battle of the Ice, 1242 (Russia)\n Army Day (Iran)\n Coma Patients' Day (Poland)\n Friend's Day (Brazil)\n Independence Day (Zimbabwe)\n International Day For Monuments and Sites\n Invention Day (Japan)\n Pet Owner's Independence Day\n April 19\n Army Day (Brazil)\n Beginning of the Independence Movement (Venezuela)\n Bicycle Day\n Dutch-American Friendship Day (United States)\n Holocaust Remembrance Day (Poland)\n Indigenous Peoples Day (Brazil)\n King Mswati III's birthday (Eswatini)\n Landing of the 33 Patriots Day (Uruguay)\n National Garlic Day (United States)\n National Rice Ball Day (United States)\n Primrose Day (United Kingdom)\n April 20\n 420 (cannabis culture) (International)\n UN Chinese Language Day (United Nations)\n April 21\n A&M Day (Texas A&M University)\n Civil Service Day (India)\n Day of Local Self-Government (Russia)\n Grounation Day (Rastafari movement)\n Heroic Defense of Veracruz (Mexico)\n Kang Pan-sok's Birthday (",
+      "right": ")\n Kartini Day (Indonesia)\n Local Self Government Day (Russia)\n National Tree Planting",
+      "window_offset": [
+        13200,
+        15000
+      ],
+      "reference": {
+        "doc_id": "April",
+        "title": "April",
+        "source": "wikipedia"
+      }
+    },
+    {
+      "doc_id": "August",
+      "text": "North Korea",
+      "offset": [
+        11040,
+        11051
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "August",
+        "hits": 2
+      },
+      "left": "(Japan)\n Founding of Asunción (Paraguay)\n Independence Day (Korea)\n Gwangbokjeol (South Korea)\n Jogukhaebangui nal, \"Fatherland Liberation Day\" (",
+      "right": ")\n Independence Day (India)\n Independence Day (Republic of the Congo)\n National Day (Liechtenstein)\n National Mourning Day (Bangladesh)\n Victory over Japan Day (United Kingdom)\n National Lemon Meringue Pie Day (United States)\n August 16\n Bennington Battle Day (Vermont, United States)\n Children's Day (Paraguay)\n Gozan no Okuribi (Kyoto, Japan)\n The first day of the Independence Days (Gabon)\n National Airborne Day (United States)\n National Rum Day (United States)\n Restoration Day (Dominican Republic)\n August 17\n The Birthday of Marcus Garvey (Rastafari)\n Engineer's Day (Colombia)\n Flag Day (Bolivia)\n Independence Day (Indonesia)\n Independence Days (Gabon)\n National Vanilla Custard Day (United States)\n Prekmurje Union Day (Slovenia)\n San Martin Day (Argentina)\n August 18\n Arbor Day (Pakistan)\n Armed Forces Day (North Macedonia)\n Bad Poetry Day\n Birthday of Virginia Dare (Roanoke Island)\n Constitution Day (Indonesia)\n Long Tan Day (Australia)\n National Science Day (Thailand)\n August 19\n Feast of the Transfiguration (Julian calendar), and its related observances:\n Buhe (Ethiopian Orthodox Tewahedo Church)\n Saviour's Transfiguration, popularly known as the \"Apples Feast\" (Russian Orthodox Church and Georgian Orthodox Church)\n Afghan Independence Day (Afghanistan)\n August Revolution Commemoration Day (Vietnam)\n Birthday of Crown Princess Mette-Marit (Norway)\n Manuel Luis Quezón Day (Quezon City and other places in The Philippines named after Manuel L.",
+      "window_offset": [
+        10895,
+        12519
+      ],
+      "reference": {
+        "doc_id": "August",
+        "title": "August",
+        "source": "wikipedia"
+      }
+    },
+    {
+      "doc_id": "August",
+      "text": "North Korea",
+      "offset": [
+        13767,
+        13778
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "August",
+        "hits": 2
+      },
+      "left": "Quezon)\n National Aviation Day (United States)\n National Potato Day (United States)\n World Humanitarian Day\n August 20\n Indian Akshay Urja Day (India)\n Restoration of Independence Day (Estonia)\n Revolution of the King and People (Morocco)\n Saint Stephen's Day (Hungary)\n World Mosquito Day\n August 21\n Ninoy Aquino Day (Philippines)\n Youth Day/King Mohammed VI's Birthday (Morocco)\n August 22\n Feast of the Coronation of Mary\n Flag Day (Russia)\n Madras Day (Chennai and Tamil Nadu, India)\n National Eat a Peach Day (United States)\n National Pecan Torte Day (United States)\n Southern Hemisphere Hoodie-Hoo Day (Chase's Calendar of Events, Southern Hemisphere)\n August 23\n Battle of Kursk Day (Russia)\n Day of the National Flag (Ukraine)\n European Day of Remembrance for Victims of Stalinism and Nazism or Black Ribbon Day (European Union and other countries), and related observances:\n Liberation from Fascist Occupation Day (Romania)\n International Day for the Remembrance of the Slave Trade and its Abolition\n Umhlanga Day (Eswatini)\n August 24\n Flag Day (Liberia)\n Independence Day of Ukraine\n International Strange Music Day\n National Waffle Day (United States)\n Nostalgia Night (Uruguay)\n Willka Raymi (Cusco, Peru)\n August 25\n Day of Songun (",
+      "right": ")\n Independence Day (Uruguay)\n Liberation Day (France)\n National Banana Split Day (United States)\n National Whiskey Sour Day (United States)\n Soldier's Day (Brazil)\n August 26\n Herero Day (Namibia)\n Heroes' Day (Namibia)\n Repentance Day (Papua New Guinea)\n Women's Equality Day (United States)\n August 27\n Film and Movies Day (Russia)\n Independence Day of the Republic of Moldova\n Lyndon Baines Johnson Day (Texas, United States)\n National Banana Lovers Day (United States)\n National Pots De Creme Day (United States)\n August 28\n Assumption of Mary (Eastern Orthodox Church (Public holiday in North Macedonia, Serbia, and Georgia (country))\n Crackers of the Keyboard Day\n Race Your Mouse Around the Icons Day\n National Cherry Turnover Day (United States)\n August 29\n International Day against Nuclear Tests\n Miners' Day (Ukraine)\n More Herbs, Less Salt Day\n National Lemon Juice Day (United States)\n National Chop Suey Day (United States)\n National Sports Day (India)\n Slovak National Uprising Anniversary (Slovakia)\n Telugu Language Day (India)\n August 30\n Constitution Day (Kazakhstan)\n Constitution Day  (Turks and Caicos Islands)\n Independence Day (Tatarstan, Russia, unrecognized)\n International Day of the Disappeare",
+      "window_offset": [
+        12520,
+        15000
+      ],
+      "reference": {
+        "doc_id": "August",
+        "title": "August",
+        "source": "wikipedia"
+      }
+    },
+    {
+      "doc_id": "April 15",
+      "text": "North Korea",
+      "offset": [
+        3510,
+        3521
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "April 15",
+        "hits": 3
+      },
+      "left": "1969 – The EC-121 shootdown incident: ",
+      "right": " shoots down a United States Navy aircraft over the Sea of Japan, killing all 31 on board.",
+      "window_offset": [
+        3472,
+        3611
+      ],
+      "reference": {
+        "doc_id": "April 15",
+        "title": "April 15",
+        "source": "wikipedia"
+      }
+    },
+    {
+      "doc_id": "April 15",
+      "text": "North Korea",
+      "offset": [
+        10077,
+        10088
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "April 15",
+        "hits": 3
+      },
+      "left": "1998)\n  1912   – Kim Il Sung, North Korean general and politician, 1st Supreme Leader of ",
+      "right": " (d.",
+      "window_offset": [
+        9988,
+        10092
+      ],
+      "reference": {
+        "doc_id": "April 15",
+        "title": "April 15",
+        "source": "wikipedia"
+      }
+    },
+    {
+      "doc_id": "August 27",
+      "text": "North Korea",
+      "offset": [
+        7333,
+        7344
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "August 27",
+        "hits": 1
+      },
+      "left": "2003   – The first six-party talks, involving South and ",
+      "right": ", the United States, China, Japan and Russia, convene to find a peaceful resolution to the security concerns of the North Korean nuclear weapons program.",
+      "window_offset": [
+        7277,
+        7497
+      ],
+      "reference": {
+        "doc_id": "August 27",
+        "title": "August 27",
+        "source": "wikipedia"
+      }
+    },
+    {
+      "doc_id": "Foreign relations of Armenia",
+      "text": "North Korea",
+      "offset": [
+        8996,
+        9007
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "Foreign relations of Armenia",
+        "hits": 1
+      },
+      "left": "Countries with diplomatic relations\n\nArmenia has diplomatic relations with the following countries: Afghanistan, Albania, Algeria, Andorra, Angola, Antigua and Barbuda, Argentina, Australia, Austria, Bahamas, Bahrain, Bangladesh, Belarus, Belgium, Belize, Benin, Bhutan, Bolivia, Brazil, Brunei Darussalam, Bulgaria, Burkina Faso, Burundi, Cambodia, Cameroon, Canada, Cape Verde, Central African Republic, Chad, Chile, China, Colombia, Comoros, Costa Rica, Croatia, Cuba, Cyprus, Czech Republic, Denmark, Djibouti, Dominica, Dominican Republic, Democratic Republic of the Congo, Republic of the Congo, East Timor, Ecuador, Egypt, El Salvador, Equatorial Guinea, Eritrea, Estonia, Eswatini, Ethiopia, Fiji, Finland, France, Gabon, The Gambia, Georgia, Germany, Ghana, Greece, Grenada, Guatemala, Guinea, Guinea-Bissau, Haiti, Holy See, Honduras, Hungary, Iceland, India, Indonesia, Iran, Iraq, Ireland, Israel, Italy, Ivory Coast, Jamaica, Japan, Jordan, Kazakhstan, Kenya, Kiribati, ",
+      "right": ", South Korea, Kuwait, Kyrgyzstan, Laos, Latvia, Lebanon, Liberia, Libya, Liechtenstein, Lithuania, Luxembourg, Madagascar, Malawi, Malaysia, Maldives, Mali, Malta, Mauritania, Mexico, Micronesia, Moldova, Monaco, Mongolia, Montenegro, Morocco, Mozambique, Myanmar, Namibia, Nauru, Nepal, Netherlands, New Zealand, Nicaragua, Niger, Nigeria, North Macedonia, Norway, Oman, Palau, Panama, Paraguay, Peru, Philippines, Poland, Portugal, Qatar, Romania, Russia, Rwanda, Saint Kitts and Nevis, Saint Lucia, Saint Vincent and the Grenadines, San Marino, Senegal, Serbia, Seychelles, Sierra Leone, Singapore, Slovakia, Slovenia, Somalia, South Africa, Spain, Sri Lanka, Sudan, Suriname, Sweden, Switzerland, Syria, Tajikistan, Tanzania, Thailand, Togo, Trinidad and Tobago, Tunisia, Turkmenistan, Tuvalu, Uganda, Ukraine, the United Arab Emirates, the United Kingdom, the United States of America, Uruguay, Vanuatu, Venezuela, Vietnam, Zambia and Zimbabwe.",
+      "window_offset": [
+        8013,
+        9957
+      ],
+      "reference": {
+        "doc_id": "Foreign relations of Armenia",
+        "title": "Foreign relations of Armenia",
+        "source": "wikipedia"
+      }
+    },
+    {
+      "doc_id": "August 15",
+      "text": "North Korea",
+      "offset": [
+        7987,
+        7998
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "August 15",
+        "hits": 3
+      },
+      "left": "1962 – James Joseph Dresnok defects to ",
+      "right": " after running across the Korean Demilitarized Zone.",
+      "window_offset": [
+        7948,
+        8050
+      ],
+      "reference": {
+        "doc_id": "August 15",
+        "title": "August 15",
+        "source": "wikipedia"
+      }
+    },
+    {
+      "doc_id": "August 15",
+      "text": "North Korea",
+      "offset": [
+        11654,
+        11665
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "August 15",
+        "hits": 3
+      },
+      "left": "2015 – ",
+      "right": " moves its clock back half an hour to introduce Pyongyang Time, 8 hours ahead of UTC.",
+      "window_offset": [
+        11647,
+        11750
+      ],
+      "reference": {
+        "doc_id": "August 15",
+        "title": "August 15",
+        "source": "wikipedia"
+      }
+    },
+    {
+      "doc_id": "August 28",
+      "text": "North Korea",
+      "offset": [
+        4366,
+        4377
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "August 28",
+        "hits": 2
+      },
+      "left": "1946 – The Workers’ Party of ",
+      "right": ", predecessor of the ruling Workers’ Party of Korea, is founded at a congress held in Pyongyang, North Korea.",
+      "window_offset": [
+        4337,
+        4486
+      ],
+      "reference": {
+        "doc_id": "August 28",
+        "title": "August 28",
+        "source": "wikipedia"
+      }
+    },
+    {
+      "doc_id": "August 28",
+      "text": "North Korea",
+      "offset": [
+        4474,
+        4485
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "August 28",
+        "hits": 2
+      },
+      "left": "1946 – The Workers’ Party of North Korea, predecessor of the ruling Workers’ Party of Korea, is founded at a congress held in Pyongyang, ",
+      "right": ".",
+      "window_offset": [
+        4337,
+        4486
+      ],
+      "reference": {
+        "doc_id": "August 28",
+        "title": "August 28",
+        "source": "wikipedia"
+      }
+    },
+    {
+      "doc_id": "Anti-ballistic missile",
+      "text": "North Korea",
+      "offset": [
+        1920,
+        1931
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "Anti-ballistic missile",
+        "hits": 6
+      },
+      "left": "The current GMD system is intended to shield the United States mainland against a limited nuclear attack by a rogue state such as ",
+      "right": ".",
+      "window_offset": [
+        1790,
+        1932
+      ],
+      "reference": {
+        "doc_id": "Anti-ballistic missile",
+        "title": "Anti-ballistic missile",
+        "source": "wikipedia"
+      }
+    },
+    {
+      "doc_id": "Anti-ballistic missile",
+      "text": "North Korea",
+      "offset": [
+        3365,
+        3376
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "Anti-ballistic missile",
+        "hits": 6
+      },
+      "left": "The system was announced to be aimed against ICBMs from Iran and ",
+      "right": ".",
+      "window_offset": [
+        3300,
+        3377
+      ],
+      "reference": {
+        "doc_id": "Anti-ballistic missile",
+        "title": "Anti-ballistic missile",
+        "source": "wikipedia"
+      }
+    },
+    {
+      "doc_id": "Anti-ballistic missile",
+      "text": "North Korea",
+      "offset": [
+        13433,
+        13444
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "Anti-ballistic missile",
+        "hits": 6
+      },
+      "left": "Japan \n\nSince 1998, when ",
+      "right": " launched a Taepodong-1 missile over northern Japan, the Japanese have been jointly developing a new surface-to-air interceptor known as the Patriot Advanced Capability 3 (PAC-3) with the US.",
+      "window_offset": [
+        13408,
+        13635
+      ],
+      "reference": {
+        "doc_id": "Anti-ballistic missile",
+        "title": "Anti-ballistic missile",
+        "source": "wikipedia"
+      }
+    },
+    {
+      "doc_id": "Arbor Day",
+      "text": "North Korea",
+      "offset": [
+        9367,
+        9378
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "Arbor Day",
+        "hits": 1
+      },
+      "left": "Korea \n\n",
+      "right": " marks \"Tree Planting Day\" on March 2, when people across the country plant trees.",
+      "window_offset": [
+        9359,
+        9460
+      ],
+      "reference": {
+        "doc_id": "Arbor Day",
+        "title": "Arbor Day",
+        "source": "wikipedia"
+      }
+    },
+    {
+      "doc_id": "April 5",
+      "text": "North Korea",
+      "offset": [
+        5587,
+        5598
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "April 5",
+        "hits": 1
+      },
+      "left": "2009 – ",
+      "right": " launches its controversial Kwangmyŏngsŏng-2 rocket.",
+      "window_offset": [
+        5580,
+        5650
+      ],
+      "reference": {
+        "doc_id": "April 5",
+        "title": "April 5",
+        "source": "wikipedia"
+      }
+    },
+    {
+      "doc_id": "Arc de Triomphe",
+      "text": "North Korea",
+      "offset": [
+        12525,
+        12536
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "Arc de Triomphe",
+        "hits": 1
+      },
+      "left": "Replicas that used its design as a model include Arch of Triumph in Pyongyang, ",
+      "right": "; Arcul de Triumf in Bucharest, Romania; Rosedale World War I Memorial Arch in Kansas City, Kansas, US; and a miniature version at the Paris Casino in Las Vegas, US.",
+      "window_offset": [
+        12446,
+        12701
+      ],
+      "reference": {
+        "doc_id": "Arc de Triomphe",
+        "title": "Arc de Triomphe",
+        "source": "wikipedia"
+      }
+    },
+    {
+      "doc_id": "Benin",
+      "text": "North Korea",
+      "offset": [
+        8367,
+        8378
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "Benin",
+        "hits": 1
+      },
+      "left": "Establishing relations with China, ",
+      "right": ", and Libya, he put \"nearly all\" businesses and economic activities under state control, causing foreign investment in Benin to dry up.",
+      "window_offset": [
+        8332,
+        8513
+      ],
+      "reference": {
+        "doc_id": "Benin",
+        "title": "Benin",
+        "source": "wikipedia"
+      }
+    },
+    {
+      "doc_id": "Cold War (1948–1953)",
+      "text": "North Korea",
+      "offset": [
+        11505,
+        11516
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "Cold War (1948–1953)",
+        "hits": 1
+      },
+      "left": "In ",
+      "right": ", Kim Il Sung created a highly centralized and brutal dictatorship, according himself unlimited power and generating a formidable cult of personality.",
+      "window_offset": [
+        11502,
+        11666
+      ],
+      "reference": {
+        "doc_id": "Cold War (1948–1953)",
+        "title": "Cold War (1948–1953)",
+        "source": "wikipedia"
+      }
+    },
+    {
+      "doc_id": "Constitution",
+      "text": "North Korea",
+      "offset": [
+        7767,
+        7778
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "Constitution",
+        "hits": 1
+      },
+      "left": "Non-democratic countries have constitutions, such as that of ",
+      "right": ", which officially grants every citizen, among other rights, the freedom of expression.",
+      "window_offset": [
+        7706,
+        7865
+      ],
+      "reference": {
+        "doc_id": "Constitution",
+        "title": "Constitution",
+        "source": "wikipedia"
+      }
+    },
+    {
+      "doc_id": "Economy of Cuba",
+      "text": "North Korea",
+      "offset": [
+        9544,
+        9555
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "Economy of Cuba",
+        "hits": 1
+      },
+      "left": "A Canadian Medical Association Journal paper claimed, \"The famine in Cuba during the Special Period was caused by political and economic factors similar to the ones that caused a famine in ",
+      "right": " in the mid-1990s because both countries were run by authoritarian regimes that denied ordinary people the food to which they were entitled to when the public food distribution collapsed and priority was given to the elite classes and the military.",
+      "window_offset": [
+        9355,
+        9803
+      ],
+      "reference": {
+        "doc_id": "Economy of Cuba",
+        "title": "Economy of Cuba",
+        "source": "wikipedia"
+      }
+    },
+    {
+      "doc_id": "Chinese language",
+      "text": "North Korea",
+      "offset": [
+        12184,
+        12195
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "Chinese language",
+        "hits": 1
+      },
+      "left": "Korean is written exclusively with hangul in ",
+      "right": " (although knowledge of the supplementary Chinese characters (called hanja) is still required), and hanja are increasingly rarely used in South Korea.",
+      "window_offset": [
+        12139,
+        12345
+      ],
+      "reference": {
+        "doc_id": "Chinese language",
+        "title": "Chinese language",
+        "source": "wikipedia"
+      }
+    },
+    {
+      "doc_id": "Foreign relations of the Czech Republic",
+      "text": "North Korea",
+      "offset": [
+        2667,
+        2678
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "Foreign relations of the Czech Republic",
+        "hits": 1
+      },
+      "left": "The objective is reportedly to protect another parts of US National Missile Defense from long-range missile strikes from Iran and ",
+      "right": ", but Czech PM Mirek Topolánek said the main reason is to avoid Russian influence and strengthen ties to US.",
+      "window_offset": [
+        2537,
+        2786
+      ],
+      "reference": {
+        "doc_id": "Foreign relations of the Czech Republic",
+        "title": "Foreign relations of the Czech Republic",
+        "source": "wikipedia"
+      }
+    },
+    {
+      "doc_id": "Samuel W. Koster",
+      "text": "North Korea",
+      "offset": [
+        2094,
+        2105
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "Samuel W. Koster",
+        "hits": 1
+      },
+      "left": "He was then assigned to direct Eighth Army's guerrilla warfare operations against ",
+      "right": ".",
+      "window_offset": [
+        2012,
+        2106
+      ],
+      "reference": {
+        "doc_id": "Samuel W. Koster",
+        "title": "Samuel W. Koster",
+        "source": "wikipedia"
+      }
+    },
+    {
+      "doc_id": "John Thomas Corley",
+      "text": "North Korea",
+      "offset": [
+        3310,
+        3321
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "John Thomas Corley",
+        "hits": 1
+      },
+      "left": "Korean War\nGeneral Corley was one of twenty-one commanders personally requested by General Douglas MacArthur for duty in the Far East shortly after the invasion of South Korea by ",
+      "right": ".",
+      "window_offset": [
+        3131,
+        3322
+      ],
+      "reference": {
+        "doc_id": "John Thomas Corley",
+        "title": "John Thomas Corley",
+        "source": "wikipedia"
+      }
+    },
+    {
+      "doc_id": "Chung Mong-joon",
+      "text": "North Korea",
+      "offset": [
+        5692,
+        5703
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "Chung Mong-joon",
+        "hits": 3
+      },
+      "left": "Chung's brother Chung Mong-hun, then the president of Hyundai Asan who pioneered South and North joint Mount Kumgang tour business, committed suicide on Aug 4, 2003 when he was investigated by prosecutors for his alleged $400 million cash remit to ",
+      "right": " shortly before 2000 North-South summit.",
+      "window_offset": [
+        5444,
+        5743
+      ],
+      "reference": {
+        "doc_id": "Chung Mong-joon",
+        "title": "Chung Mong-joon",
+        "source": "wikipedia"
+      }
+    },
+    {
+      "doc_id": "Chung Mong-joon",
+      "text": "North Korea",
+      "offset": [
+        7001,
+        7012
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "Chung Mong-joon",
+        "hits": 3
+      },
+      "left": "In fact, the money wasn't part of $400 million cash remittance to ",
+      "right": ".",
+      "window_offset": [
+        6935,
+        7013
+      ],
+      "reference": {
+        "doc_id": "Chung Mong-joon",
+        "title": "Chung Mong-joon",
+        "source": "wikipedia"
+      }
+    },
+    {
+      "doc_id": "Chung Mong-joon",
+      "text": "North Korea",
+      "offset": [
+        7014,
+        7025
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "Chung Mong-joon",
+        "hits": 3
+      },
+      "left": "",
+      "right": " blamed Grand National Party immediately after Chung Mong-hun's suicide.",
+      "window_offset": [
+        7014,
+        7097
+      ],
+      "reference": {
+        "doc_id": "Chung Mong-joon",
+        "title": "Chung Mong-joon",
+        "source": "wikipedia"
+      }
+    },
+    {
+      "doc_id": "Card stunt",
+      "text": "North Korea",
+      "offset": [
+        1577,
+        1588
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "Card stunt",
+        "hits": 3
+      },
+      "left": "",
+      "right": "\n\nNorth Korea's yearly Arirang Festival, also known as the Mass Games, in Pyongyang capitalizes on choreography and card stunt to create sweeping images across the stadium.",
+      "window_offset": [
+        1577,
+        1760
+      ],
+      "reference": {
+        "doc_id": "Card stunt",
+        "title": "Card stunt",
+        "source": "wikipedia"
+      }
+    },
+    {
+      "doc_id": "Card stunt",
+      "text": "North Korea",
+      "offset": [
+        1590,
+        1601
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "Card stunt",
+        "hits": 3
+      },
+      "left": "North Korea\n\n",
+      "right": "'s yearly Arirang Festival, also known as the Mass Games, in Pyongyang capitalizes on choreography and card stunt to create sweeping images across the stadium.",
+      "window_offset": [
+        1577,
+        1760
+      ],
+      "reference": {
+        "doc_id": "Card stunt",
+        "title": "Card stunt",
+        "source": "wikipedia"
+      }
+    },
+    {
+      "doc_id": "Card stunt",
+      "text": "North Korea",
+      "offset": [
+        7562,
+        7573
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "Card stunt",
+        "hits": 3
+      },
+      "left": "Card stunts involving large numbers of people have become a standard part of similar celebratory gatherings in countries such as ",
+      "right": ".",
+      "window_offset": [
+        7433,
+        7574
+      ],
+      "reference": {
+        "doc_id": "Card stunt",
+        "title": "Card stunt",
+        "source": "wikipedia"
+      }
+    },
+    {
+      "doc_id": "BGN/PCGN romanization",
+      "text": "North Korea",
+      "offset": [
+        2972,
+        2983
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "BGN/PCGN romanization",
+        "hits": 2
+      },
+      "left": "Systems \n BGN/PCGN romanization of Adyghe (2012 system)\n BGN/PCGN national romanization system for Afghanistan (for Pashto and Dari, 2007 system)\n BGN/PCGN romanization of Amharic (1967 system)\n BGN/PCGN romanization of Arabic (1956 system; BGN 1946, PCGN 1956)\n BGN/PCGN romanization of Armenian (1981 system)\n BGN/PCGN romanization of Avar (2011 system)\n BGN/PCGN romanization of Azerbaijani Cyrillic script (2002 table of correspondences)—note that the Government of Azerbaijan abandoned the Cyrillic script in 1991 and adopted the Roman alphabet to replace it\n BGN/PCGN romanization of Baluchi (2008 system)\n BGN/PCGN romanization of Bashkir (2007 agreement)\n BGN/PCGN romanization of Belarusian (1979 System)\n BGN/PCGN romanization of Bulgarian (BGN/PCGN 2013 agreement reflecting the official Bulgarian system.)\n BGN/PCGN romanization of Burmese (1970 agreement)\n BGN/PCGN romanization of Chechen (2008 table of correspondences)\n BGN/PCGN romanization of Chinese (1979 agreement)—Chinese characters are romanized by BGN/PCGN by means of the Pinyin system\n BGN/PCGN romanization of Chuvash (2011 system)\n BGN/PCGN romanization of Dzongkha (2010 agreement)\n BGN/PCGN romanization of Georgian (2009 agreement)\n BGN/PCGN romanization of Greek (1996 agreement)—Greek is romanized by BGN/PCGN by means of the ELOT 743 system\n BGN/PCGN romanization of Hebrew (2018 agreement)\n BGN/PCGN romanization of Inuktitut (2013 agreement)\n BGN/PCGN romanization of Japanese Kana (2017 agreement)—Japanese is romanized by BGN/PCGN by means of the modified Hepburn system)\n BGN/PCGN romanization of Kabardian (2011 system)\n BGN/PCGN romanization of Karachay-Balkar (2008 table of correspondences)\n BGN/PCGN romanization of Kazakh (1979 system)\n BGN/PCGN romanization of Khmer (1972 agreement)\n BGN/PCGN romanization of Korean (",
+      "right": ") (BGN/PCGN 1945 agreement); of Korean in North Korea—Korean is romanized by BGN/PCGN by means of the McCune–Reischauer system.",
+      "window_offset": [
+        1158,
+        3110
+      ],
+      "reference": {
+        "doc_id": "BGN/PCGN romanization",
+        "title": "BGN/PCGN romanization",
+        "source": "wikipedia"
+      }
+    },
+    {
+      "doc_id": "BGN/PCGN romanization",
+      "text": "North Korea",
+      "offset": [
+        3025,
+        3036
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "BGN/PCGN romanization",
+        "hits": 2
+      },
+      "left": "Systems \n BGN/PCGN romanization of Adyghe (2012 system)\n BGN/PCGN national romanization system for Afghanistan (for Pashto and Dari, 2007 system)\n BGN/PCGN romanization of Amharic (1967 system)\n BGN/PCGN romanization of Arabic (1956 system; BGN 1946, PCGN 1956)\n BGN/PCGN romanization of Armenian (1981 system)\n BGN/PCGN romanization of Avar (2011 system)\n BGN/PCGN romanization of Azerbaijani Cyrillic script (2002 table of correspondences)—note that the Government of Azerbaijan abandoned the Cyrillic script in 1991 and adopted the Roman alphabet to replace it\n BGN/PCGN romanization of Baluchi (2008 system)\n BGN/PCGN romanization of Bashkir (2007 agreement)\n BGN/PCGN romanization of Belarusian (1979 System)\n BGN/PCGN romanization of Bulgarian (BGN/PCGN 2013 agreement reflecting the official Bulgarian system.)\n BGN/PCGN romanization of Burmese (1970 agreement)\n BGN/PCGN romanization of Chechen (2008 table of correspondences)\n BGN/PCGN romanization of Chinese (1979 agreement)—Chinese characters are romanized by BGN/PCGN by means of the Pinyin system\n BGN/PCGN romanization of Chuvash (2011 system)\n BGN/PCGN romanization of Dzongkha (2010 agreement)\n BGN/PCGN romanization of Georgian (2009 agreement)\n BGN/PCGN romanization of Greek (1996 agreement)—Greek is romanized by BGN/PCGN by means of the ELOT 743 system\n BGN/PCGN romanization of Hebrew (2018 agreement)\n BGN/PCGN romanization of Inuktitut (2013 agreement)\n BGN/PCGN romanization of Japanese Kana (2017 agreement)—Japanese is romanized by BGN/PCGN by means of the modified Hepburn system)\n BGN/PCGN romanization of Kabardian (2011 system)\n BGN/PCGN romanization of Karachay-Balkar (2008 table of correspondences)\n BGN/PCGN romanization of Kazakh (1979 system)\n BGN/PCGN romanization of Khmer (1972 agreement)\n BGN/PCGN romanization of Korean (North Korea) (BGN/PCGN 1945 agreement); of Korean in ",
+      "right": "—Korean is romanized by BGN/PCGN by means of the McCune–Reischauer system.",
+      "window_offset": [
+        1158,
+        3110
+      ],
+      "reference": {
+        "doc_id": "BGN/PCGN romanization",
+        "title": "BGN/PCGN romanization",
+        "source": "wikipedia"
+      }
+    },
+    {
+      "doc_id": "2007 in association football",
+      "text": "North Korea",
+      "offset": [
+        8726,
+        8737
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "2007 in association football",
+        "hits": 1
+      },
+      "left": "AFC nations\n\nAustralia: Melbourne Victory\nBahrain: Muharraq\nBangladesh: Abahani\nBhutan: Transport United\nCambodia:\nBrunei: No championship held\nBurma: Kanbawza\nChina: Changchun Yatai\nEast Timor:\nGuam: Quality Distributors\nHong Kong: South China\nIndia: Dempo SC\nIndonesia:\nIran: Saipa\nIraq: Arbil\nJapan: Kashima Antlers\nJordan: Al-Wihdat\nKuwait: Al Kuwait\nKyrgyzstan: Dordoi-Dynamo Naryn\nLaos: Lao-American College\nLebanon: Al-Ansar\nMacao: GD Lam Pak\nMalaysia: Kedah FA\nMaldives: New Radiant\nMongolia: Erchim\nNepal: Mahendra Police Club\n",
+      "right": ":\nOman: Al-Nahda\nPakistan: Pakistan Army\nPhilippines: National Capital Region\nQatar: Al-Sadd\nSaudi Arabia: Al-Hilal\nSingapore: SAFFC\nSouth Korea: Pohang Steelers\nSri Lanka: Ratnam SC\nSyria: Al-Karamah\nTaiwan: Taiwan Power Company\nTajikistan: Regar-TadAZ Tursunzoda\nThailand: Chonburi\nTurkmenistan: FC Aşgabat\nUnited Arab Emirates: Al Wasl\nUzbekistan: Pakhtakor Tashkent\nVietnam: Bình Dương\nYemen: Al-Ahli\n\nOFC nations\n\nAmerican Samoa: Konica\nCook Islands:\nFiji: Ba\nNew Caledonia: JS Baco\nNew Zealand: Auckland City\nNiue:\nNorthern Mariana Islands: Fiesta Inter Saipan\nPalau: Team Bangladesh\nPapua New Guinea: Cancelled\nSamoa:\nSolomon Islands: Kossa\nTahiti: AS Manu-Ura\nTonga:\nTuvalu:\nVanuatu: Tafea\n\nNotable managerial changes\n\n January 2 – Omiya Ardija appoints Robert Verbeek as their new manager to replace Toshiya Miura.",
+      "window_offset": [
+        8190,
+        9560
+      ],
+      "reference": {
+        "doc_id": "2007 in association football",
+        "title": "2007 in association football",
+        "source": "wikipedia"
+      }
+    },
+    {
+      "doc_id": "Stan Smith (American Dad!)",
+      "text": "North Korea",
+      "offset": [
+        9792,
+        9803
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "Stan Smith (American Dad!)",
+        "hits": 1
+      },
+      "left": "When he was wounded on a top-secret mission inside ",
+      "right": ", Stan returned home to a desk job.",
+      "window_offset": [
+        9741,
+        9838
+      ],
+      "reference": {
+        "doc_id": "Stan Smith (American Dad!)",
+        "title": "Stan Smith (American Dad!)",
+        "source": "wikipedia"
+      }
+    },
+    {
+      "doc_id": "Bureau of East Asian and Pacific Affairs",
+      "text": "North Korea",
+      "offset": [
+        1847,
+        1858
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "Bureau of East Asian and Pacific Affairs",
+        "hits": 1
+      },
+      "left": "Office of Korean and Mongolian Affairs (EAP/KM) – Coordinates policy towards ",
+      "right": " and South Korea.",
+      "window_offset": [
+        1770,
+        1875
+      ],
+      "reference": {
+        "doc_id": "Bureau of East Asian and Pacific Affairs",
+        "title": "Bureau of East Asian and Pacific Affairs",
+        "source": "wikipedia"
+      }
+    },
+    {
+      "doc_id": "Ashley Chambers",
+      "text": "North Korea",
+      "offset": [
+        8267,
+        8278
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "Ashley Chambers",
+        "hits": 1
+      },
+      "left": "Chambers was on the bench for England's opening Group B match against ",
+      "right": " but started the following match against New Zealand, scoring the final goal in the 88th minute of a 5–0 victory.",
+      "window_offset": [
+        8197,
+        8391
+      ],
+      "reference": {
+        "doc_id": "Ashley Chambers",
+        "title": "Ashley Chambers",
+        "source": "wikipedia"
+      }
+    },
+    {
+      "doc_id": "Jamestown Foundation",
+      "text": "North Korea",
+      "offset": [
+        3401,
+        3412
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "Jamestown Foundation",
+        "hits": 1
+      },
+      "left": "Previous publications included Eurasia Security Trends, Fortnight in Review, ",
+      "right": " Review, Russia and Eurasia Review, Russia's Week, Spotlight on Terror, North Caucasus Weekly, (formerly Chechnya Weekly) and Recent From Turkey and Terrorism Focus.",
+      "window_offset": [
+        3324,
+        3577
+      ],
+      "reference": {
+        "doc_id": "Jamestown Foundation",
+        "title": "Jamestown Foundation",
+        "source": "wikipedia"
+      }
+    },
+    {
+      "doc_id": "Devdas (2002 Hindi film)",
+      "text": "North Korea",
+      "offset": [
+        9398,
+        9409
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "Devdas (2002 Hindi film)",
+        "hits": 1
+      },
+      "left": "However, in November the same year, Eros reclaimed these rights from Focus after months of negotiations for them and planned to sell remaining rights at the MIFED market; the companies had jointly handled sales in France, Switzerland, Greece, Australia and ",
+      "right": " in the interim.",
+      "window_offset": [
+        9141,
+        9425
+      ],
+      "reference": {
+        "doc_id": "Devdas (2002 Hindi film)",
+        "title": "Devdas (2002 Hindi film)",
+        "source": "wikipedia"
+      }
+    },
+    {
+      "doc_id": "Sejong the Great-class destroyer",
+      "text": "North Korea",
+      "offset": [
+        2844,
+        2855
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "Sejong the Great-class destroyer",
+        "hits": 1
+      },
+      "left": "This gives the destroyers the ability to track missiles launched from anywhere in ",
+      "right": ".",
+      "window_offset": [
+        2762,
+        2856
+      ],
+      "reference": {
+        "doc_id": "Sejong the Great-class destroyer",
+        "title": "Sejong the Great-class destroyer",
+        "source": "wikipedia"
+      }
+    },
+    {
+      "doc_id": "2008 in association football",
+      "text": "North Korea",
+      "offset": [
+        2040,
+        2051
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "2008 in association football",
+        "hits": 1
+      },
+      "left": "24 – Japan won the Women's East Asian Cup 2008 with three straight wins over South Korea, ",
+      "right": ", and China.",
+      "window_offset": [
+        1950,
+        2063
+      ],
+      "reference": {
+        "doc_id": "2008 in association football",
+        "title": "2008 in association football",
+        "source": "wikipedia"
+      }
+    },
+    {
+      "doc_id": "AH1",
+      "text": "North Korea",
+      "offset": [
+        1270,
+        1281
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "AH1",
+        "hits": 2
+      },
+      "left": "The Highway Boundary of South and ",
+      "right": ".",
+      "window_offset": [
+        1236,
+        1282
+      ],
+      "reference": {
+        "doc_id": "AH1",
+        "title": "AH1",
+        "source": "wikipedia"
+      }
+    },
+    {
+      "doc_id": "AH1",
+      "text": "North Korea",
+      "offset": [
+        1706,
+        1717
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "AH1",
+        "hits": 2
+      },
+      "left": ": Busan-Centre - Busan-Dong-gu\n  Busan City Route 11: Busan-Dong-gu - Busan-Geumjeong-gu\n  Gyeongbu Expressway: Busan-Geumjeong-gu - Gyeongju - Daegu - Daejeon - Seoul-Seocho-gu\n  Seoul City Route 41: Seoul-Seocho-gu - Seoul-Gangnam-gu - Seoul-Yongsan-gu\n  Namsan 1st tunnel: Seoul-Yongsan-gu - Seoul-Jung-gu\n  Seoul City Route 21: Seoul-Jung-gu - Seoul-Eunpyeong-gu\n  National Route 1: Seoul-Eunpyeong-gu - Panmunjeom\n\n",
+      "right": "\nP'anmunjŏm - Kaesŏng\n  Pyongyang-Kaesong Motorway: Kaesŏng - P'yŏngyang\n  Pyongyang-Sinuiju Motorway (Under Construction): P'yŏngyang - Sinŭiju\n\nChina\n Within Dandong: New Yalu River Bridge - Guomen Avenue -  (Dandong Xinqu IC) -  Zhangjiabao JCT -  Dandong JCT\n : Dandong - Shenyang\n Within Shenyang: : Xiashengou JCT - Jinbaotai JCT - Beiliguan JCT\n : Shenyang - Jinzhou - Beijing\n Within Beijing: : Shiyuan JCT - Maju JCT - Shuangyuan JCT - Fangshan Liyuan JCT\n : Beijing - Shijiazhuang - Zhengzhou - Xinyang - Wuhan - Changsha - Xiangtan - Guangzhou\n Within Guangzhou: : Taihe JCT - Longshan JCT - Leping JCT - Hengjiang JCT\n : Guangzhou - Nanning\n : Nanning - Youyiguan\n\nGuangzhou - Hong Kong branch \n : Taihe JCT - Huocun JCT\n : Guangzhou - Shenzhen (Huanggang Port)\n\nHong Kong\n\nGuangzhou - Hong Kong branch \n : Shenzhen Bay Port - Shenzhen Bay Bridge - Lam Tei\n : Lam Tei - Yuen Long Highway - San Tin Highway - Lok Ma Chau Control Point\n\nVietnam\n\n : Hữu Nghị Quan - Đồng Đăng\n : Bắc Giang - Hanoi - Thanh Hoá - Diễn Châu\n : Vinh - Hà Tĩnh - Đồng Hới - Đông Hà\n : Đông Hà - Huế - Đà Nẵng - Hội An - Quảng Ngãi\n : Quy Nhơn - Tuy Hòa - Nha Trang\n : Nha Trang - Cam Ranh\n : Cam Ranh - Tuy Phong\n : Tuy Phong - Phan Thiết - Dầu Giây\n : Dầu Giây - Long Thành - Phú Hữu\n Connection to HCMC Ring Road 2 (Phú Hữu to High-Tech Park) (temporary)\n : Ho Chi Minh\n : Dĩ An - Thuận An\n Connection to  (Thuận An to Thủ Đức) (temporary)\n : Ho Chi Minh\n : Ho Chi Minh - Mộc Bài\n\nIn future, \n\n  (Diễn Châu - Cam Lộ, Quảng Ngãi - Nha Trang, Cam Lâm - Vĩnh Hảo)\n\n  (Long Trường - Tân Vạn, Bình Chuẩn - Hóc Môn)\n\n  (HCMC - Mộc Bài)\n\nwill become part of AH1 instead of the current National Highway 1 and National Highway 22.",
+      "window_offset": [
+        1286,
+        3427
+      ],
+      "reference": {
+        "doc_id": "AH1",
+        "title": "AH1",
+        "source": "wikipedia"
+      }
+    },
+    {
+      "doc_id": "Tony Hand",
+      "text": "North Korea",
+      "offset": [
+        9376,
+        9387
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "Tony Hand",
+        "hits": 1
+      },
+      "left": "In March 1992, the Pool C competition was held in Hull and in a group containing Australia, Belgium, Hungary, ",
+      "right": " and South Korea, the GB team won the gold medal and promotion to Pool B.",
+      "window_offset": [
+        9266,
+        9460
+      ],
+      "reference": {
+        "doc_id": "Tony Hand",
+        "title": "Tony Hand",
+        "source": "wikipedia"
+      }
+    },
+    {
+      "doc_id": "Frostbite (2006 film)",
+      "text": "North Korea",
+      "offset": [
+        8549,
+        8560
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "Frostbite (2006 film)",
+        "hits": 1
+      },
+      "left": "According to the producers, and to director Anders Banke, Frostbiten became the first horror movie ever to be screened in ",
+      "right": ".",
+      "window_offset": [
+        8427,
+        8561
+      ],
+      "reference": {
+        "doc_id": "Frostbite (2006 film)",
+        "title": "Frostbite (2006 film)",
+        "source": "wikipedia"
+      }
+    },
+    {
+      "doc_id": "Korean Augmentation to the United States Army",
+      "text": "North Korea",
+      "offset": [
+        1969,
+        1980
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "Korean Augmentation to the United States Army",
+        "hits": 2
+      },
+      "left": "The KATUSA program remains essential for the safety of the Republic of Korea, not only for establishing partnerships with American Armed Forces, but to learn from each other and to assist each other, especially with the threat of ",
+      "right": " looming over South Korea.",
+      "window_offset": [
+        1739,
+        2006
+      ],
+      "reference": {
+        "doc_id": "Korean Augmentation to the United States Army",
+        "title": "Korean Augmentation to the United States Army",
+        "source": "wikipedia"
+      }
+    },
+    {
+      "doc_id": "Korean Augmentation to the United States Army",
+      "text": "North Korea",
+      "offset": [
+        3408,
+        3419
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "Korean Augmentation to the United States Army",
+        "hits": 2
+      },
+      "left": "Army needed a military force that had the proper knowledge of the geography of Korea, and the abilities to distinguish ally troops (South Korea) from enemy troops (",
+      "right": ") and communicate better between U.",
+      "window_offset": [
+        3244,
+        3454
+      ],
+      "reference": {
+        "doc_id": "Korean Augmentation to the United States Army",
+        "title": "Korean Augmentation to the United States Army",
+        "source": "wikipedia"
+      }
+    },
+    {
+      "doc_id": "Tactical nuclear weapon",
+      "text": "North Korea",
+      "offset": [
+        2184,
+        2195
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "Tactical nuclear weapon",
+        "hits": 1
+      },
+      "left": "Specifically on the Korean Peninsula, with a nuclear ",
+      "right": " facing off against a NPT-compliant South Korea, there have been calls to request a return of US-owned and -operated, short range, low yield nuclear weapons (called \"tactical\" by the US military) to provide a local strategic deterrent to the North's growing domestically-produced nuclear arsenal and delivery systems.",
+      "window_offset": [
+        2131,
+        2512
+      ],
+      "reference": {
+        "doc_id": "Tactical nuclear weapon",
+        "title": "Tactical nuclear weapon",
+        "source": "wikipedia"
+      }
+    },
+    {
+      "doc_id": "1991 Sino-Soviet Border Agreement",
+      "text": "North Korea",
+      "offset": [
+        9729,
+        9740
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "1991 Sino-Soviet Border Agreement",
+        "hits": 2
+      },
+      "left": "Sino-Russian-North Korean border\nThe exact location of the Sino-Russian border along the left bank of the Tumen River was an area of contention (the entirety of the right bank of the river belonging to ",
+      "right": ").",
+      "window_offset": [
+        9527,
+        9742
+      ],
+      "reference": {
+        "doc_id": "1991 Sino-Soviet Border Agreement",
+        "title": "1991 Sino-Soviet Border Agreement",
+        "source": "wikipedia"
+      }
+    },
+    {
+      "doc_id": "1991 Sino-Soviet Border Agreement",
+      "text": "North Korea",
+      "offset": [
+        10338,
+        10349
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "1991 Sino-Soviet Border Agreement",
+        "hits": 2
+      },
+      "left": "The final position of the triangular border, where China, Russia, and ",
+      "right": " meet, was successfully demarcated in 1998 after trilateral negotiations from all three countries, and went into effect 1999.",
+      "window_offset": [
+        10268,
+        10474
+      ],
+      "reference": {
+        "doc_id": "1991 Sino-Soviet Border Agreement",
+        "title": "1991 Sino-Soviet Border Agreement",
+        "source": "wikipedia"
+      }
+    },
+    {
+      "doc_id": "Weapons-grade nuclear material",
+      "text": "North Korea",
+      "offset": [
+        2597,
+        2608
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "Weapons-grade nuclear material",
+        "hits": 1
+      },
+      "left": "Countries that have produced weapons-grade nuclear material\n\nAt least ten countries have produced weapons-grade nuclear material:\n Five recognized \"nuclear-weapon states\" under the terms of the Nuclear Non-Proliferation Treaty (NPT): the United States (first nuclear weapon tested and two bombs used as weapons in 1945), Russia (first weapon tested in 1949), the United Kingdom (1952), France (1960), and China (1964)\n Three other declared nuclear states that are not signatories of the NPT: India (not a signatory, weapon tested in 1974), Pakistan (not a signatory, weapon tested in 1998), and ",
+      "right": " (withdrew from the NPT in 2003, weapon tested in 2006)\n Israel, which is widely known to have developed nuclear weapons (likely first tested in the 1960s or 1970s) but has not openly declared its capability\n South Africa, which also had enrichment capabilities and developed nuclear weapons (possibly tested in 1979), but disassembled its arsenal and joined the NPT in 1991\n\nWeapons-grade uranium\n\nNatural uranium is made weapons-grade through isotopic enrichment.",
+      "window_offset": [
+        2002,
+        3073
+      ],
+      "reference": {
+        "doc_id": "Weapons-grade nuclear material",
+        "title": "Weapons-grade nuclear material",
+        "source": "wikipedia"
+      }
+    },
+    {
+      "doc_id": "Mass games",
+      "text": "North Korea",
+      "offset": [
+        3095,
+        3106
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "Mass games",
+        "hits": 4
+      },
+      "left": "Uganda \nUgandan dictator Idi Amin was an admirer of ",
+      "right": "'s Mass Games.",
+      "window_offset": [
+        3043,
+        3120
+      ],
+      "reference": {
+        "doc_id": "Mass games",
+        "title": "Mass games",
+        "source": "wikipedia"
+      }
+    },
+    {
+      "doc_id": "Mass games",
+      "text": "North Korea",
+      "offset": [
+        220,
+        231
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "Mass games",
+        "hits": 4
+      },
+      "left": "",
+      "right": "\n\nMass games are now performed only in the Rungrado May Day Stadium but in the '90s there were mass games held at the Kim Il-sung Stadium and in the Pyongyang Gymnasium.",
+      "window_offset": [
+        220,
+        400
+      ],
+      "reference": {
+        "doc_id": "Mass games",
+        "title": "Mass games",
+        "source": "wikipedia"
+      }
+    },
+    {
+      "doc_id": "Mass games",
+      "text": "North Korea",
+      "offset": [
+        1290,
+        1301
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "Mass games",
+        "hits": 4
+      },
+      "left": "Outside ",
+      "right": "\n\nGuyana\nGuyana under the leader Forbes Burnham held mass games.",
+      "window_offset": [
+        1282,
+        1365
+      ],
+      "reference": {
+        "doc_id": "Mass games",
+        "title": "Mass games",
+        "source": "wikipedia"
+      }
+    },
+    {
+      "doc_id": "Amur falcon",
+      "text": "North Korea",
+      "offset": [
+        1955,
+        1966
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "Amur falcon",
+        "hits": 1
+      },
+      "left": "Distribution and migration\n\nThe Amur falcon breeds in east Asia from the Transbaikalia, Amurland, and northern Mongolian region to parts of ",
+      "right": ".",
+      "window_offset": [
+        1815,
+        1967
+      ],
+      "reference": {
+        "doc_id": "Amur falcon",
+        "title": "Amur falcon",
+        "source": "wikipedia"
+      }
+    },
+    {
+      "doc_id": "The Amazing Race Asia",
+      "text": "North Korea",
+      "offset": [
+        2771,
+        2782
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "The Amazing Race Asia",
+        "hits": 1
+      },
+      "left": "Participating countries include all citizens of the continent of Asia except the Middle East, Laos, ",
+      "right": ", Russia and East Timor, but including Palau and non-Asian workers who are living in Asia for a long period of time.",
+      "window_offset": [
+        2671,
+        2898
+      ],
+      "reference": {
+        "doc_id": "The Amazing Race Asia",
+        "title": "The Amazing Race Asia",
+        "source": "wikipedia"
+      }
+    },
+    {
+      "doc_id": "Criticism of atheism",
+      "text": "North Korea",
+      "offset": [
+        3339,
+        3350
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "Criticism of atheism",
+        "hits": 1
+      },
+      "left": "The 1937 papal encyclical Divini Redemptoris denounced the atheism of the Soviet Union under Joseph Stalin, which was later influential in the establishment of  state atheism across Eastern Europe and elsewhere, including Mao Zedong's China, Kim's ",
+      "right": " and Pol Pot's Cambodia.",
+      "window_offset": [
+        3091,
+        3374
+      ],
+      "reference": {
+        "doc_id": "Criticism of atheism",
+        "title": "Criticism of atheism",
+        "source": "wikipedia"
+      }
+    },
+    {
+      "doc_id": "Pál Csernai",
+      "text": "North Korea",
+      "offset": [
+        710,
+        721
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "Pál Csernai",
+        "hits": 1
+      },
+      "left": "During this time, ",
+      "right": " beat the United States 2–1 in a friendly match.",
+      "window_offset": [
+        692,
+        769
+      ],
+      "reference": {
+        "doc_id": "Pál Csernai",
+        "title": "Pál Csernai",
+        "source": "wikipedia"
+      }
+    },
+    {
+      "doc_id": "George Andrew Davis Jr.",
+      "text": "North Korea",
+      "offset": [
+        11355,
+        11366
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "George Andrew Davis Jr.",
+        "hits": 1
+      },
+      "left": "Davis and his squadron were relocated to Kimpo Airfield to allow them the best access to \"MiG Alley\" in ",
+      "right": ", where much of the air-to-air combat took place.",
+      "window_offset": [
+        11251,
+        11415
+      ],
+      "reference": {
+        "doc_id": "George Andrew Davis Jr.",
+        "title": "George Andrew Davis Jr.",
+        "source": "wikipedia"
+      }
+    },
+    {
+      "doc_id": "Thomas McInerney",
+      "text": "North Korea",
+      "offset": [
+        5656,
+        5667
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "Thomas McInerney",
+        "hits": 1
+      },
+      "left": "Duelfer, special adviser on Iraqi weapons to the C.I.A., concluded that any stockpiles had been destroyed long before the war and that transfers to Syria were \"unlikely.\"\n\nIn 2006, McInerney advocated for regime change via military action against Iran and ",
+      "right": ".",
+      "window_offset": [
+        5400,
+        5668
+      ],
+      "reference": {
+        "doc_id": "Thomas McInerney",
+        "title": "Thomas McInerney",
+        "source": "wikipedia"
+      }
+    },
+    {
+      "doc_id": "VFA-151",
+      "text": "North Korea",
+      "offset": [
+        4194,
+        4205
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "VFA-151",
+        "hits": 1
+      },
+      "left": "In March 1968, USS Coral Sea, with VF-151 embarked, operated on station off the coast of Korea following the capture of  by ",
+      "right": ".",
+      "window_offset": [
+        4070,
+        4206
+      ],
+      "reference": {
+        "doc_id": "VFA-151",
+        "title": "VFA-151",
+        "source": "wikipedia"
+      }
+    },
+    {
+      "doc_id": "Hampstead School",
+      "text": "North Korea",
+      "offset": [
+        2923,
+        2934
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "Hampstead School",
+        "hits": 1
+      },
+      "left": "One of their teams, representing ",
+      "right": ", won the award of Best Delegation at the conference.",
+      "window_offset": [
+        2890,
+        2987
+      ],
+      "reference": {
+        "doc_id": "Hampstead School",
+        "title": "Hampstead School",
+        "source": "wikipedia"
+      }
+    },
+    {
+      "doc_id": "Forced Labour Convention",
+      "text": "North Korea",
+      "offset": [
+        3051,
+        3062
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "Forced Labour Convention",
+        "hits": 1
+      },
+      "left": "The ILO members that have not ratified the convention are:\n\nUN member states which are not members of the ILO are Andorra, Bhutan, Liechtenstein, Micronesia, Monaco, Nauru, and ",
+      "right": "; these states are not eligible to ratify the Convention unless they first join the ILO.",
+      "window_offset": [
+        2874,
+        3150
+      ],
+      "reference": {
+        "doc_id": "Forced Labour Convention",
+        "title": "Forced Labour Convention",
+        "source": "wikipedia"
+      }
+    },
+    {
+      "doc_id": "People's Army",
+      "text": "North Korea",
+      "offset": [
+        261,
+        272
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "People's Army",
+        "hits": 1
+      },
+      "left": "People's Army/Armed Forces is/was the title of the armed forces or army of several countries:\n\n Albanian People's Army\n Algerian People's National Armed Forces\n Bulgarian People's Army\n Czechoslovak People's Army\n Hungarian People's Army\n Korean People's Army, ",
+      "right": "\n Lao People's Armed Forces\n Mongolian People's Army\n National People's Army of East Germany\n People's Army of Catalonia \n People's Army of Poland\n People's Army of the Republic of Spain\n People's Army of Vietnam \n People's Liberation Army of China\n Romanian People's Army\n South Sudan People's Defence Forces\n Ukrainian People's Army\n Yugoslav People's Army \n\nIt is or was also the title used by various militias and rebel groups:\n\n Catalan People's Army – A Catalan nationalist paramilitary group during the 1970s.",
+      "window_offset": [
+        0,
+        788
+      ],
+      "reference": {
+        "doc_id": "People's Army",
+        "title": "People's Army",
+        "source": "wikipedia"
+      }
+    },
+    {
+      "doc_id": "Center for International Policy",
+      "text": "North Korea",
+      "offset": [
+        4211,
+        4222
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "Center for International Policy",
+        "hits": 1
+      },
+      "left": "Former The Washington Post foreign correspondent Selig Harrison joined CIP in the same year to head the center's Asia program which focused on ",
+      "right": " and the Indian subcontinent.",
+      "window_offset": [
+        4068,
+        4251
+      ],
+      "reference": {
+        "doc_id": "Center for International Policy",
+        "title": "Center for International Policy",
+        "source": "wikipedia"
+      }
+    },
+    {
+      "doc_id": "Richard Lloyd Parry",
+      "text": "North Korea",
+      "offset": [
+        976,
+        987
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "Richard Lloyd Parry",
+        "hits": 3
+      },
+      "left": "Altogether he has worked in twenty-seven countries, including Afghanistan, Iraq, ",
+      "right": ", Papua New Guinea, Vietnam, Kosovo and Macedonia.",
+      "window_offset": [
+        895,
+        1037
+      ],
+      "reference": {
+        "doc_id": "Richard Lloyd Parry",
+        "title": "Richard Lloyd Parry",
+        "source": "wikipedia"
+      }
+    },
+    {
+      "doc_id": "Richard Lloyd Parry",
+      "text": "North Korea",
+      "offset": [
+        2193,
+        2204
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "Richard Lloyd Parry",
+        "hits": 3
+      },
+      "left": "In September 2010, he and David McNeill of The Independent were briefly arrested in ",
+      "right": ", after discovering a secret street market in the capital Pyongyang.",
+      "window_offset": [
+        2109,
+        2272
+      ],
+      "reference": {
+        "doc_id": "Richard Lloyd Parry",
+        "title": "Richard Lloyd Parry",
+        "source": "wikipedia"
+      }
+    },
+    {
+      "doc_id": "Richard Lloyd Parry",
+      "text": "North Korea",
+      "offset": [
+        2433,
+        2444
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "Richard Lloyd Parry",
+        "hits": 3
+      },
+      "left": "Lloyd Parry defended McNeill and himself from accusations that they misrepresented the situation in ",
+      "right": " and put their local guides at risk of punishment.",
+      "window_offset": [
+        2333,
+        2494
+      ],
+      "reference": {
+        "doc_id": "Richard Lloyd Parry",
+        "title": "Richard Lloyd Parry",
+        "source": "wikipedia"
+      }
+    },
+    {
+      "doc_id": "VF-21",
+      "text": "North Korea",
+      "offset": [
+        5825,
+        5836
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "VF-21",
+        "hits": 1
+      },
+      "left": "After returning from this deployment on March 17, 1994, they took part in RIMPAC '94 against the USS Constellation near Hawaii, before taking part in contingency operations in response to the death of ",
+      "right": "'s first leader, Kim Il-Sung on July 8 and the Nuclear crisis on the Korean Peninsula.",
+      "window_offset": [
+        5624,
+        5922
+      ],
+      "reference": {
+        "doc_id": "VF-21",
+        "title": "VF-21",
+        "source": "wikipedia"
+      }
+    },
+    {
+      "doc_id": "Doug Wright Award",
+      "text": "North Korea",
+      "offset": [
+        2972,
+        2983
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "Doug Wright Award",
+        "hits": 1
+      },
+      "left": "1 by Darwyn Cooke (DC Comics)\n Clyde Fans, Book One by Seth (D&Q) ***\n\nBest Emerging Talent \n\n Rabbithead by Rebecca Dart (Alternative Comics)\n Revolver #1 by Max Douglas / Salgood Sam (self-published)\n Canvas by Alex Fellows (Fantagraphics)\n Scott Pilgrim's Precious Little Life by Bryan Lee O'Malley (Oni Press) ***\n\n2006\n\n(Jurists: Justin Peroff, Alan Hunt and Ben Portis)\n\nBest Book \n\n Pyongyang: A Journey in ",
+      "right": " by Guy Delisle (D&Q)\n Scott Pilgrim Versus the World by Bryan Lee O’Malley (Oni)\n Dragonslippers: This Is What an Abusive Relationship Looks Like by Rosalind B.",
+      "window_offset": [
+        2558,
+        3144
+      ],
+      "reference": {
+        "doc_id": "Doug Wright Award",
+        "title": "Doug Wright Award",
+        "source": "wikipedia"
+      }
+    },
+    {
+      "doc_id": "Caroline Cox, Baroness Cox",
+      "text": "North Korea",
+      "offset": [
+        7167,
+        7178
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "Caroline Cox, Baroness Cox",
+        "hits": 2
+      },
+      "left": "Cox is one of eleven officers of the All-Party Parliamentary Group on ",
+      "right": ".",
+      "window_offset": [
+        7097,
+        7179
+      ],
+      "reference": {
+        "doc_id": "Caroline Cox, Baroness Cox",
+        "title": "Caroline Cox, Baroness Cox",
+        "source": "wikipedia"
+      }
+    },
+    {
+      "doc_id": "Caroline Cox, Baroness Cox",
+      "text": "North Korea",
+      "offset": [
+        7332,
+        7343
+      ],
+      "meta": {
+        "source": "wikipedia",
+        "via": "dataset",
+        "language": "en",
+        "title": "Caroline Cox, Baroness Cox",
+        "hits": 2
+      },
+      "left": "The Group stated that the Obama administration brought with it an opportunity for a formal cessation of hostilities and normalisation of relations with ",
+      "right": ".",
+      "window_offset": [
+        7180,
+        7344
+      ],
+      "reference": {
+        "doc_id": "Caroline Cox, Baroness Cox",
+        "title": "Caroline Cox, Baroness Cox",
+        "source": "wikipedia"
+      }
+    }
+  ]
+}
